@@ -1,0 +1,59 @@
+{
+  "stage": "b1-visual-review",
+  "model": "gpt-6-astra",
+  "ran_at": "2026-09-16T20:04:42.085Z",
+  "usage": {
+    "input_tokens": 9286,
+    "input_tokens_details": {
+      "cache_write_tokens": 9283,
+      "cached_tokens": 0
+    },
+    "output_tokens": 819,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 10105
+  },
+  "reviewed": [
+    "data/proofs/b1-1080x1350.png",
+    "data/proofs/b1-360w.png",
+    "data/proofs/b1-generated-1080x1350.png",
+    "data/proofs/b1-generated-360w.png"
+  ],
+  "deterministic": {
+    "verdict": "pass",
+    "five_second_read": "Features shipped, but migrations, dependency upgrades and coverage gaps remain across multiple repositories. This reads at both supplied sizes without needing the support to explain the entire illustration.",
+    "beyond_headline": "The detached SHIPPED sections contrast with larger, still-loaded repository sheets. Repetition adds cross-repository scope; the backing leaves add remaining workload.",
+    "devin_role": "Clear through the separate 'Devin playbooks for recurring maintenance' line, product signature and Contact sales CTA. The sheets do not attribute completed work to Devin.",
+    "vs_empty_typography_card": "Materially stronger. The illustration occupies substantial space and makes the shipped-versus-remaining distinction concrete rather than merely repeating the headline.",
+    "legibility_360": "Headline, branding, support and CTA are readable. The capability line and workload nouns are small but readable in the supplied 360px raster, with no clipping. Torn separation survives reduction. The gray uppercase labels are subordinate but still decipherable.",
+    "claim_accuracy": "The visible content stays within the supplied approved claims. Explicit illustrative labeling and generic repository labels avoid suggesting customer or product evidence. SHIPPED applies to feature work, not maintenance or Devin's results.",
+    "reject_conditions_triggered": [],
+    "problems": []
+  },
+  "generated_layer": {
+    "verdict": "fail",
+    "five_second_read": "The headline says cleanup remains, but the visual shows three empty torn paper stacks. A viewer cannot identify shipped feature sections or repository maintenance from the artifact itself.",
+    "beyond_headline": "Only a generic separation metaphor survives. Without the sheet labels, the illustration does not explain what left, what remains or why the three stacks represent repositories.",
+    "devin_role": "The footer still clearly names Devin playbooks for recurring maintenance, but the blank artifact contributes nothing to that role.",
+    "vs_empty_typography_card": "Not materially stronger. It fills the middle with empty document shapes while leaving the explanatory work to the headline and footer.",
+    "legibility_360": "Headline, branding, support, capability and CTA remain readable. All feature, shipped, repository and workload labels are absent at both sizes—not merely too small. Fine paper outlines remain visible but carry little information.",
+    "claim_accuracy": "The remaining copy stays within the supplied approved claims and introduces no fabricated evidence. However, the actual pixels contradict the description that artifact type was composited over the generated layer: none of that type is visible.",
+    "reject_conditions_triggered": [
+      "The remaining sheets are mostly blank.",
+      "The artifact reads as outlined document icons rather than populated repository work artifacts.",
+      "The five-second visual read does not identify shipped feature sections and maintenance remaining across repositories."
+    ],
+    "problems": [
+      "All three FEATURE WORK labels and all three SHIPPED labels are missing.",
+      "All repository labels and maintenance nouns are missing from the sheets.",
+      "The generated objects use narrower, differently positioned geometry than the specified text boxes; restoring the original overlays unchanged would not fit these objects.",
+      "More natural torn edges do not compensate for the loss of the illustration's semantic content."
+    ]
+  },
+  "winner": "deterministic",
+  "why_winner": "It communicates the intended problem through the actual artifact at feed size, preserves the approved messaging and needs no corrective render. Ship it as supplied.",
+  "image_generation_verdict": "Generation did not earn its place in this execution. The missing composited type is an execution failure, not proof that generation cannot draw paper, but the generated layer offers no meaningful communication advantage over the deterministic version. Do not extend generation to the other three on this evidence; use it only where a concept has a specific visual need that deterministic construction cannot serve as well.",
+  "corrections": [],
+  "ship_without_correction": true
+}

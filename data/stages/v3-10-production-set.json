@@ -1,0 +1,97 @@
+{
+  "stage": "production-candidates",
+  "ran_at": "2026-09-16T20:36:05.177Z",
+  "composition": "deterministic only — @resvg/resvg-js + sharp, Inter (assets/fonts), supplied brand-refs/brand-logo-devin.png",
+  "image_model_calls": 0,
+  "strategy_provenance": [
+    "data/stages/v3-1-claude-strategy.json",
+    "data/stages/v3-3-astra-refine.json",
+    "data/stages/v3-8-astra-b1-options.json"
+  ],
+  "concepts": [
+    {
+      "id": "A1",
+      "angle": "self-serve",
+      "label": "The dependency update",
+      "cta": "Get started",
+      "destination": "https://devin.ai/",
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/candidates/A1-1080x1350.png",
+          "sha256_16": "0bfc4cb006ef6917"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/candidates/A1-1080x1080.png",
+          "sha256_16": "e59487d3547f2a28"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "angle": "self-serve",
+      "label": "Show me the diff",
+      "cta": "Get started",
+      "destination": "https://devin.ai/",
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/candidates/A2-1080x1350.png",
+          "sha256_16": "0386ac8c6bdcf883"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/candidates/A2-1080x1080.png",
+          "sha256_16": "d3cf276a212d9a41"
+        }
+      ]
+    },
+    {
+      "id": "B1",
+      "angle": "enterprise",
+      "label": "The cleanup that stayed",
+      "cta": "Get a demo",
+      "destination": "https://cognition.com/demo#company",
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/candidates/B1-1080x1350.png",
+          "sha256_16": "c3d2482a183ab8d4"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/candidates/B1-1080x1080.png",
+          "sha256_16": "dee8ef0f0fdea8a0"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "angle": "enterprise",
+      "label": "FE fundinfo playbooks",
+      "cta": "See how they did it",
+      "destination": "https://devin.ai/customers/fefundinfo",
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/candidates/B2-1080x1350.png",
+          "sha256_16": "88d8254e856f1464"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/candidates/B2-1080x1080.png",
+          "sha256_16": "e8ec76b29946d5f2"
+        }
+      ]
+    }
+  ]
+}

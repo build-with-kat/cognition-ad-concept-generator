@@ -1,0 +1,161 @@
+{
+  "stage": "creative-direction",
+  "model": "gpt-6-astra",
+  "ran_at": "2026-09-16T19:52:09.750Z",
+  "usage": {
+    "input_tokens": 11856,
+    "input_tokens_details": {
+      "cache_write_tokens": 11853,
+      "cached_tokens": 0
+    },
+    "output_tokens": 5040,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 16896
+  },
+  "validation": {
+    "missing_concepts": []
+  },
+  "set_logic": {
+    "shared": "Four engineering posters built around one visual grammar: solid work-masses, deliberate gaps and exact typography. Each image makes a different argument about engineering work; none illustrates a generic workflow. Use #F7F6F5 grounds, #191919 type, #000000 work-masses and CTAs, #FFFFFF reversals, and one restrained #317CFF intervention per frame. Inter throughout; no simulated monospace. Shared 72px left alignment, product signature near y=145, and CTA band ending before y=1215. Choose plain-text Devin branding throughout, with 'The AI software engineer' beneath it; no competing Cognition lockup. All artwork is deterministic vector/type composition, not generated imagery. Keep the independent-project disclosure in the portfolio presentation and accompanying post, without suggesting brand or customer endorsement. Before approval, inspect full-size and 360px-wide proofs. Any Brand-Lock violation triggers rejection and one corrected render; a second violation fails the concept.",
+    "self_serve_vs_enterprise": "Self-serve operates at the scale of one task and one developer's decision: an extracted chore, then a visible review boundary. Enterprise changes the unit of attention to persistent maintenance and an entire repository estate: accumulated work, then a counted field. Keep both pairs light-grounded; enterprise gains density and scale, not a different brand palette. Self-serve frames carry a compact Free / Pro / Max offer and quota qualification. Their accompanying Meta primary copy must include this exact commercial context: 'Free. Pro $20/mo. Max $200/mo. Included quota, then pay in dollars for extra work. Teams: usage-based, $80/mo minimum. Enterprise: custom ACU/workload pricing, not seats.' Do not place that full ladder on the image. Enterprise pain contains no pricing; enterprise proof contains only the supplied FE fundinfo scope claim, with visible attribution and source verification required before rendering."
+  },
+  "concepts": [
+    {
+      "id": "self-serve-handoff-task",
+      "first_half_second": "That one dependency chore still sitting among the work you actually want to do.",
+      "beyond_the_headline": "The dependency update has been physically separated from the backlog, while the other work remains yours. Delegation is bounded, not a promise to take over the repository.",
+      "why_devin_specific": "The selected work is an existing-repository dependency update, and the support names Devin as the PR author returning a diff and tests. This is engineering execution, not a chat answer or generated app.",
+      "central_visual_idea": "Pull one chore out of the pile. Three broad, flat typographic strips represent competing work. The dependency-update strip is shifted decisively to the right, leaving a clean interruption in the stack. Its blue edge is the only accent. No ticket silhouette, board chrome, arrows, status badges or completion marks.",
+      "composition": "1080x1350. Devin signature at x=72, y=145. Headline at x=72, y=270, occupying three lines. The work-stack occupies y=535–780: 'FEATURE WORK', 'DEPENDENCY UPDATE', 'BUG FIXES'. First and third strips begin at x=72; the dependency strip begins at x=220 and ends at x=1008. Use black strips with white text, separated by substantial off-white gaps. These are poster shapes, not UI cards. Support at x=72, y=825: 'You write the ticket. Devin opens the PR\\nwith the diff and tests.' Offer at y=955: 'Free · Pro $20/mo · Max $200/mo', then 'Included quota, then pay for extra work.' CTA at x=72, y=1105, 330x96. No critical text outside y=135–1215.",
+      "typography": "Inter Medium headline, 68px with 72px line spacing and slightly tight tracking: 'Hand off the\\ndependency update.\\nYou review the PR.' Strip labels are Inter Medium, 38px, left-aligned with 30px internal padding. Support is Inter Regular 36px/45px. Offer and qualification are 33px/42px. Devin is Inter Medium 44px; category line 30px. CTA is Inter Medium 36px. Do not use condensed type or shrink the long task label to fit; widen its strip if needed.",
+      "branding": {
+        "treatment": "devin-wordmark",
+        "placement": "Plain-text 'Devin' at x=72, y=145, with 'The AI software engineer' directly beneath in smaller Inter Regular. Keep a signature-height of clearspace from other elements.",
+        "why": "The developer is evaluating Devin itself. A single product signature connects the task to the product immediately without splitting attention between parent and product marks."
+      },
+      "cta": "Exact text 'Get started', white on #000000, 8px corner radius. Place at x=72, y=1105. It is a conventional ad CTA, visually separate from the task strip; do not make the dependency strip look clickable.",
+      "assets": {
+        "generated": [],
+        "composited_in_code": [
+          "Source assets: supplied Inter Regular and Medium font files; authoritative brand palette and supplied capability copy. The Cognition PNG is deliberately unused.",
+          "Exact headline, support, three illustrative work labels, Devin signature, category line and on-image offer qualification.",
+          "Three solid vector strips, their offsets and the single #317CFF edge on the dependency strip.",
+          "Exact CTA label and button geometry.",
+          "Accompanying Meta primary copy containing the full commercial model specified in set_logic; independent portfolio disclosure in the presentation/post."
+        ]
+      },
+      "small_size_risk": "At 360px, the task label becomes roughly 13px and the offer 11px. A clipped dependency label or low-contrast qualification destroys credibility. Verify both at actual display size; preserve the full task wording and use #191919 for the offer. The offset must remain visibly greater than the strip padding, or the central idea collapses into three ordinary list rows.",
+      "reject_if": [
+        "The strips resemble a fabricated Linear board, actual product interface, outlined ticket icons or an arrow-led process diagram.",
+        "The dependency update is checked off, stamped merged or presented as an actual completed Devin task.",
+        "The selected strip is not visibly displaced from the other work.",
+        "Copy promises no setup, no babysitting, guaranteed correctness or a quantified result.",
+        "Self-serve price or quota qualification is missing, altered or illegible at 360px.",
+        "Cognition appears beside Devin as a second mark, or critical type enters the top/bottom exclusion zones."
+      ]
+    },
+    {
+      "id": "self-serve-handoff-objection",
+      "first_half_second": "A PR is not permission to merge. The final decision is still yours.",
+      "beyond_the_headline": "There is an intentional, unbridged boundary between producing work and accepting it. The image never closes that gap on the developer's behalf.",
+      "why_devin_specific": "Devin is explicitly the author of the PR, not a review assistant commenting on human-written code. The visual locates Devin's contribution in the authored work and locates acceptance with the engineer.",
+      "central_visual_idea": "An unfinished lockup. A large black mass reading 'PR' ends above a separate, oversized 'YOUR CALL.' The two almost form one typographic object, but a clear off-white interruption and one short blue stop-rule prevent them from joining. The missing connection is the idea: work delivered is not work accepted.",
+      "composition": "1080x1350. Shared Devin signature at x=72, y=145. Headline at x=72, y=275 in three lines. At x=72, y=530 place a black rectangle 936px wide and 230px tall, containing a large white 'PR', aligned left rather than centered. Beneath it leave a 45px interruption; place a short 120x8px blue rule at the left edge of that interruption. 'YOUR CALL.' sits on the off-white ground at x=72, y=805. Support at y=920: 'Read the diff. Run the tests. You keep the merge.' On-image offer at y=990 and y=1035: 'Free · Pro $20/mo · Max $200/mo' / 'Included quota, then pay for extra work.' CTA at x=72, y=1110, 330x96. There are no controls, branches, timestamps or green checks.",
+      "typography": "Inter Medium headline, 66px/71px: 'Devin opens the PR.\\nYou decide\\nif it merges.' PR is Inter Medium approximately 210px, optically fitted inside the black mass with visible breathing room. YOUR CALL. is Inter Medium 100px with tight tracking. Support is Inter Regular 33px/42px, with a deliberate wrap after 'tests.' if font measurement requires it. Offer and quota line are 33px. Shared signature and CTA sizes match concept one.",
+      "branding": {
+        "treatment": "devin-wordmark",
+        "placement": "Plain-text Devin at x=72, y=145, category line beneath. The headline's use of Devin is grammatical copy, not another wordmark.",
+        "why": "Product-level attribution matters here: the buyer must understand that Devin writes the change while the engineer decides whether to accept it."
+      },
+      "cta": "Exact 'Get started' in the same black 330x96px button as the first self-serve frame, at x=72, y=1110. Keep it well below YOUR CALL. so it cannot be mistaken for a merge control.",
+      "assets": {
+        "generated": [],
+        "composited_in_code": [
+          "Source assets: supplied Inter Regular and Medium files, brand palette and supplied product-capability statements. No screenshot or Cognition lockup required.",
+          "Exact headline, PR lettering, YOUR CALL. lettering, support, signature, category line, prices and quota qualification.",
+          "Black work-mass, off-white separation and short blue stop-rule as vector geometry.",
+          "Exact CTA and deterministic spacing that keeps the ad button separate from the review metaphor.",
+          "Accompanying Meta primary copy containing the commercial model specified in set_logic; portfolio disclosure outside the creative."
+        ]
+      },
+      "small_size_risk": "The gap must survive downsampling; preserve at least 15 display pixels between the PR mass and the decision lettering. PR and YOUR CALL. must read before the smaller support. If the blue rule looks like a loading indicator or the CTA appears attached to a merge panel, increase separation rather than add explanatory microcopy.",
+      "reject_if": [
+        "The PR mass and YOUR CALL. touch, or an arrow bridges them.",
+        "The design introduces an apparent Merge button, fabricated branch protection or a claim that Devin technically enforces approval in every configuration.",
+        "Green CI, a checkmark or a merged status implies correctness or acceptance.",
+        "Devin is described or pictured as reviewing a human-authored PR.",
+        "The image reads as a generic centered headline with a decorative rectangle rather than two visibly separate domains.",
+        "Pricing, quota qualification or human merge ownership becomes unreadable at 360px."
+      ]
+    },
+    {
+      "id": "enterprise-playbook-pain",
+      "first_half_second": "The release is gone from the agenda. The maintenance is still there.",
+      "beyond_the_headline": "Cleanup is not a single forgotten ticket. It persists as repeated classes of work across the estate, taking up space after the celebrated delivery has disappeared.",
+      "why_devin_specific": "The response to the pain is Devin playbooks for recurring engineering work across repositories, not a dashboard for tracking debt. Use the capability line 'Run recurring work across repos with Devin playbooks.' without an invented outcome or customer endorsement.",
+      "central_visual_idea": "The missing feature, the remaining weight. A label reading 'FEATURE / SHIPPED' sits beside an empty horizontal slot. Beneath that absence, dense black bands of 'MIGRATIONS', 'DEPENDENCY UPGRADES' and 'COVERAGE GAPS' remain, with repeated words continuing beyond the right crop. The feature has left; the maintenance occupies the picture.",
+      "composition": "1080x1350. Shared signature at x=72, y=145; small blue 'ENTERPRISE' label at upper right within the safe area. Headline at x=72, y=280. The empty feature slot occupies y=505–595, with 'FEATURE / SHIPPED' in muted Inter at its left and no enclosing box. Three black maintenance bands occupy y=625–905. Each begins at x=72 and extends beyond the right canvas edge; the first full instance of each work noun stays inside x=1008. Repetition after that first instance supplies scale, not additional information. Capability line at x=72, y=960: 'Run recurring work across repos\\nwith Devin playbooks.' CTA at x=72, y=1105, 355x96. The density is confined to the work-mass; the brand and message remain quiet.",
+      "typography": "Inter Medium headline, 76px/81px: 'The feature shipped.\\nThe cleanup didn’t.' Maintenance nouns are Inter Medium 52px, white on black, with 30px left padding and consistent baselines. FEATURE / SHIPPED is Inter Regular 33px in #6B6B6B. Capability line is Inter Regular 38px/47px. ENTERPRISE is Inter Medium 30px with modest positive tracking, not a faux-mono font. Signature and CTA follow the set.",
+      "branding": {
+        "treatment": "devin-wordmark",
+        "placement": "Plain-text Devin at x=72, y=145, category line beneath. ENTERPRISE is an audience label, not a second brand.",
+        "why": "Keeping the product signature consistent makes the change from one chore to estate-wide maintenance feel like a change in workload scale, not a different company or campaign."
+      },
+      "cta": "Exact 'Contact sales', white on black, 355x96px at x=72, y=1105. Match the self-serve button construction while retaining the enterprise action.",
+      "assets": {
+        "generated": [],
+        "composited_in_code": [
+          "Source assets: supplied Inter files, brand palette and marketer-approved playbook capability language. Ramp and FE fundinfo mechanics may inform fact-checking but are not named or displayed in this creative.",
+          "Exact headline, feature label, three maintenance nouns and their repeated continuations, capability line, Devin signature and category.",
+          "Empty feature slot and three solid black bands; right-edge clipping applies only to repeated decorative words.",
+          "Small blue ENTERPRISE label and exact Contact sales CTA."
+        ]
+      },
+      "small_size_risk": "Repeated words can become an unreadable barcode at feed size. Each band must show one complete, clearly legible noun before any repetition or crop. The empty feature slot must remain substantial enough to register as absence rather than an accidental large line gap. Do not introduce fine repository labels to explain scale.",
+      "reject_if": [
+        "The empty feature slot is filled with an icon, card or another headline, removing the central absence.",
+        "The first full maintenance noun on any band is clipped or too small to read at 360px.",
+        "The repetition resembles source code, an IDE, a fabricated dashboard or a grey workflow diagram.",
+        "Copy claims work runs without planning or review, or promises eliminated coordination overhead.",
+        "The frame contains ROI, hours saved, capacity figures, prices, seat language or customer logos.",
+        "The image implies Devin has already completed the illustrated maintenance rather than naming the buyer's unresolved work."
+      ]
+    },
+    {
+      "id": "enterprise-playbook-proof",
+      "first_half_second": "A named implementation at 1,800-repository scale, not another demo-repo claim.",
+      "beyond_the_headline": "The count becomes an estate rather than an abstract big number. Equal, unconnected units suggest many separate repositories under one repeatable operating approach, without suggesting all changes merge automatically.",
+      "why_devin_specific": "The claim is explicitly FE fundinfo's reported use of automated Devin playbooks via custom Replit apps. Both the named implementation and that operating mechanism distinguish it from a generic agent-fleet promise.",
+      "central_visual_idea": "Make the denominator visible. Pair a large 1,800 with an exactly counted field of 1,800 solid repository units. No ticks, success colors, network connections or motion trails: the field represents managed scope, not completed jobs, simultaneous agents or merges.",
+      "composition": "1080x1350. Shared Devin signature at x=72, y=145. 'Devin playbooks.' at x=72, y=270. The numeric headline occupies y=345–565: large '1,800' with 'repositories.' directly beneath. At x=72, y=640 place a 60-column by 30-row matrix, 895px wide and 296px tall: each unit 10x6px, with 5px horizontal and 4px vertical gaps. All units are #191919. A single blue rule above the matrix is the accent; do not highlight an individual repository. Attribution at x=72, y=965 in three lines: 'FE fundinfo reports 1,800 repositories\\nmanaged with automated Devin playbooks\\nvia custom Replit apps. Source: devin.ai'. CTA at x=72, y=1120, 665x86. Use the supplied support 'How FE fundinfo automates maintenance across its repos.' as accompanying Meta primary copy rather than adding another on-image paragraph.",
+      "typography": "Inter Medium 68px for 'Devin playbooks.'; Inter Medium approximately 200px for '1,800', using the supplied font's actual metrics and preserving the comma. 'repositories.' is Inter Regular 64px. Attribution is Inter Regular 33px/42px in #191919, not faint legal grey. CTA is Inter Medium 34px. All text is left-aligned. The figure is dominant, but FE fundinfo attribution must be readable at feed size, not relegated to a tiny footnote.",
+      "branding": {
+        "treatment": "devin-wordmark",
+        "placement": "Plain-text Devin at x=72, y=145 with the category line beneath. FE fundinfo appears only as plain-text attribution in the evidence caption and CTA, never styled as a customer logo.",
+        "why": "One product signature maintains the set. Treating the customer name as a source rather than a badge avoids implying endorsement of this independent portfolio project."
+      },
+      "cta": "Exact 'See how FE fundinfo did it', white on black, 665x86px at x=72, y=1120. Keep on one line at 34px if measured font bounds permit; increase width within the safe area rather than abbreviate the name. Intended destination is the verified official FE fundinfo customer story, not a generic sales page.",
+      "assets": {
+        "generated": [],
+        "composited_in_code": [
+          "Source assets: supplied Inter files and palette; the supplied FE fundinfo claim and attribution. Before rendering, the marketer must supply or verify the exact official devin.ai customer-story URL and archive the supporting passage. Do not invent a URL slug.",
+          "Exact headline, numeric figure, repository noun, Devin signature, category, visible attribution and CTA.",
+          "A programmatically counted 60x30 matrix of exactly 1,800 identical units; automated count assertion before export.",
+          "One blue rule, black CTA and all spacing. No customer logo, screenshot, Replit logo or generated product imagery.",
+          "Accompanying Meta primary copy using the supplied support, with the verified source link and independent-project disclosure in the portfolio presentation/post."
+        ]
+      },
+      "small_size_risk": "The repository units reduce to approximately 3.3x2px, so poor resampling can fuse rows or introduce moiré. Test the actual 360px raster; retain clear gaps and use high-quality downsampling. The viewer need not count the units, but must see a field of distinct units. More importantly, 'FE fundinfo reports' and the custom-Replit mechanism must remain legible at approximately 11px. If they do not, reflow the caption and reduce the matrix height rather than shrink attribution.",
+      "reject_if": [
+        "The official story and exact scope wording have not been verified by the marketer before rendering.",
+        "The figure is presented as Devin-wide scale, a typical customer result, concurrent agents, completed PRs or universally auto-merged work.",
+        "The matrix does not contain exactly 1,800 units, or includes green checks or completion indicators.",
+        "FE fundinfo attribution or the custom Replit apps mechanism is omitted, detached from the figure or illegible at 360px.",
+        "The render adds the 10% capacity figure, a timeframe, the projected 2–4x result or another customer's evidence.",
+        "FE fundinfo's logo appears, endorsement is implied, or the counted field becomes an illegible texture after downsampling."
+      ]
+    }
+  ]
+}

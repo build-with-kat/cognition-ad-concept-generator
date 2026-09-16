@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350"><rect width="1080" height="1350" fill="#F7F6F5"/>
+<text x="72" y="162.75" font-family="Inter" font-weight="500" font-size="50" fill="#191919" letter-spacing="-0.6" text-anchor="start">Devin</text>
+<text x="72" y="291.53" font-family="Inter" font-weight="500" font-size="86" fill="#191919" letter-spacing="-2" text-anchor="start">The feature shipped.</text>
+<text x="72" y="385.53" font-family="Inter" font-weight="500" font-size="86" fill="#191919" letter-spacing="-2" text-anchor="start">The cleanup didn't.</text>
+<rect x="102" y="482" width="906" height="512" fill="#FFFFFF" stroke="#D9D6D2" stroke-width="2" rx="4"/>
+<rect x="87" y="467" width="906" height="512" fill="#FFFFFF" stroke="#D9D6D2" stroke-width="2" rx="4"/>
+<rect x="72" y="452" width="906" height="512" fill="#FFFFFF" stroke="#191919" stroke-width="2.5" rx="4"/>
+<text x="124" y="522.585" font-family="Inter" font-weight="500" font-size="27" fill="#6B6B6B" letter-spacing="1.6" text-anchor="start">RECURRING MAINTENANCE</text>
+<text x="926" y="522.585" font-family="Inter" font-weight="500" font-size="27" fill="#317CFF" letter-spacing="1.6" text-anchor="end">EVERY REPO</text>
+<rect x="124" y="560" width="802" height="2" fill="#D9D6D2"/>
+<text x="124" y="644.17" font-family="Inter" font-weight="500" font-size="54" fill="#191919" letter-spacing="-0.8" text-anchor="start">Remove stale feature flags</text>
+<rect x="124" y="682" width="802" height="2" fill="#D9D6D2"/>
+<text x="124" y="766.17" font-family="Inter" font-weight="500" font-size="54" fill="#191919" letter-spacing="-0.8" text-anchor="start">Update dependencies</text>
+<rect x="124" y="804" width="802" height="2" fill="#D9D6D2"/>
+<text x="124" y="888.17" font-family="Inter" font-weight="500" font-size="54" fill="#191919" letter-spacing="-0.8" text-anchor="start">Fix flaky tests</text>
+<text x="926" y="925.52" font-family="Inter" font-weight="400" font-size="24" fill="#A3A09C" letter-spacing="0" text-anchor="end">Illustration</text>
+<text x="72" y="1090.33" font-family="Inter" font-weight="500" font-size="46" fill="#191919" letter-spacing="-0.8" text-anchor="start">Delegate recurring maintenance</text>
+<text x="72" y="1146.33" font-family="Inter" font-weight="500" font-size="46" fill="#191919" letter-spacing="-0.8" text-anchor="start">across repos to Devin.</text>
+<rect x="72" y="1194" width="352" height="84" rx="8" fill="#000000"/>
+<text x="248" y="1248.78" font-family="Inter" font-weight="500" font-size="36" fill="#FFFFFF" letter-spacing="0" text-anchor="middle">Contact sales</text></svg>

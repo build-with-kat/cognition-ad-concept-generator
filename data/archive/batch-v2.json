@@ -1,0 +1,565 @@
+{
+  "schema": "devin-creative-lab/2",
+  "generated_at": "2026-09-16T18:40:25.874Z",
+  "product": {
+    "title": "Devin Creative Lab",
+    "subtitle": "Independent project · Built with Devin"
+  },
+  "scope": {
+    "angles": 2,
+    "executions": 4,
+    "formats_per_execution": [
+      "4:5",
+      "1:1"
+    ],
+    "note": "Format adaptations are the same creative, not separate concepts."
+  },
+  "inputs": [
+    "inputs/cognition-brand-kit.md",
+    "inputs/market-truth.md",
+    "brand-refs/Cognition_PrimaryLockup_Black.png"
+  ],
+  "pipeline": [
+    {
+      "stage": "copy",
+      "provider": "anthropic",
+      "model": "claude-opus-5",
+      "trace": "data/stages/v2-1-claude-copy.json"
+    },
+    {
+      "stage": "art direction",
+      "provider": "openai",
+      "api": "responses",
+      "model": "gpt-6-astra",
+      "trace": "data/stages/v2-2-astra-direction.json"
+    },
+    {
+      "stage": "illustration panels",
+      "provider": "openai",
+      "api": "images.generations",
+      "model": "gpt-image-2.5-sunburst",
+      "trace": "data/stages/v2-3-render-panels.json"
+    },
+    {
+      "stage": "compositing",
+      "provider": "local",
+      "engine": "satori + @resvg/resvg-js",
+      "typeface": "Inter 4.1 (assets/fonts)",
+      "trace": "data/stages/v2-4-composite-ads.json"
+    },
+    {
+      "stage": "brand lock",
+      "provider": "openai",
+      "api": "responses",
+      "model": "gpt-6-astra",
+      "trace": "data/stages/v2-5-brand-lock.json"
+    }
+  ],
+  "limitations": [
+    "Approval is local to this browser. Nothing is published and there is no Meta integration.",
+    "Rejection feedback is saved in localStorage only; the generation pipeline does not read it.",
+    "Workflow graphics are illustrations, not product screenshots or execution evidence.",
+    "Angles are hypotheses to test. No performance results are shown because none exist."
+  ],
+  "angles": [
+    {
+      "id": "self-serve-handoff",
+      "track": "self-serve",
+      "title": "Hand off the ticket. Review the PR.",
+      "audience": "developers delegating well-scoped engineering tasks",
+      "insight": "Developers will delegate bounded, well-scoped work if the result comes back as an inspectable diff.",
+      "hypothesis": "We believe framing Devin as delegation of a well-scoped ticket, with the developer keeping the merge, will lower cost per activated signup versus command-center and tooling-comparison framing.",
+      "evidence": {
+        "source_file": "inputs/market-truth.md",
+        "section": "§2 Buyers & workflows with strongest evidence",
+        "quote": "You don’t babysit it. You delegate, walk away, and check the result.",
+        "label": "observed buyer language (OBS)",
+        "reading": "This shows how buyers describe the delegate-then-inspect workflow they want; it does not prove Devin's output quality, task fit, or that any given ticket comes back mergeable.",
+        "source_url": null
+      },
+      "measurement": {
+        "metric": "Cost per activated signup",
+        "definition_note": "Before launch, agree what activation means: account created plus a first delegated task started, attributed on a fixed window."
+      },
+      "executions": [
+        {
+          "id": "self-serve-handoff-a",
+          "angle_id": "self-serve-handoff",
+          "label": "Execution A · Typography",
+          "treatment": "typography-led",
+          "concept_line": "A large two-line handoff statement sits between a small official lockup and a quietly anchored CTA.",
+          "ad": {
+            "headline": "Hand off the ticket.\nReview the PR.",
+            "support": "You delegate bounded work. You own the merge.",
+            "cta": "Get started",
+            "destination": {
+              "url": "https://app.devin.ai/",
+              "checked_at": "2026-09-16",
+              "http_status": 200,
+              "note": "Reachable sign-in / start surface for Devin."
+            }
+          },
+          "meta": {
+            "primary": "Assign a well-scoped ticket and walk away.\nDevin plans the work and comes back with a diff and test results.\nYou review. You merge.",
+            "headline": "Ticket in. Pull request out.",
+            "description": "You own the merge."
+          },
+          "artifact": {
+            "kind": "none"
+          },
+          "formats": {
+            "4:5": {
+              "src": "/ads/v2/self-serve-handoff-a-1080x1350.png",
+              "file": "public/ads/v2/self-serve-handoff-a-1080x1350.png",
+              "width": 1080,
+              "height": 1350,
+              "sha256_16": "4daaef372c7717d3"
+            },
+            "1:1": {
+              "src": "/ads/v2/self-serve-handoff-a-1080x1080.png",
+              "file": "public/ads/v2/self-serve-handoff-a-1080x1080.png",
+              "width": 1080,
+              "height": 1080,
+              "sha256_16": "34985001747ee8eb"
+            }
+          },
+          "provenance": {
+            "copy_model": "claude-opus-5",
+            "direction_model": "gpt-6-astra",
+            "composited_in_code": [
+              "headline",
+              "support",
+              "official Cognition lockup",
+              "product name Devin",
+              "CTA button"
+            ],
+            "model_generated": [],
+            "panel": null,
+            "brand_lock": {
+              "pass": false,
+              "verdict": "Both statics fail because the standalone “Devin” label adds copy prohibited by the checklist. Otherwise, the visible execution is consistent with the requirements, including retained typography in the square version.",
+              "forbidden_elements": [
+                "Additional standalone “Devin” copy in both statics"
+              ],
+              "checks": [
+                {
+                  "item": "1. Uniform #F7F6F5 ground and #191919 headline ink",
+                  "pass": true,
+                  "note": "Both backgrounds are uniform and visually consistent with the specified ground and headline colors."
+                },
+                {
+                  "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
+                  "pass": true,
+                  "note": "Each static shows one black lockup, without visible distortion and with ample clearspace."
+                },
+                {
+                  "item": "3. Two-line headline and support appearing once",
+                  "pass": true,
+                  "note": "Both retain the same two headline lines and show the support once."
+                },
+                {
+                  "item": "4. All typeset text uses Inter; no eyebrow or additional copy",
+                  "pass": false,
+                  "note": "Typography appears consistent with Inter, but “Devin” is additional copy in both statics."
+                },
+                {
+                  "item": "5. One black CTA reading Get started in white",
+                  "pass": true,
+                  "note": "Each static has exactly one black CTA with the required white text."
+                },
+                {
+                  "item": "6. No panel, motif, accent mark, border or decorative line",
+                  "pass": true,
+                  "note": "No prohibited decorative elements are visible."
+                },
+                {
+                  "item": "7. All critical content at least 80px from every canvas edge",
+                  "pass": true,
+                  "note": "Edge clearances appear consistent with the requirement; no visually clear infringement."
+                },
+                {
+                  "item": "8. Square retains portrait typography and compresses only spacing",
+                  "pass": true,
+                  "note": "Type sizes, weights and line breaks appear unchanged; spacing is compressed."
+                }
+              ],
+              "accepted_exception": "Reviewer counts the product name 'Devin' beside the Cognition lockup as extra copy. Devin branding on the creative is a brief requirement, so the open item is accepted deliberately rather than fixed."
+            }
+          }
+        },
+        {
+          "id": "self-serve-handoff-b",
+          "angle_id": "self-serve-handoff",
+          "label": "Execution B · Workflow",
+          "treatment": "workflow-led",
+          "concept_line": "The same handoff statement leads into a compact ticket-to-review diagram with a visibly open final review gate.",
+          "ad": {
+            "headline": "From well-scoped ticket\nto PR awaiting review",
+            "support": "Devin does the work. You read the diff.",
+            "cta": "Get started",
+            "destination": {
+              "url": "https://app.devin.ai/",
+              "checked_at": "2026-09-16",
+              "http_status": 200,
+              "note": "Reachable sign-in / start surface for Devin."
+            }
+          },
+          "meta": {
+            "primary": "One bounded ticket: bump the dependency, fix what breaks.\nDevin runs it and opens a pull request with tests.\nThe review and the merge stay with you.",
+            "headline": "Delegate the chore, read the diff",
+            "description": "Bounded work, inspected."
+          },
+          "artifact": {
+            "kind": "illustration",
+            "note": "Illustration. Not a screenshot and not execution evidence.",
+            "steps": [
+              "Ticket",
+              "Devin runs",
+              "Diff + tests",
+              "You review"
+            ],
+            "ticket": "ENG-2214 · Bump lint dependency and fix failures",
+            "repos": []
+          },
+          "formats": {
+            "4:5": {
+              "src": "/ads/v2/self-serve-handoff-b-1080x1350.png",
+              "file": "public/ads/v2/self-serve-handoff-b-1080x1350.png",
+              "width": 1080,
+              "height": 1350,
+              "sha256_16": "506ac82a5b5e56b5"
+            },
+            "1:1": {
+              "src": "/ads/v2/self-serve-handoff-b-1080x1080.png",
+              "file": "public/ads/v2/self-serve-handoff-b-1080x1080.png",
+              "width": 1080,
+              "height": 1080,
+              "sha256_16": "ed902bb6f215924e"
+            }
+          },
+          "provenance": {
+            "copy_model": "claude-opus-5",
+            "direction_model": "gpt-6-astra",
+            "composited_in_code": [
+              "headline",
+              "support",
+              "official Cognition lockup",
+              "product name Devin",
+              "CTA button"
+            ],
+            "model_generated": [
+              "illustration panel (text-free)"
+            ],
+            "panel": {
+              "image_model": "gpt-image-2.5-sunburst",
+              "size": "1088x816",
+              "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small open review indicator in the final stage. Arrange four stages left to right, centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First stage: one bounded ticket-shaped card with a small edge notch, no internal writing. Second stage: two slightly offset rectangular work sheets receiving the ticket through a connector. Third stage: one review document containing two clearly separated blank rectangular panes, representing a proposed change ready for inspection, with no code or pseudo-text. Fourth stage: a separate outlined review tray containing that proposed-change document, with one small blue hollow circular indicator attached to its upper-right corner. Connect the stages with thin black directional connectors; terminate the workflow at the open review tray, without an approval tick, merged state or completion badge. Preserve generous blank space above and below the diagram. Make the ticket-to-proposed-change-to-pending-review sequence legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
+              "sha256_16": "e988afa6d2d70a69"
+            },
+            "brand_lock": {
+              "pass": true,
+              "verdict": "Both formats pass on visible execution, with no visible forbidden elements. Exact copy matching to self-serve-handoff-a remains unverified because that reference was not attached.",
+              "forbidden_elements": [],
+              "checks": [
+                {
+                  "item": "1. Headline, support and CTA exactly match self-serve-handoff-a.",
+                  "pass": true,
+                  "note": "Wording is identical across both supplied formats; no visible discrepancy, but the self-serve-handoff-a comparison is unavailable."
+                },
+                {
+                  "item": "2. Uniform #F7F6F5 ground; sole blue accent is the open review indicator.",
+                  "pass": true,
+                  "note": "Both grounds appear uniformly warm off-white. Only the open review ring is blue."
+                },
+                {
+                  "item": "3. One official black lockup, undistorted, with at least 48px clearspace.",
+                  "pass": true,
+                  "note": "Each static has one black Cognition lockup, visibly undistorted and generously separated from surrounding content."
+                },
+                {
+                  "item": "4. Exactly one flat panel showing a bounded ticket progressing to separate pending review.",
+                  "pass": true,
+                  "note": "Each static contains one flat workflow illustration, with a bounded ticket and a distinct final review stage."
+                },
+                {
+                  "item": "5. No text, code, logo, screenshot chrome, texture, shadow or gradient in the illustration.",
+                  "pass": true,
+                  "note": "Both illustrations use only flat outlined shapes, connectors and the open blue ring."
+                },
+                {
+                  "item": "6. Four stage labels and exact disclaimer legible outside the image.",
+                  "pass": true,
+                  "note": "Ticket, Devin runs, Diff + tests, and You review are legible below the illustration. Both display: “Illustration. Not a screenshot and not execution evidence.” Original supplied text references are unavailable for independent comparison."
+                },
+                {
+                  "item": "7. Exactly one black Get started CTA; critical content clears the outer 80px.",
+                  "pass": true,
+                  "note": "Each has one black Get started button. Critical content appears within the intended safe area; no clear visual margin violation."
+                },
+                {
+                  "item": "8. Review remains open, without merged, approved or completed status.",
+                  "pass": true,
+                  "note": "The hollow blue indicator and awaiting-review headline preserve an explicitly pending handoff; no completion markers appear."
+                }
+              ],
+              "accepted_exception": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "enterprise-playbook",
+      "track": "enterprise",
+      "title": "One playbook. Many repos.",
+      "audience": "engineering leaders responsible for repeatable maintenance across repositories",
+      "insight": "Leaders have repeatable maintenance work, many repositories, and review capacity as the real constraint.",
+      "hypothesis": "We believe framing repeatable maintenance as one playbook fanned across repositories, with review retained by the team, will lower cost per qualified meeting versus generic agent-fleet messaging.",
+      "evidence": {
+        "source_file": "inputs/market-truth.md",
+        "section": "§2 Buyers & workflows with strongest evidence",
+        "quote": "one playbook / many repos",
+        "label": "synthesis / interpretation (INT)",
+        "reading": "This is the research pack's synthesis of how backlog work becomes parallel across repositories; it is not a customer outcome, a throughput claim, or evidence of Devin's results in any codebase.",
+        "source_url": null
+      },
+      "measurement": {
+        "metric": "Cost per qualified meeting",
+        "definition_note": "Before launch, agree the qualification definition: role, team size, repository ownership, and who confirms the meeting held."
+      },
+      "executions": [
+        {
+          "id": "enterprise-playbook-a",
+          "angle_id": "enterprise-playbook",
+          "label": "Execution A · Typography",
+          "treatment": "typography-led",
+          "concept_line": "An oversized two-line playbook statement uses empty space, rather than repeated graphics, to imply breadth.",
+          "ad": {
+            "headline": "One playbook.\nMany repos.",
+            "support": "Migrations, dependency updates, flaky tests.",
+            "cta": "Book a demo",
+            "destination": {
+              "url": "https://cognition.ai/contact",
+              "checked_at": "2026-09-16",
+              "http_status": 200,
+              "page_title": "Get a Demo | Cognition",
+              "note": "Cognition's demo request page."
+            }
+          },
+          "meta": {
+            "primary": "Define the maintenance task once. Run it across repositories.\nMigrations, dependency bumps, flaky tests, coverage gaps.\nYour engineers still review and merge.",
+            "headline": "One playbook. Many repos.",
+            "description": "Your team still reviews."
+          },
+          "artifact": {
+            "kind": "none"
+          },
+          "formats": {
+            "4:5": {
+              "src": "/ads/v2/enterprise-playbook-a-1080x1350.png",
+              "file": "public/ads/v2/enterprise-playbook-a-1080x1350.png",
+              "width": 1080,
+              "height": 1350,
+              "sha256_16": "bc4c54d0ce555e3e"
+            },
+            "1:1": {
+              "src": "/ads/v2/enterprise-playbook-a-1080x1080.png",
+              "file": "public/ads/v2/enterprise-playbook-a-1080x1080.png",
+              "width": 1080,
+              "height": 1080,
+              "sha256_16": "980a5114be65b81f"
+            }
+          },
+          "provenance": {
+            "copy_model": "claude-opus-5",
+            "direction_model": "gpt-6-astra",
+            "composited_in_code": [
+              "headline",
+              "support",
+              "official Cognition lockup",
+              "product name Devin",
+              "CTA button"
+            ],
+            "model_generated": [],
+            "panel": null,
+            "brand_lock": {
+              "pass": false,
+              "verdict": "Both formats include an extra “Devin” label above the headline, violating the no-eyebrow requirement. The remaining checks pass on visible evidence, without asserting exact color, font or pixel measurements.",
+              "forbidden_elements": [
+                "Extra “Devin” eyebrow label in both formats"
+              ],
+              "checks": [
+                {
+                  "item": "1. Uniform #F7F6F5 ground with no dark section or blue accent",
+                  "pass": true,
+                  "note": "Both backgrounds appear uniformly warm off-white, with no dark section or blue accent."
+                },
+                {
+                  "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
+                  "pass": true,
+                  "note": "Each format shows one black Cognition lockup, visibly undistorted and generously separated from other content."
+                },
+                {
+                  "item": "3. Supplied headline on two lines and support sentence once",
+                  "pass": true,
+                  "note": "Both show “One playbook.” / “Many repos.” on two lines and the support sentence once."
+                },
+                {
+                  "item": "4. All typeset text uses Inter; no eyebrow or extra claim",
+                  "pass": false,
+                  "note": "Both include an extra “Devin” label above the headline, functioning as an eyebrow; no visible font mismatch is apparent."
+                },
+                {
+                  "item": "5. Exactly one black CTA reading Book a demo in white",
+                  "pass": true,
+                  "note": "Each format has exactly one black CTA with the correct white text."
+                },
+                {
+                  "item": "6. No panel, repository motif, decorative line, customer logo or chart",
+                  "pass": true,
+                  "note": "None of these elements is visible in either format."
+                },
+                {
+                  "item": "7. All critical content clears the outer 80px on every side",
+                  "pass": true,
+                  "note": "Both appear adequately inset; no clear margin violation is visually established without precise measurement."
+                },
+                {
+                  "item": "8. No added seat-pricing, quantified outcome or execution-evidence claim",
+                  "pass": true,
+                  "note": "No such claims appear in either format."
+                }
+              ],
+              "accepted_exception": "Reviewer counts the product name 'Devin' beside the Cognition lockup as extra copy. Devin branding on the creative is a brief requirement, so the open item is accepted deliberately rather than fixed."
+            }
+          }
+        },
+        {
+          "id": "enterprise-playbook-b",
+          "angle_id": "enterprise-playbook",
+          "label": "Execution B · Workflow",
+          "treatment": "workflow-led",
+          "concept_line": "The same playbook statement sits above one task branching into four repository changes that remain behind an open review gate.",
+          "ad": {
+            "headline": "One task.\nEvery repo. Your review.",
+            "support": "Same migration step, one diff per repo.",
+            "cta": "Book a demo",
+            "destination": {
+              "url": "https://cognition.ai/contact",
+              "checked_at": "2026-09-16",
+              "http_status": 200,
+              "page_title": "Get a Demo | Cognition",
+              "note": "Cognition's demo request page."
+            }
+          },
+          "meta": {
+            "primary": "Write the maintenance step once: upgrade the framework version.\nDevin applies it repo by repo and opens a pull request for each.\nReview capacity stays with your engineers.",
+            "headline": "Fan one chore across repos",
+            "description": "One diff per repository."
+          },
+          "artifact": {
+            "kind": "illustration",
+            "note": "Illustration. Not a screenshot and not execution evidence.",
+            "steps": [
+              "Playbook",
+              "Fan out",
+              "Diff per repo",
+              "Your review"
+            ],
+            "ticket": "PLAT-118 · Upgrade framework minor version",
+            "repos": [
+              "payments-api",
+              "web-app",
+              "billing-service",
+              "internal-tools"
+            ]
+          },
+          "formats": {
+            "4:5": {
+              "src": "/ads/v2/enterprise-playbook-b-1080x1350.png",
+              "file": "public/ads/v2/enterprise-playbook-b-1080x1350.png",
+              "width": 1080,
+              "height": 1350,
+              "sha256_16": "4cafe9d576bb9380"
+            },
+            "1:1": {
+              "src": "/ads/v2/enterprise-playbook-b-1080x1080.png",
+              "file": "public/ads/v2/enterprise-playbook-b-1080x1080.png",
+              "width": 1080,
+              "height": 1080,
+              "sha256_16": "784ee4b323afb684"
+            }
+          },
+          "provenance": {
+            "copy_model": "claude-opus-5",
+            "direction_model": "gpt-6-astra",
+            "composited_in_code": [
+              "headline",
+              "support",
+              "official Cognition lockup",
+              "product name Devin",
+              "CTA button"
+            ],
+            "model_generated": [
+              "illustration panel (text-free)"
+            ],
+            "panel": {
+              "image_model": "gpt-image-2.5-sunburst",
+              "size": "1088x816",
+              "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards and repository-folder shapes, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small hollow indicator on the final review gate. Organize four stage columns centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First column: one bounded task card containing a single blank inset rectangle. Second column: one functional connector from that task branching into four evenly separated paths; this is routing geometry, not a chart. Third column: four identical repository-folder cards stacked vertically, each receiving one path and each containing the same small two-pane blank change document. All four repository cards must be equal in size and treatment. Fourth column: carry four separate thin connectors into one tall outlined review tray holding four separate blank document slots, preserving one proposed change per repository rather than collapsing them into a single merged document. Attach one small blue hollow indicator to the review tray's upper-right corner. End the workflow there, with no approval tick or completed state. Preserve ample uniform background above and below the geometry. The repeated task, four repository artifacts and retained review boundary must remain legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
+              "sha256_16": "d2b7b2ffa69fda72"
+            },
+            "brand_lock": {
+              "pass": true,
+              "verdict": "Both formats pass the visually verifiable execution checks. Exact wording parity with enterprise-playbook-a remains unverified because that reference was not supplied.",
+              "forbidden_elements": [],
+              "checks": [
+                {
+                  "item": "1. Headline, support and CTA exactly match enterprise-playbook-a",
+                  "pass": true,
+                  "note": "Copy is identical across both supplied sizes; comparison against enterprise-playbook-a is unavailable."
+                },
+                {
+                  "item": "2. Uniform #F7F6F5 ground; #317CFF only on final open review indicator",
+                  "pass": true,
+                  "note": "Ground appears uniform, with blue confined to the final open review ring. Exact hex values are not verifiable by eye."
+                },
+                {
+                  "item": "3. One official black lockup, undistorted, with at least 48px clearspace",
+                  "pass": true,
+                  "note": "Each static has one recognizable black Cognition lockup, visibly undistorted and comfortably isolated."
+                },
+                {
+                  "item": "4. Exactly one panel with one task branching to four equal repository artifacts and a separate review boundary",
+                  "pass": true,
+                  "note": "Each illustration shows one source branching to four equal repository artifacts, followed by a distinct review enclosure."
+                },
+                {
+                  "item": "5. Image contains no text, code, logos, screenshot chrome, gradients, shadows or texture",
+                  "pass": true,
+                  "note": "The illustration itself contains only flat outlined shapes and connectors; copy and branding remain outside it."
+                },
+                {
+                  "item": "6. Four stage labels and exact illustration disclaimer are legible and outside the image",
+                  "pass": true,
+                  "note": "Both show legible external labels: Playbook, Fan out, Diff per repo, Your review. Disclaimer reads: Illustration. Not a screenshot and not execution evidence."
+                },
+                {
+                  "item": "7. Exactly one black Book a demo CTA; critical content clears outer 80px",
+                  "pass": true,
+                  "note": "One black Book a demo button appears per static. Content appears within the intended safe inset; no clear margin violation is visually established."
+                },
+                {
+                  "item": "8. Four proposed changes remain separate; no approval, merger, measured outcome or seat-pricing claim",
+                  "pass": true,
+                  "note": "Four separate change documents remain visible inside the review boundary; no prohibited claims or completion signals appear."
+                }
+              ],
+              "accepted_exception": null
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

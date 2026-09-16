@@ -8,29 +8,29 @@ A one-off paid-social creative packet for Devin. Opening `/` shows a review boar
 
 | Angle | Message | Audience | CTA → destination |
 |---|---|---|---|
-| Self-serve | Hand off the ticket. Review the PR. | Developers delegating well-scoped engineering work | Get started → `https://app.devin.ai/` |
-| Enterprise | One playbook. Many repos. | Engineering leaders owning repeatable maintenance across repositories | Book a demo → `https://cognition.ai/contact` |
+| Self-serve | Hand off the ticket. Review the PR. | Developers delegating well-scoped engineering work | Get started → `https://devin.ai/` |
+| Enterprise | One playbook. Many repos. | Engineering leaders owning repeatable maintenance across repositories | Get a demo → `https://cognition.com/demo#company` · See how they did it → `https://devin.ai/customers/fefundinfo` |
 
-Each angle has two executions — **A, typography-led** and **B, workflow-led** — and each execution ships at 1080×1350 (primary) and 1080×1080 (adaptation). That is 4 creatives and 8 files; the format adaptations are the same creative behind a toggle, not separate concepts.
+Four executions: **A1** the dependency update (task-led), **A2** show me the diff (review/control-led), **B1** the cleanup that stayed (pain-led), **B2** FE fundinfo playbooks (customer-proof-led). Each ships at 1080×1350 (primary) and 1080×1080, the square a deliberate re-layout rather than a crop. That is 4 creatives and 8 files; the format adaptations are the same creative behind a toggle, not separate concepts.
 
 Both angles are **hypotheses to test**, not proven winners. No results, savings figures, customer logos or performance claims appear anywhere, because none are supported by the inputs.
 
 ## What actually ran
 
-Against `inputs/cognition-brand-kit.md`, `inputs/market-truth.md` and the official lockups in `brand-refs/`:
+Against the research files in `inputs/` and the supplied Devin logo in `brand-refs/`:
 
 | Stage | Model / engine | Job | Trace |
 |---|---|---|---|
-| 1 | `claude-opus-5` (Anthropic Messages API) | Copy for the two locked angles: headline, support line, Meta primary/headline/description, buyer insight, test hypothesis, **verbatim** market-truth quote, proposed metric | `data/stages/v2-1-claude-copy.json` |
-| 2 | `gpt-6-astra` (OpenAI Responses API, image-in) | Art direction only: layout, type scale, safe margins, lockup placement, CTA treatment, illustration brief, Brand Lock checklist | `data/stages/v2-2-astra-direction.json` |
-| 3 | `gpt-image-2.5-sunburst` (OpenAI Images) | The two **text-free** workflow illustration panels for the B executions | `data/stages/v2-3-render-panels.json` |
-| 4 | Satori + resvg + sharp (local) | Deterministic compositing of all 8 files — headline, support, official lockup and CTA are typeset in code, never generated | `data/stages/v2-4-composite-ads.json` |
-| 5 | `gpt-6-astra` (vision) | Brand Lock review of the finished files against each execution's checklist | `data/stages/v2-5-brand-lock.json` |
-| 6 | — | Bake `data/batch.json` + `public/ads/v2/*.png` | `data/batch.json` |
+| 1 | `claude-opus-5` (Anthropic Messages API) | Strategy: two angles, four concepts, Meta copy, buyer insight, **verbatim** research quotes, proposed metric, claims to avoid | `data/stages/v3-1-claude-strategy.json` |
+| 2 | `gpt-6-astra` (OpenAI Responses API) | Art direction for the four executions | `data/stages/v3-2-astra-direction.json` |
+| 3 | `gpt-6-astra` | Direction critique and refinement after the first treatments were rejected | `data/stages/v3-3-astra-refine.json`, `v3-8-astra-b1-options.json` |
+| 4 | `gpt-image-2.5-sunburst` (OpenAI Images) | One image-generation experiment for the enterprise pain concept — **reviewed and rejected**, not used in any finished ad | `data/stages/v3-5-render-b1-generated.json`, `v3-9-render-b1-options.json` |
+| 5 | resvg + sharp (local) | Deterministic composition of all 8 finished files in Inter over the supplied logo — no generated pixels | `data/stages/v3-10-production-set.json` |
+| 6 | — | Bake `data/batch.json` + `public/ads/live/*.png` | `data/batch.json` |
 
-Stage 1 hard-fails if a quote is not a verbatim substring of `inputs/market-truth.md` or if an insight exceeds 20 words. Image generation is deliberately never responsible for small text or the logo: the panels are text-free and everything legible is composited from Inter (`assets/fonts/`) and the supplied `Cognition_PrimaryLockup_Black.png`. Panels are generated at dimensions divisible by 16 (an API constraint) and resized with sharp.
+Stage 1 hard-fails if a quote is not a verbatim substring of its source file. No model renders text or the logo: everything legible is typeset in code from Inter (`assets/fonts/`) over the supplied `brand-refs/brand-logo-devin.png`.
 
-**Open Brand Lock item:** the reviewer marks the product name *Devin* beside the Cognition lockup as extra copy on the two typography executions. Devin branding on the creative is a requirement of the brief, so that item is accepted knowingly rather than fixed; the full verdicts are in `data/batch.json` and `data/stages/v2-5-brand-lock.json`.
+The four finished ads contain **no generated imagery**. They have no measured performance, and the rejection feedback saved in the board does not train anything.
 
 ## The board
 
@@ -44,24 +44,22 @@ Proposed metrics are cost per activated signup (self-serve) and cost per qualifi
 
 ## Archive
 
-The earlier five-angle batch is preserved: `data/archive/batch-v1.json`, `data/archive/stages-v1/`, `public/ads/archive/`.
+Earlier batches are preserved: `data/archive/batch-v1.json`, `data/archive/batch-v2.json`, `data/archive/stages-v1/`, `public/ads/archive/`. Rejected B1 explorations (pencil, paper stack) remain in `data/stages/` as archived experiments only.
 
 ## Re-running the pipeline
 
 Only needed for a fresh batch; the shipped batch is committed.
 
 ```bash
-export ANTHROPIC_API_KEY=...   # stage 1
-export OPENAI_API_KEY=...      # stages 2, 3, 5
-node scripts/v2/1-claude-copy.mjs
-node scripts/v2/2-astra-direction.mjs
-node scripts/v2/3-render-panels.mjs
-node scripts/v2/4-composite-ads.mjs
-node scripts/v2/5-brand-lock.mjs
-node scripts/v2/6-bake-batch.mjs
+export ANTHROPIC_API_KEY=...   # strategy
+export OPENAI_API_KEY=...      # direction
+node scripts/v3/1-claude-strategy.mjs
+node scripts/v3/2-astra-direction.mjs
+node scripts/v3/10-production-set.mjs   # no model calls
+node scripts/v3/11-bake-batch.mjs       # no model calls
 ```
 
-Each script stops loudly if its key is missing. `scripts/` (v1) holds the original five-angle pipeline for reference.
+Each model script stops loudly if its key is missing; production and bake need no keys. `scripts/` (v1) and `scripts/v2/` hold the earlier pipelines for reference.
 
 ## Develop
 

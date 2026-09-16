@@ -1,0 +1,26 @@
+{
+  "stage": "b1-two-options-render",
+  "ran_at": "2026-09-16T20:18:53.965Z",
+  "option1": {
+    "mode": "deterministic-only",
+    "image_model_called": null,
+    "sha256_16": "a3ffc156aa57372e",
+    "idea": "Give the shipped feature a quiet, resolved line, then let the unfinished cleanup occupy a heavier, inverted block."
+  },
+  "option2": {
+    "mode": "one generated plate + deterministic type",
+    "image_model": "gpt-image-2.5-sunburst",
+    "size": "1088x1360",
+    "sha256_16": "25b2561af4dbd672",
+    "idea": "Show a precisely sharpened pencil beside the substantial shaving left behind: the useful work is finished, but its residue remains."
+  },
+  "cta": "Get a demo",
+  "destination": "https://cognition.com/demo",
+  "files": [
+    "data/proofs/b1-opt1-1080x1350.png",
+    "data/proofs/b1-opt1-360x450.png",
+    "data/proofs/b1-opt2-1080x1350.png",
+    "data/proofs/b1-opt2-360x450.png",
+    "data/proofs/b1-options-side-by-side.png"
+  ]
+}

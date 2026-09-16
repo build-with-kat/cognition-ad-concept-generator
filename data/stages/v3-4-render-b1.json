@@ -1,0 +1,20 @@
+{
+  "stage": "b1-render",
+  "ran_at": "2026-09-16T20:03:34.640Z",
+  "mode": "deterministic-only (Astra's production call)",
+  "engine": "@resvg/resvg-js + sharp",
+  "typeface": "Inter (assets/fonts)",
+  "image_model_called": null,
+  "files": [
+    {
+      "file": "data/proofs/b1-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "sha256_16": "4efcbebee21e6304"
+    },
+    {
+      "file": "data/proofs/b1-360w.png",
+      "width": 360
+    }
+  ]
+}

@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import type { Angle, Batch, Execution, FormatKey } from "@/lib/batch";
+import type { Angle, Batch, Execution, Finding, FormatKey } from "@/lib/batch";
 
 type Decision = { state: "approved" | "rejected"; note?: string; at: string };
 type Decisions = Record<string, Decision>;
 
-const STORE = "devin-creative-lab/decisions/v2";
+const STORE = "devin-creative-lab/decisions/v3";
 
 function useDecisions() {
   const [decisions, setDecisions] = useState<Decisions>({});
@@ -92,9 +92,12 @@ export default function Board({ batch }: { batch: Batch }) {
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 border-b border-line bg-ground/90 backdrop-blur">
         <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-6 py-3">
-          <div className="min-w-0">
-            <h1 className="truncate text-[17px] font-semibold tracking-[-0.01em]">{batch.product.title}</h1>
-            <p className="truncate text-[12px] text-muted">{batch.product.subtitle}</p>
+          <div className="flex min-w-0 items-center gap-3">
+            <Image src="/brand/devin-logo.png" alt="Devin" width={1988} height={529} priority className="h-5 w-auto shrink-0" />
+            <div className="min-w-0 border-l border-line pl-3">
+              <h1 className="truncate text-[17px] font-semibold tracking-[-0.01em]">{batch.product.title}</h1>
+              <p className="truncate text-[12px] text-muted">{batch.product.subtitle}</p>
+            </div>
           </div>
           <div className="flex shrink-0 items-center gap-3">
             <span className="hidden text-[11px] uppercase tracking-[0.14em] text-muted sm:inline">Demo only</span>
@@ -111,6 +114,8 @@ export default function Board({ batch }: { batch: Batch }) {
       </header>
 
       <main className="mx-auto max-w-[1180px] px-6 pb-24">
+        <Research findings={batch.research} />
+
         {batch.angles.map((angle) => (
           <section key={angle.id} className="pt-6">
             <AngleIntro angle={angle} />
@@ -148,6 +153,34 @@ export default function Board({ batch }: { batch: Batch }) {
   );
 }
 
+function Research({ findings }: { findings: Finding[] }) {
+  return (
+    <section className="pt-6">
+      <h2 className="text-[11px] uppercase tracking-[0.14em] text-muted">Research</h2>
+      <div className="mt-3 grid gap-3 md:grid-cols-3">
+        {findings.map((f) => (
+          <div key={f.id} className="rounded-xl border border-line bg-card p-4 text-[13px] leading-relaxed">
+            <div className="text-[11px] uppercase tracking-[0.12em] text-muted">{f.kind}</div>
+            <p className="mt-1.5 font-medium">{f.finding}</p>
+            <p className="mt-2 text-muted">Implication: {f.implication}</p>
+            <p className="mt-2 text-[12px] text-muted">
+              Source: {f.source_file.replace("inputs/", "")} · {f.section}
+              {f.source_url && (
+                <>
+                  {" · "}
+                  <a className="text-accent underline underline-offset-2" href={f.source_url} target="_blank" rel="noreferrer">
+                    original
+                  </a>
+                </>
+              )}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function AngleIntro({ angle }: { angle: Angle }) {
   const [open, setOpen] = useState(false);
   return (
@@ -171,14 +204,14 @@ function AngleIntro({ angle }: { angle: Angle }) {
         <div className="mt-3 grid gap-4 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed sm:grid-cols-2">
           <Field label="Buyer insight">{angle.insight}</Field>
           <Field label="Test hypothesis">{angle.hypothesis}</Field>
-          <Field label={`Market truth — ${angle.evidence.section}`}>
+          <Field label={`Evidence — ${angle.evidence.section}`}>
             <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
             <p className="mt-2 text-muted">
-              Source: market-truth brief supplied with this project
+              Source: {angle.evidence.source_file.replace("inputs/", "")}
               {angle.evidence.source_url ? (
                 <>
                   {" · "}
-                  <a className="text-accent underline underline-offset-2" href={angle.evidence.source_url}>
+                  <a className="text-accent underline underline-offset-2" href={angle.evidence.source_url} target="_blank" rel="noreferrer">
                     original
                   </a>
                 </>
@@ -445,16 +478,29 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
                 {execution.ad.destination.note} Checked {execution.ad.destination.checked_at} · HTTP {execution.ad.destination.http_status}.
               </p>
             </Field>
-            {execution.artifact.kind === "illustration" && (
-              <Field label="Graphic">
-                <p>{execution.artifact.note}</p>
-                <p className="mt-1 text-muted">Steps shown: {execution.artifact.steps.join(" → ")}</p>
-              </Field>
-            )}
-            <Field label="Evidence for this angle">
+            <Field label="Source evidence for this claim">
+              <p>{execution.proof.statement}</p>
+              <p className="mt-1 text-muted">
+                {execution.proof.attribution}
+                {execution.proof.source_url && (
+                  <>
+                    {" · "}
+                    <a className="text-accent underline underline-offset-2" href={execution.proof.source_url} target="_blank" rel="noreferrer">
+                      customer story
+                    </a>
+                  </>
+                )}
+              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
+                {execution.claims_avoided.map((c) => (
+                  <li key={c}>{c}</li>
+                ))}
+              </ul>
+            </Field>
+            <Field label="Why this angle">
               <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
               <p className="mt-1 text-muted">
-                Market-truth brief · {angle.evidence.section}
+                {angle.evidence.source_file.replace("inputs/", "")} · {angle.evidence.section}
                 {angle.evidence.source_url ? ` · ${angle.evidence.source_url}` : " · no original URL supplied"}
               </p>
               <p className="mt-2">{angle.hypothesis}</p>
@@ -506,11 +552,12 @@ function HowItWasBuilt({ batch }: { batch: Batch }) {
         <summary className="cursor-pointer font-medium text-ink">How it was built</summary>
         <div className="mt-3 max-w-3xl space-y-3">
           <p>
-            Copy was written by {batch.pipeline[0].model} from the brand kit and market-truth file in this repository. Art direction came
-            from {batch.pipeline[1].model} through the Responses API. The workflow illustrations were generated with{" "}
-            {batch.pipeline[2].model}; every headline, the official Cognition lockup and the CTA button are composited deterministically in
-            code with {batch.pipeline[3].engine}, so no model is responsible for rendering small text or the logo. A final visual review
-            pass ran on {batch.pipeline[4].model}. Full prompts, outputs and review results are in data/stages.
+            Strategy — the two angles, the four concepts and the claims to avoid — came from {batch.pipeline[0].model}, reading the research
+            files in this repository. Art direction and a second critique pass came from {batch.pipeline[1].model}. One image-generation
+            experiment ran on {batch.pipeline[3].model} as a candidate for the enterprise pain concept; it was reviewed, rejected and is not
+            part of any finished ad. The four ads you see are composed entirely in code with {batch.pipeline[4].engine} in{" "}
+            {batch.pipeline[4].typeface}, over the supplied Devin logo file — no generated pixels, and no model renders text or the logo.
+            Prompts, model outputs and review results are recorded in data/stages.
           </p>
           <ul className="list-disc space-y-1 pl-5">
             {batch.limitations.map((l) => (

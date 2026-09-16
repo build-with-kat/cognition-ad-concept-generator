@@ -1,0 +1,24 @@
+{
+  "stage": "b1-render-variant",
+  "ran_at": "2026-09-16T20:04:10.137Z",
+  "image_model": "gpt-image-2.5-sunburst",
+  "size": "1088x816",
+  "prompt": "Flat 2D editorial vector illustration, no text of any kind.\nBackground: uniform warm off-white #F7F6F5, no gradient, no texture, no shadow, no perspective.\nSubject: three evenly spaced vertical columns of plain white paper work-sheets outlined in thin black ink.\nIn every column: a short paper strip at the top whose bottom edge is a ragged torn edge, then a clear gap, then a much taller sheet directly below whose top edge is the matching ragged torn edge, as if the strip was torn off it. The tall sheet has two slightly offset white backing leaves behind it, so it reads as a thick stack of remaining work.\nThe sheets are completely blank inside — no writing, no letters, no numbers, no lines of text, no scribbles, no icons, no checkboxes, no arrows, no logos, no user interface, no code, no people, no robots.\nStyle: precise flat vector, uniform thin black outlines, pure white fills, no drop shadows, no 3D, no highlights, generous even spacing, centered composition with margins on all sides.",
+  "panel_sha256_16": "061c93791b5a0c21",
+  "composited_in_code": [
+    "headline",
+    "support",
+    "illustration label",
+    "capability line",
+    "Devin signature",
+    "CTA"
+  ],
+  "model_generated": [
+    "text-free paper work-artifact illustration layer"
+  ],
+  "files": [
+    "data/proofs/b1-generated-1080x1350.png",
+    "data/proofs/b1-generated-360w.png",
+    "data/proofs/b1-panel-raw.png"
+  ]
+}

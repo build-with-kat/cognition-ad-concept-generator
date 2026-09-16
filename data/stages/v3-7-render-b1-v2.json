@@ -1,0 +1,27 @@
+{
+  "stage": "b1-correction",
+  "ran_at": "2026-09-16T20:11:50.256Z",
+  "mode": "deterministic-only",
+  "engine": "@resvg/resvg-js + sharp",
+  "image_model_called": null,
+  "cta_destination": "https://cognition.com/demo",
+  "content": {
+    "headline": "The feature shipped.\nThe cleanup didn't.",
+    "solution": "Delegate recurring maintenance across repos to Devin.",
+    "cta": "Contact sales",
+    "tasks": [
+      "Remove stale feature flags",
+      "Update dependencies",
+      "Fix flaky tests"
+    ]
+  },
+  "files": [
+    {
+      "file": "data/proofs/b1-v2-1080x1350.png",
+      "sha256_16": "414a7c43748f36f7"
+    },
+    {
+      "file": "data/proofs/b1-v2-360x450.png"
+    }
+  ]
+}

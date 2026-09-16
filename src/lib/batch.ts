@@ -12,23 +12,43 @@ export type FormatRender = {
   sha256_16: string;
 };
 
+export type Proof = {
+  type: string;
+  statement: string;
+  source_file: string;
+  source_url: string | null;
+  attribution: string;
+};
+
 export type Execution = {
   id: string;
   angle_id: string;
   label: string;
-  treatment: "typography-led" | "workflow-led";
+  approach: string;
   concept_line: string;
-  ad: { headline: string; support: string; cta: string; destination: Destination };
+  ad: { headline: string; support: string; qualifier?: string; cta: string; destination: Destination };
   meta: { primary: string; headline: string; description: string };
-  artifact: { kind: "none" } | { kind: "illustration"; note: string; steps: string[]; ticket: string | null; repos: string[] };
+  proof: Proof;
+  claims_avoided: string[];
   formats: Record<FormatKey, FormatRender>;
   provenance: {
-    copy_model: string;
+    strategy_model: string;
     direction_model: string;
     composited_in_code: string[];
     model_generated: string[];
-    panel: { image_model: string; size: string; prompt: string; sha256_16: string } | null;
   };
+};
+
+export type Finding = {
+  id: string;
+  kind: string;
+  finding: string;
+  quote: string;
+  source_file: string;
+  section: string;
+  source_url: string | null;
+  implication: string;
+  label: string;
 };
 
 export type Angle = {
@@ -57,6 +77,7 @@ export type Batch = {
   scope: { angles: number; executions: number; formats_per_execution: FormatKey[]; note: string };
   inputs: string[];
   pipeline: { stage: string; provider: string; model?: string | null; api?: string; engine?: string; typeface?: string; trace: string }[];
+  research: Finding[];
   limitations: string[];
   angles: Angle[];
 };

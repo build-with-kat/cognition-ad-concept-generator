@@ -1,0 +1,240 @@
+{
+  "stage": "strategy",
+  "model": "claude-opus-5",
+  "ran_at": "2026-09-16T19:49:49.269Z",
+  "sources": [
+    "inputs/cognition-brand-kit.md",
+    "inputs/cognition-company-context.md",
+    "inputs/buyer-creator-signals-2026-09-15.md",
+    "inputs/competitive-campaign-signals-2026-09-15.md",
+    "inputs/market-truth.md",
+    "inputs/customer-stories-2026-09.md"
+  ],
+  "usage": {
+    "input_tokens": 37396,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 16644,
+    "output_tokens_details": {
+      "thinking_tokens": 11315
+    },
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "validation": {
+    "problems": []
+  },
+  "angles": [
+    {
+      "id": "self-serve-handoff",
+      "icp": "Self-serve developers",
+      "title": "Hand off the ticket. Review the PR.",
+      "audience": "Individual developers working in existing repositories who are weighing whether to delegate defined engineering tasks to an agent.",
+      "insight": "Developers will delegate defined chores only if the finished work comes back inspectable and they keep the merge.",
+      "hypothesis": "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
+      "evidence": {
+        "source_file": "buyer-creator-signals-2026-09-15.md",
+        "section": "Finding 2 — Trust language = receipt / proof / junior-shaped review — not autonomy theater",
+        "quote": "Your job is to deliver code you have proven to work.",
+        "label": "OBS",
+        "source_url": "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
+        "reading": "It proves an influential practitioner norm that the human stays accountable for proving code works, which is why 'you keep the merge' should resonate; it proves nothing about whether Devin's output is reviewable or correct."
+      },
+      "success_metric": "Cost per activated signup",
+      "metric_note": "Agree before launch that an activated signup means a new account that starts a first Devin session, not an email captured on the signup page.",
+      "concepts": [
+        {
+          "id": "self-serve-handoff-task",
+          "name": "The dependency update",
+          "approach": "task-led",
+          "buyer_situation": "A developer has a dependency upgrade ticket sitting in their board for the third sprint, knows exactly what done looks like, and does not want to spend an afternoon on it.",
+          "research_observation": {
+            "source_file": "buyer-creator-signals-2026-09-15.md",
+            "section": "Finding 5 — \"Good async work\" vocabulary is specific (delegable backlog nouns)",
+            "quote": "dependency bump, small CRUD + tests, coverage on one module, reproducible bugfix, migrate deprecated API, missing docs",
+            "source_url": "https://ai-tldr.dev/learn/ai-coding-tools/coding-agents-assistants/cloud-coding-agents-explained/"
+          },
+          "objection_or_motivation": "Motivation: get a chore with a clear definition of done off my plate without setting up or babysitting anything.",
+          "messaging_hypothesis": "Naming one specific, already-agreed-delegable chore will read as credible and low-risk, where a broad capability claim reads as hype.",
+          "ad": {
+            "headline": "Hand off the dependency update.\nYou review the PR.",
+            "support": "You write the ticket. Devin opens the PR with the diff and tests.",
+            "cta": "Get started"
+          },
+          "destination": "https://app.devin.ai/",
+          "meta": {
+            "primary": "A dependency update is the kind of ticket that has a clear definition of done.\nHand it to Devin. It works in your repo and opens a pull request.\nYou read the diff and decide whether it merges.",
+            "headline": "Hand off the dependency update.",
+            "description": "You still review the PR."
+          },
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin is positioned as an agent that plans, writes, tests and ships code inside existing codebases and toolchains, returning a pull request.",
+            "source_file": "cognition-company-context.md",
+            "source_url": null,
+            "attribution": "none — product capability",
+            "status": "product capability"
+          },
+          "claims_to_avoid": [
+            "that Devin completes dependency updates correctly every time or without review",
+            "any success-rate, time-saved or cost-per-ticket figure",
+            "'no coding required' or blank-page / idea-to-app framing",
+            "that other agents cannot take delegated tasks"
+          ]
+        },
+        {
+          "id": "self-serve-handoff-objection",
+          "name": "Show me the diff",
+          "approach": "objection-led",
+          "buyer_situation": "A developer is interested but stuck on the supervision question: if an agent works while they are away, how do they know what it actually changed before it touches main.",
+          "research_observation": {
+            "source_file": "buyer-creator-signals-2026-09-15.md",
+            "section": "Finding 11 — Reddit: review-loop fork + interactive steer vs hand off well-defined work",
+            "quote": "Devin hands you a finished diff to check, Claude Code lets you watch and interrupt",
+            "source_url": "https://www.reddit.com/r/windsurf/comments/1v0vrnw/my_experience_comparing_the_pro_plans_devin_vs/"
+          },
+          "objection_or_motivation": "Objection: I cannot supervise an agent I am not watching, so I do not know whether the change is right.",
+          "messaging_hypothesis": "Stating that Devin does the work and the developer inspects the result and owns the merge will defuse the supervision objection without promising autonomy or correctness.",
+          "ad": {
+            "headline": "Devin opens the PR.\nYou decide if it merges.",
+            "support": "Read the diff. Run the tests. You keep the merge.",
+            "cta": "Get started"
+          },
+          "destination": "https://app.devin.ai/",
+          "meta": {
+            "primary": "The worry is not speed. It is whether the change is right.\nDevin does the work in your repo and opens a pull request you can read: the diff, the tests, the session.\nYou review it the way you would review a teammate, and you own the merge.",
+            "headline": "What changed? Show me the diff.",
+            "description": "Devin ships it. You merge it."
+          },
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin's output is a pull request in the team's existing workflow, with sessions the engineer can open; the merge decision stays with the human.",
+            "source_file": "cognition-brand-kit.md",
+            "source_url": "https://devin.ai/",
+            "attribution": "none — product capability",
+            "status": "product capability"
+          },
+          "claims_to_avoid": [
+            "positioning this as a code-review tool that reviews human-written code — Devin is the author here",
+            "that review is unnecessary, or that Devin removes supervision",
+            "that a green CI run means the change is correct",
+            "any claim that Devin's diffs are always small, clean or merge-ready"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enterprise-playbook",
+      "icp": "Enterprise engineering leaders",
+      "title": "One playbook. Many repos.",
+      "audience": "VPs of Engineering and Heads of Platform accountable for maintenance and modernization spread across a large number of repositories.",
+      "insight": "Maintenance work survives every sprint; leaders need it run across many repos without adding coordination overhead.",
+      "hypothesis": "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
+      "evidence": {
+        "source_file": "market-truth.md",
+        "section": "2. Buyers & workflows with strongest evidence — B. Engineering / platform leads — strong on backlog parallelism + review bottleneck",
+        "quote": "(migrations, flaky tests, dependency bumps, coverage gaps) — one playbook / many repos",
+        "label": "INT",
+        "source_url": null,
+        "reading": "This is the synthesis's own interpretation of eng-lead workflow built on the shared seeded frame, so it tells us which vocabulary to test; it is not independent demand evidence and not proof Devin clears such backlogs."
+      },
+      "success_metric": "Cost per qualified meeting",
+      "metric_note": "Agree before launch that a qualified meeting means a held conversation with a leader who owns multi-repo maintenance, and that the customer-story concept is judged on engaged case-study visits with meetings tracked downstream.",
+      "concepts": [
+        {
+          "id": "enterprise-playbook-pain",
+          "name": "The cleanup that stayed",
+          "approach": "pain-led",
+          "buyer_situation": "A platform lead is planning the next quarter and sees the same upgrade, test and tech-debt work carried over again because every team pushed it behind feature delivery.",
+          "research_observation": {
+            "source_file": "customer-stories-2026-09.md",
+            "section": "FE fundinfo — https://devin.ai/customers/fefundinfo",
+            "quote": "security updates, dependency upgrades, testing coverage gaps, and technical debt remediation. Over time, this work began to crowd out new feature development.",
+            "source_url": "https://devin.ai/customers/fefundinfo"
+          },
+          "objection_or_motivation": "Motivation: stop trading roadmap headcount against maintenance that never finishes, without standing up a coordination programme to do it.",
+          "messaging_hypothesis": "Naming the post-launch cleanup as the real cost will get recognition from leaders faster than agent-fleet or command-centre language.",
+          "ad": {
+            "headline": "The feature shipped.\nThe cleanup didn't.",
+            "support": "Migrations, dependency upgrades, coverage gaps — across every repo.",
+            "cta": "Contact sales"
+          },
+          "destination": "https://cognition.ai/contact",
+          "meta": {
+            "primary": "The migration landed. The deprecated calls, the flaky tests and the dependency upgrades did not.\nPoint one Devin playbook at that recurring work, across the repositories that need it.\nYour engineers review the pull requests. Your roadmap keeps its people.",
+            "headline": "One playbook. Many repos.",
+            "description": "Maintenance work, delegated."
+          },
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin playbooks — standardized prompts attached to recurring tasks — can be triggered programmatically across repositories, as described in the mechanics sections of the Ramp and FE fundinfo stories.",
+            "source_file": "customer-stories-2026-09.md",
+            "source_url": "https://devin.ai/customers/ramp",
+            "attribution": "none — product capability (mechanics described on the Ramp and FE fundinfo story pages)",
+            "status": "product capability"
+          },
+          "claims_to_avoid": [
+            "any ROI, capacity, hours-saved or cost figure in this concept",
+            "that maintenance runs without human review or planning",
+            "'replaces engineers' or headcount-reduction framing",
+            "seat-count or pricing language",
+            "customer logos or any implication that a customer endorses this project"
+          ]
+        },
+        {
+          "id": "enterprise-playbook-proof",
+          "name": "FE fundinfo playbooks",
+          "approach": "proof-led",
+          "buyer_situation": "A leader who accepts the idea but wants to see someone with a comparable estate — hundreds of engineers, thousands of repositories — actually operate it.",
+          "research_observation": {
+            "source_file": "customer-stories-2026-09.md",
+            "section": "FE fundinfo — https://devin.ai/customers/fefundinfo",
+            "quote": "1,800 — repositories managed with automated Devin playbooks via custom Replit apps",
+            "source_url": "https://devin.ai/customers/fefundinfo"
+          },
+          "objection_or_motivation": "Objection: this may work on a demo repo, but not across an estate the size of mine with governance over what can merge unattended.",
+          "messaging_hypothesis": "A single named implementation at estate scale, with its own reported figures and its own words, will out-pull generic modernization messaging with engineering leaders.",
+          "ad": {
+            "headline": "Devin playbooks.\n1,800 repositories.",
+            "support": "How FE fundinfo automates maintenance across its repos.",
+            "cta": "See how FE fundinfo did it"
+          },
+          "destination": "https://devin.ai/customers/fefundinfo",
+          "meta": {
+            "primary": "FE fundinfo built an automation system that runs Devin playbooks across all 1,800 of its active code repositories.\nReported by FE fundinfo: a 10% immediate increase in engineering capacity from automated test generation, security fixes, and modernization work.\nLow-risk changes auto-merge; medium and high-complexity work keeps humans in review, and in planning.\nTheir separate 2-4x figure is a projection over the next 2-5 years, not a result.",
+            "headline": "Devin playbooks. 1,800 repos.",
+            "description": "FE fundinfo, in their words."
+          },
+          "proof": {
+            "type": "customer-result",
+            "statement": "\"1,800 — repositories managed with automated Devin playbooks via custom Replit apps\" (REPORTED scope) and \"10% — immediate increase in engineering capacity from automated test generation, security fixes, and modernization work\" (REPORTED).",
+            "source_file": "customer-stories-2026-09.md",
+            "source_url": "https://devin.ai/customers/fefundinfo",
+            "attribution": "FE fundinfo, as displayed on its devin.ai customer story page; scope is FE fundinfo's own estate — 200+ expert engineers, approximately 1,800 active code repositories — and the page states no timeframe for the 10% capacity increase.",
+            "status": "reported outcome"
+          },
+          "claims_to_avoid": [
+            "presenting 2-4x as a result — it is FE fundinfo's projection over the next 2-5 years",
+            "generalising the 10% or the 1,800 repositories to 'customers' or 'teams'",
+            "combining FE fundinfo figures with Ramp or AngelList figures",
+            "implying full auto-merge across all work — only low-risk changes are described as auto-merged",
+            "using FE fundinfo's logo or implying endorsement of this independent project"
+          ]
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    "No first-party asset rights: no real Devin session, diff, PR or Desktop screenshot available for this project, so any product-UI hero would be fabricated — concepts are typographic by necessity, not choice.",
+    "No public per-task success rate, task-fit data or review-survival metric for Devin, so a1 and a2 must stay capability-framed; the strongest independent failure narrative in the pack (Answer.AI, Jan 2025) is dated trust-debt and unusable either way.",
+    "The vivid async-trust objections in the research (halt on missing secret, invisible spend, hard spend caps) come from Cursor and Claude Code users — there is no Devin-specific substantiation, so no control, halting or spend-cap claim can be made.",
+    "No substantiated enterprise security or governance proof in the pack (SSO, audit trail, isolated environments, VPC, certifications) — the enterprise concepts therefore rest on workflow and one named implementation, not on controls.",
+    "No verified customer permission for logos or endorsement; b2 is limited to factual name attribution, which weakens visual proof density versus a logo-led competitor static.",
+    "No agreed activation event or conversion tracking definition on app.devin.ai from this side, so the self-serve metric definition must be confirmed with the team before launch.",
+    "No Devin-named enterprise buyer language: enterprise concepts use category and vendor-page vocabulary, so 'one playbook, many repos' as a phrase is an untested hypothesis, not validated buyer wording."
+  ]
+}

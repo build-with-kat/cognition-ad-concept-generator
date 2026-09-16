@@ -1,6 +1,6 @@
 {
-  "schema": "devin-creative-lab/2",
-  "generated_at": "2026-09-16T18:40:25.874Z",
+  "schema": "devin-creative-lab/3",
+  "generated_at": "2026-09-16T20:36:34.145Z",
   "product": {
     "title": "Devin Creative Lab",
     "subtitle": "Independent project · Built with Devin"
@@ -12,298 +12,240 @@
       "4:5",
       "1:1"
     ],
-    "note": "Format adaptations are the same creative, not separate concepts."
+    "note": "Format adaptations are deliberate re-layouts of the same creative, not separate concepts."
   },
   "inputs": [
+    "inputs/buyer-creator-signals-2026-09-15.md",
+    "inputs/competitive-campaign-signals-2026-09-15.md",
     "inputs/cognition-brand-kit.md",
+    "inputs/cognition-company-context.md",
+    "inputs/customer-stories-2026-09.md",
     "inputs/market-truth.md",
-    "brand-refs/Cognition_PrimaryLockup_Black.png"
+    "brand-refs/brand-logo-devin.png"
   ],
   "pipeline": [
     {
-      "stage": "copy",
+      "stage": "strategy",
       "provider": "anthropic",
       "model": "claude-opus-5",
-      "trace": "data/stages/v2-1-claude-copy.json"
+      "trace": "data/stages/v3-1-claude-strategy.json"
     },
     {
       "stage": "art direction",
       "provider": "openai",
       "api": "responses",
       "model": "gpt-6-astra",
-      "trace": "data/stages/v2-2-astra-direction.json"
+      "trace": "data/stages/v3-2-astra-direction.json"
     },
     {
-      "stage": "illustration panels",
-      "provider": "openai",
-      "api": "images.generations",
-      "model": "gpt-image-2.5-sunburst",
-      "trace": "data/stages/v2-3-render-panels.json"
-    },
-    {
-      "stage": "compositing",
-      "provider": "local",
-      "engine": "satori + @resvg/resvg-js",
-      "typeface": "Inter 4.1 (assets/fonts)",
-      "trace": "data/stages/v2-4-composite-ads.json"
-    },
-    {
-      "stage": "brand lock",
+      "stage": "direction critique",
       "provider": "openai",
       "api": "responses",
       "model": "gpt-6-astra",
-      "trace": "data/stages/v2-5-brand-lock.json"
+      "trace": "data/stages/v3-3-astra-refine.json"
+    },
+    {
+      "stage": "image-generation experiment (rejected, not in the final ads)",
+      "provider": "openai",
+      "api": "images.generations",
+      "model": "gpt-image-2.5-sunburst",
+      "trace": "data/stages/v3-8-astra-b1-options.json"
+    },
+    {
+      "stage": "final composition",
+      "provider": "local",
+      "engine": "@resvg/resvg-js + sharp",
+      "typeface": "Inter (assets/fonts)",
+      "trace": "data/stages/v3-10-production-set.json"
+    }
+  ],
+  "research": [
+    {
+      "id": "buyer",
+      "kind": "Buyer observation",
+      "finding": "Developers describe delegation in terms of a receipt they can inspect: the human stays accountable for proving the code works.",
+      "quote": "Your job is to deliver code you have proven to work.",
+      "source_file": "inputs/buyer-creator-signals-2026-09-15.md",
+      "section": "Finding 2 — Trust language = receipt / proof / junior-shaped review",
+      "source_url": "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
+      "implication": "Both self-serve statics keep the merge decision with the developer instead of promising autonomy.",
+      "label": "OBS"
+    },
+    {
+      "id": "format",
+      "kind": "Competitive format observation",
+      "finding": "Cognition's sampled Meta inventory is video/creator with comment-to-DM; the static, copy-led slot that competitors dominate is open.",
+      "quote": "Cognition ~110 active; sampled cards overwhelmingly video with comment-to-DM. Viktor ~650 active; static/templated claim cards dominate.",
+      "source_file": "inputs/competitive-campaign-signals-2026-09-15.md",
+      "section": "Finding 1 — static DR is the gap",
+      "source_url": null,
+      "implication": "All four concepts are statics with a direct site CTA rather than a comment bridge.",
+      "label": "OBS"
+    },
+    {
+      "id": "proof",
+      "kind": "Customer proof",
+      "finding": "FE fundinfo reports running automated Devin playbooks across approximately 1,800 active repositories, via automation it built itself.",
+      "quote": "1,800 — repositories managed with automated Devin playbooks via custom Replit apps",
+      "source_file": "inputs/customer-stories-2026-09.md",
+      "section": "FE fundinfo customer story",
+      "source_url": "https://devin.ai/customers/fefundinfo",
+      "implication": "The enterprise angle gets one named implementation at estate scale (B2) alongside the pain-led execution (B1).",
+      "label": "REPORTED"
     }
   ],
   "limitations": [
     "Approval is local to this browser. Nothing is published and there is no Meta integration.",
-    "Rejection feedback is saved in localStorage only; the generation pipeline does not read it.",
-    "Workflow graphics are illustrations, not product screenshots or execution evidence.",
-    "Angles are hypotheses to test. No performance results are shown because none exist."
+    "Rejection feedback is saved in localStorage only; it is not read by any model and trains nothing.",
+    "No performance data is shown because none exists — these are test candidates, not results.",
+    "Every pixel in the four finished ads is composed in code from the supplied Devin logo and Inter; none of them contains generated imagery.",
+    "FE fundinfo's reported figures describe its own estate and its own custom automation. FE fundinfo has not endorsed this project."
   ],
   "angles": [
     {
       "id": "self-serve-handoff",
       "track": "self-serve",
       "title": "Hand off the ticket. Review the PR.",
-      "audience": "developers delegating well-scoped engineering tasks",
-      "insight": "Developers will delegate bounded, well-scoped work if the result comes back as an inspectable diff.",
-      "hypothesis": "We believe framing Devin as delegation of a well-scoped ticket, with the developer keeping the merge, will lower cost per activated signup versus command-center and tooling-comparison framing.",
+      "audience": "Developers weighing whether to delegate defined engineering tasks inside existing repositories.",
+      "insight": "Developers will delegate defined chores only if the finished work comes back inspectable and they keep the merge.",
+      "hypothesis": "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
       "evidence": {
-        "source_file": "inputs/market-truth.md",
-        "section": "§2 Buyers & workflows with strongest evidence",
-        "quote": "You don’t babysit it. You delegate, walk away, and check the result.",
-        "label": "observed buyer language (OBS)",
-        "reading": "This shows how buyers describe the delegate-then-inspect workflow they want; it does not prove Devin's output quality, task fit, or that any given ticket comes back mergeable.",
-        "source_url": null
+        "source_file": "inputs/buyer-creator-signals-2026-09-15.md",
+        "section": "Finding 2 — Trust language = receipt / proof / junior-shaped review",
+        "quote": "Your job is to deliver code you have proven to work.",
+        "label": "OBS",
+        "reading": "It evidences a practitioner norm that the human stays accountable for proving code works, which is why 'you keep the merge' should resonate; it says nothing about whether Devin's output is correct.",
+        "source_url": "https://simonwillison.net/2025/dec/18/code-proven-to-work/"
       },
       "measurement": {
         "metric": "Cost per activated signup",
-        "definition_note": "Before launch, agree what activation means: account created plus a first delegated task started, attributed on a fixed window."
+        "definition_note": "Agree before launch that an activated signup means a new account that starts a first Devin session, not an email captured on the signup page."
       },
       "executions": [
         {
-          "id": "self-serve-handoff-a",
+          "id": "A1",
           "angle_id": "self-serve-handoff",
-          "label": "Execution A · Typography",
-          "treatment": "typography-led",
-          "concept_line": "A large two-line handoff statement sits between a small official lockup and a quietly anchored CTA.",
+          "label": "A1 · The dependency update",
+          "approach": "task-led",
+          "concept_line": "One named chore is the focal point; the accent colour carries the task itself.",
           "ad": {
-            "headline": "Hand off the ticket.\nReview the PR.",
-            "support": "You delegate bounded work. You own the merge.",
+            "headline": "Hand off the dependency update.\nYou review the PR.",
+            "support": "Devin handles the task in your repo and opens a pull request for you to review.",
             "cta": "Get started",
             "destination": {
-              "url": "https://app.devin.ai/",
+              "url": "https://devin.ai/",
               "checked_at": "2026-09-16",
               "http_status": 200,
-              "note": "Reachable sign-in / start surface for Devin."
+              "note": "Devin product site."
             }
           },
           "meta": {
-            "primary": "Assign a well-scoped ticket and walk away.\nDevin plans the work and comes back with a diff and test results.\nYou review. You merge.",
-            "headline": "Ticket in. Pull request out.",
-            "description": "You own the merge."
+            "primary": "A dependency update is the kind of ticket that has a clear definition of done.\nHand it to Devin. It works in your repo and opens a pull request.\nYou read the diff and decide whether it merges.",
+            "headline": "Hand off the dependency update.",
+            "description": "You still review the PR."
           },
-          "artifact": {
-            "kind": "none"
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin is positioned as an agent that plans, writes and ships code inside existing codebases and toolchains, returning a pull request.",
+            "source_file": "inputs/cognition-company-context.md",
+            "source_url": null,
+            "attribution": "none — product capability"
           },
+          "claims_avoided": [
+            "no success-rate, time-saved or cost-per-ticket figure",
+            "no promise that dependency updates come back correct, tested or merge-ready",
+            "no 'no supervision' or 'no coding required' framing"
+          ],
           "formats": {
             "4:5": {
-              "src": "/ads/v2/self-serve-handoff-a-1080x1350.png",
-              "file": "public/ads/v2/self-serve-handoff-a-1080x1350.png",
+              "src": "/ads/live/A1-1080x1350.png",
+              "file": "public/ads/live/A1-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "4daaef372c7717d3"
+              "sha256_16": "0bfc4cb006ef6917"
             },
             "1:1": {
-              "src": "/ads/v2/self-serve-handoff-a-1080x1080.png",
-              "file": "public/ads/v2/self-serve-handoff-a-1080x1080.png",
+              "src": "/ads/live/A1-1080x1080.png",
+              "file": "public/ads/live/A1-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "34985001747ee8eb"
+              "sha256_16": "e59487d3547f2a28"
             }
           },
           "provenance": {
-            "copy_model": "claude-opus-5",
+            "strategy_model": "claude-opus-5",
             "direction_model": "gpt-6-astra",
             "composited_in_code": [
               "headline",
-              "support",
-              "official Cognition lockup",
-              "product name Devin",
-              "CTA button"
+              "supporting line",
+              "supplied Devin logo",
+              "CTA button",
+              "attribution and qualifier"
             ],
-            "model_generated": [],
-            "panel": null,
-            "brand_lock": {
-              "pass": false,
-              "verdict": "Both statics fail because the standalone “Devin” label adds copy prohibited by the checklist. Otherwise, the visible execution is consistent with the requirements, including retained typography in the square version.",
-              "forbidden_elements": [
-                "Additional standalone “Devin” copy in both statics"
-              ],
-              "checks": [
-                {
-                  "item": "1. Uniform #F7F6F5 ground and #191919 headline ink",
-                  "pass": true,
-                  "note": "Both backgrounds are uniform and visually consistent with the specified ground and headline colors."
-                },
-                {
-                  "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
-                  "pass": true,
-                  "note": "Each static shows one black lockup, without visible distortion and with ample clearspace."
-                },
-                {
-                  "item": "3. Two-line headline and support appearing once",
-                  "pass": true,
-                  "note": "Both retain the same two headline lines and show the support once."
-                },
-                {
-                  "item": "4. All typeset text uses Inter; no eyebrow or additional copy",
-                  "pass": false,
-                  "note": "Typography appears consistent with Inter, but “Devin” is additional copy in both statics."
-                },
-                {
-                  "item": "5. One black CTA reading Get started in white",
-                  "pass": true,
-                  "note": "Each static has exactly one black CTA with the required white text."
-                },
-                {
-                  "item": "6. No panel, motif, accent mark, border or decorative line",
-                  "pass": true,
-                  "note": "No prohibited decorative elements are visible."
-                },
-                {
-                  "item": "7. All critical content at least 80px from every canvas edge",
-                  "pass": true,
-                  "note": "Edge clearances appear consistent with the requirement; no visually clear infringement."
-                },
-                {
-                  "item": "8. Square retains portrait typography and compresses only spacing",
-                  "pass": true,
-                  "note": "Type sizes, weights and line breaks appear unchanged; spacing is compressed."
-                }
-              ],
-              "accepted_exception": "Reviewer counts the product name 'Devin' beside the Cognition lockup as extra copy. Devin branding on the creative is a brief requirement, so the open item is accepted deliberately rather than fixed."
-            }
+            "model_generated": []
           }
         },
         {
-          "id": "self-serve-handoff-b",
+          "id": "A2",
           "angle_id": "self-serve-handoff",
-          "label": "Execution B · Workflow",
-          "treatment": "workflow-led",
-          "concept_line": "The same handoff statement leads into a compact ticket-to-review diagram with a visibly open final review gate.",
+          "label": "A2 · Show me the diff",
+          "approach": "review/control-led",
+          "concept_line": "Call and response across a rule: Devin's action on the left, the developer's decision answering it on the right.",
           "ad": {
-            "headline": "From well-scoped ticket\nto PR awaiting review",
-            "support": "Devin does the work. You read the diff.",
+            "headline": "Devin opens the PR.\nYou decide if it merges.",
+            "support": "Review the changes before you merge.",
             "cta": "Get started",
             "destination": {
-              "url": "https://app.devin.ai/",
+              "url": "https://devin.ai/",
               "checked_at": "2026-09-16",
               "http_status": 200,
-              "note": "Reachable sign-in / start surface for Devin."
+              "note": "Devin product site."
             }
           },
           "meta": {
-            "primary": "One bounded ticket: bump the dependency, fix what breaks.\nDevin runs it and opens a pull request with tests.\nThe review and the merge stay with you.",
-            "headline": "Delegate the chore, read the diff",
-            "description": "Bounded work, inspected."
+            "primary": "The worry is not speed. It is whether the change is right.\nDevin does the work in your repo and opens a pull request you can read: the diff, the tests, the session.\nYou review it the way you would review a teammate, and you own the merge.",
+            "headline": "What changed? Show me the diff.",
+            "description": "Devin ships it. You merge it."
           },
-          "artifact": {
-            "kind": "illustration",
-            "note": "Illustration. Not a screenshot and not execution evidence.",
-            "steps": [
-              "Ticket",
-              "Devin runs",
-              "Diff + tests",
-              "You review"
-            ],
-            "ticket": "ENG-2214 · Bump lint dependency and fix failures",
-            "repos": []
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin's output is a pull request in the team's existing workflow, with sessions the engineer can open. This execution promotes the review-before-merge workflow; it is not a claim that Devin can never merge automatically.",
+            "source_file": "inputs/cognition-brand-kit.md",
+            "source_url": "https://devin.ai/",
+            "attribution": "none — product capability"
           },
+          "claims_avoided": [
+            "not positioned as a tool for reviewing human-written code — Devin is the author here",
+            "no claim that a green CI run means the change is correct",
+            "no claim that Devin's diffs are always small or merge-ready"
+          ],
           "formats": {
             "4:5": {
-              "src": "/ads/v2/self-serve-handoff-b-1080x1350.png",
-              "file": "public/ads/v2/self-serve-handoff-b-1080x1350.png",
+              "src": "/ads/live/A2-1080x1350.png",
+              "file": "public/ads/live/A2-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "506ac82a5b5e56b5"
+              "sha256_16": "0386ac8c6bdcf883"
             },
             "1:1": {
-              "src": "/ads/v2/self-serve-handoff-b-1080x1080.png",
-              "file": "public/ads/v2/self-serve-handoff-b-1080x1080.png",
+              "src": "/ads/live/A2-1080x1080.png",
+              "file": "public/ads/live/A2-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "ed902bb6f215924e"
+              "sha256_16": "d3cf276a212d9a41"
             }
           },
           "provenance": {
-            "copy_model": "claude-opus-5",
+            "strategy_model": "claude-opus-5",
             "direction_model": "gpt-6-astra",
             "composited_in_code": [
               "headline",
-              "support",
-              "official Cognition lockup",
-              "product name Devin",
-              "CTA button"
+              "supporting line",
+              "supplied Devin logo",
+              "CTA button",
+              "attribution and qualifier"
             ],
-            "model_generated": [
-              "illustration panel (text-free)"
-            ],
-            "panel": {
-              "image_model": "gpt-image-2.5-sunburst",
-              "size": "1088x816",
-              "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small open review indicator in the final stage. Arrange four stages left to right, centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First stage: one bounded ticket-shaped card with a small edge notch, no internal writing. Second stage: two slightly offset rectangular work sheets receiving the ticket through a connector. Third stage: one review document containing two clearly separated blank rectangular panes, representing a proposed change ready for inspection, with no code or pseudo-text. Fourth stage: a separate outlined review tray containing that proposed-change document, with one small blue hollow circular indicator attached to its upper-right corner. Connect the stages with thin black directional connectors; terminate the workflow at the open review tray, without an approval tick, merged state or completion badge. Preserve generous blank space above and below the diagram. Make the ticket-to-proposed-change-to-pending-review sequence legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
-              "sha256_16": "e988afa6d2d70a69"
-            },
-            "brand_lock": {
-              "pass": true,
-              "verdict": "Both formats pass on visible execution, with no visible forbidden elements. Exact copy matching to self-serve-handoff-a remains unverified because that reference was not attached.",
-              "forbidden_elements": [],
-              "checks": [
-                {
-                  "item": "1. Headline, support and CTA exactly match self-serve-handoff-a.",
-                  "pass": true,
-                  "note": "Wording is identical across both supplied formats; no visible discrepancy, but the self-serve-handoff-a comparison is unavailable."
-                },
-                {
-                  "item": "2. Uniform #F7F6F5 ground; sole blue accent is the open review indicator.",
-                  "pass": true,
-                  "note": "Both grounds appear uniformly warm off-white. Only the open review ring is blue."
-                },
-                {
-                  "item": "3. One official black lockup, undistorted, with at least 48px clearspace.",
-                  "pass": true,
-                  "note": "Each static has one black Cognition lockup, visibly undistorted and generously separated from surrounding content."
-                },
-                {
-                  "item": "4. Exactly one flat panel showing a bounded ticket progressing to separate pending review.",
-                  "pass": true,
-                  "note": "Each static contains one flat workflow illustration, with a bounded ticket and a distinct final review stage."
-                },
-                {
-                  "item": "5. No text, code, logo, screenshot chrome, texture, shadow or gradient in the illustration.",
-                  "pass": true,
-                  "note": "Both illustrations use only flat outlined shapes, connectors and the open blue ring."
-                },
-                {
-                  "item": "6. Four stage labels and exact disclaimer legible outside the image.",
-                  "pass": true,
-                  "note": "Ticket, Devin runs, Diff + tests, and You review are legible below the illustration. Both display: “Illustration. Not a screenshot and not execution evidence.” Original supplied text references are unavailable for independent comparison."
-                },
-                {
-                  "item": "7. Exactly one black Get started CTA; critical content clears the outer 80px.",
-                  "pass": true,
-                  "note": "Each has one black Get started button. Critical content appears within the intended safe area; no clear visual margin violation."
-                },
-                {
-                  "item": "8. Review remains open, without merged, approved or completed status.",
-                  "pass": true,
-                  "note": "The hollow blue indicator and awaiting-review headline preserve an explicitly pending handoff; no completion markers appear."
-                }
-              ],
-              "accepted_exception": null
-            }
+            "model_generated": []
           }
         }
       ]
@@ -312,251 +254,148 @@
       "id": "enterprise-playbook",
       "track": "enterprise",
       "title": "One playbook. Many repos.",
-      "audience": "engineering leaders responsible for repeatable maintenance across repositories",
-      "insight": "Leaders have repeatable maintenance work, many repositories, and review capacity as the real constraint.",
-      "hypothesis": "We believe framing repeatable maintenance as one playbook fanned across repositories, with review retained by the team, will lower cost per qualified meeting versus generic agent-fleet messaging.",
+      "audience": "Engineering and platform leaders accountable for maintenance spread across a large repository estate.",
+      "insight": "Maintenance work survives every sprint; leaders need it run across many repos without adding coordination overhead.",
+      "hypothesis": "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
       "evidence": {
-        "source_file": "inputs/market-truth.md",
-        "section": "§2 Buyers & workflows with strongest evidence",
-        "quote": "one playbook / many repos",
-        "label": "synthesis / interpretation (INT)",
-        "reading": "This is the research pack's synthesis of how backlog work becomes parallel across repositories; it is not a customer outcome, a throughput claim, or evidence of Devin's results in any codebase.",
-        "source_url": null
+        "source_file": "inputs/customer-stories-2026-09.md",
+        "section": "FE fundinfo customer story — why they started",
+        "quote": "security updates, dependency upgrades, testing coverage gaps, and technical debt remediation. Over time, this work began to crowd out new feature development.",
+        "label": "REPORTED",
+        "reading": "One named company describing maintenance crowding out feature work supports the pain framing; it is not evidence that this is universal or that Devin clears such backlogs.",
+        "source_url": "https://devin.ai/customers/fefundinfo"
       },
       "measurement": {
         "metric": "Cost per qualified meeting",
-        "definition_note": "Before launch, agree the qualification definition: role, team size, repository ownership, and who confirms the meeting held."
+        "definition_note": "Agree before launch that a qualified meeting means a held conversation with a leader who owns multi-repo maintenance; judge the customer-proof execution on engaged case-study visits with meetings tracked downstream."
       },
       "executions": [
         {
-          "id": "enterprise-playbook-a",
+          "id": "B1",
           "angle_id": "enterprise-playbook",
-          "label": "Execution A · Typography",
-          "treatment": "typography-led",
-          "concept_line": "An oversized two-line playbook statement uses empty space, rather than repeated graphics, to imply breadth.",
+          "label": "B1 · The cleanup that stayed",
+          "approach": "pain-led",
+          "concept_line": "Typographic contrast: the shipped line sits light on the ground, the unfinished work outweighs it inside an ink band.",
           "ad": {
-            "headline": "One playbook.\nMany repos.",
-            "support": "Migrations, dependency updates, flaky tests.",
-            "cta": "Book a demo",
+            "headline": "The feature shipped.\nThe cleanup didn't.",
+            "support": "Delegate recurring maintenance across repos to Devin.",
+            "cta": "Get a demo",
             "destination": {
-              "url": "https://cognition.ai/contact",
+              "url": "https://cognition.com/demo#company",
               "checked_at": "2026-09-16",
               "http_status": 200,
-              "page_title": "Get a Demo | Cognition",
-              "note": "Cognition's demo request page."
+              "note": "Cognition demo request form."
             }
           },
           "meta": {
-            "primary": "Define the maintenance task once. Run it across repositories.\nMigrations, dependency bumps, flaky tests, coverage gaps.\nYour engineers still review and merge.",
+            "primary": "The migration landed. The deprecated calls, the flaky tests and the dependency upgrades did not.\nPoint one Devin playbook at that recurring work, across the repositories that need it.\nYour engineers review the pull requests.",
             "headline": "One playbook. Many repos.",
-            "description": "Your team still reviews."
+            "description": "Maintenance work, delegated."
           },
-          "artifact": {
-            "kind": "none"
+          "proof": {
+            "type": "product-capability",
+            "statement": "Devin playbooks — standardized prompts attached to recurring tasks — can be triggered across repositories, as described in the mechanics sections of the published customer stories.",
+            "source_file": "inputs/customer-stories-2026-09.md",
+            "source_url": "https://devin.ai/customers/ramp",
+            "attribution": "none — product capability"
           },
+          "claims_avoided": [
+            "no ROI, capacity, hours-saved or cost figure",
+            "no claim that maintenance runs without human review",
+            "no headcount-reduction framing, pricing or customer logos"
+          ],
           "formats": {
             "4:5": {
-              "src": "/ads/v2/enterprise-playbook-a-1080x1350.png",
-              "file": "public/ads/v2/enterprise-playbook-a-1080x1350.png",
+              "src": "/ads/live/B1-1080x1350.png",
+              "file": "public/ads/live/B1-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "bc4c54d0ce555e3e"
+              "sha256_16": "c3d2482a183ab8d4"
             },
             "1:1": {
-              "src": "/ads/v2/enterprise-playbook-a-1080x1080.png",
-              "file": "public/ads/v2/enterprise-playbook-a-1080x1080.png",
+              "src": "/ads/live/B1-1080x1080.png",
+              "file": "public/ads/live/B1-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "980a5114be65b81f"
+              "sha256_16": "dee8ef0f0fdea8a0"
             }
           },
           "provenance": {
-            "copy_model": "claude-opus-5",
+            "strategy_model": "claude-opus-5",
             "direction_model": "gpt-6-astra",
             "composited_in_code": [
               "headline",
-              "support",
-              "official Cognition lockup",
-              "product name Devin",
-              "CTA button"
+              "supporting line",
+              "supplied Devin logo",
+              "CTA button",
+              "attribution and qualifier"
             ],
-            "model_generated": [],
-            "panel": null,
-            "brand_lock": {
-              "pass": false,
-              "verdict": "Both formats include an extra “Devin” label above the headline, violating the no-eyebrow requirement. The remaining checks pass on visible evidence, without asserting exact color, font or pixel measurements.",
-              "forbidden_elements": [
-                "Extra “Devin” eyebrow label in both formats"
-              ],
-              "checks": [
-                {
-                  "item": "1. Uniform #F7F6F5 ground with no dark section or blue accent",
-                  "pass": true,
-                  "note": "Both backgrounds appear uniformly warm off-white, with no dark section or blue accent."
-                },
-                {
-                  "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
-                  "pass": true,
-                  "note": "Each format shows one black Cognition lockup, visibly undistorted and generously separated from other content."
-                },
-                {
-                  "item": "3. Supplied headline on two lines and support sentence once",
-                  "pass": true,
-                  "note": "Both show “One playbook.” / “Many repos.” on two lines and the support sentence once."
-                },
-                {
-                  "item": "4. All typeset text uses Inter; no eyebrow or extra claim",
-                  "pass": false,
-                  "note": "Both include an extra “Devin” label above the headline, functioning as an eyebrow; no visible font mismatch is apparent."
-                },
-                {
-                  "item": "5. Exactly one black CTA reading Book a demo in white",
-                  "pass": true,
-                  "note": "Each format has exactly one black CTA with the correct white text."
-                },
-                {
-                  "item": "6. No panel, repository motif, decorative line, customer logo or chart",
-                  "pass": true,
-                  "note": "None of these elements is visible in either format."
-                },
-                {
-                  "item": "7. All critical content clears the outer 80px on every side",
-                  "pass": true,
-                  "note": "Both appear adequately inset; no clear margin violation is visually established without precise measurement."
-                },
-                {
-                  "item": "8. No added seat-pricing, quantified outcome or execution-evidence claim",
-                  "pass": true,
-                  "note": "No such claims appear in either format."
-                }
-              ],
-              "accepted_exception": "Reviewer counts the product name 'Devin' beside the Cognition lockup as extra copy. Devin branding on the creative is a brief requirement, so the open item is accepted deliberately rather than fixed."
-            }
+            "model_generated": []
           }
         },
         {
-          "id": "enterprise-playbook-b",
+          "id": "B2",
           "angle_id": "enterprise-playbook",
-          "label": "Execution B · Workflow",
-          "treatment": "workflow-led",
-          "concept_line": "The same playbook statement sits above one task branching into four repository changes that remain behind an open review gate.",
+          "label": "B2 · FE fundinfo playbooks",
+          "approach": "customer-proof-led",
+          "concept_line": "The reported number is the artwork, with the customer's name attached directly above it.",
           "ad": {
-            "headline": "One task.\nEvery repo. Your review.",
-            "support": "Same migration step, one diff per repo.",
-            "cta": "Book a demo",
+            "headline": "FE fundinfo\n1,800 repositories.",
+            "support": "Managed with automated Devin playbooks through a custom-built orchestration system.",
+            "qualifier": "Reported by FE fundinfo. Custom implementation, not a typical result.",
+            "cta": "See how they did it",
             "destination": {
-              "url": "https://cognition.ai/contact",
+              "url": "https://devin.ai/customers/fefundinfo",
               "checked_at": "2026-09-16",
               "http_status": 200,
-              "page_title": "Get a Demo | Cognition",
-              "note": "Cognition's demo request page."
+              "note": "The FE fundinfo customer story this ad cites."
             }
           },
           "meta": {
-            "primary": "Write the maintenance step once: upgrade the framework version.\nDevin applies it repo by repo and opens a pull request for each.\nReview capacity stays with your engineers.",
-            "headline": "Fan one chore across repos",
-            "description": "One diff per repository."
+            "primary": "FE fundinfo reports running automated Devin playbooks across all 1,800 of its active code repositories.\nThe orchestration around it — finding repositories that need work, triggering sessions, tracking progress — is a system FE fundinfo built itself using custom Replit apps.\nTheir engineers stay in review on anything beyond low-risk changes.",
+            "headline": "Devin playbooks. 1,800 repos.",
+            "description": "FE fundinfo's reported implementation."
           },
-          "artifact": {
-            "kind": "illustration",
-            "note": "Illustration. Not a screenshot and not execution evidence.",
-            "steps": [
-              "Playbook",
-              "Fan out",
-              "Diff per repo",
-              "Your review"
-            ],
-            "ticket": "PLAT-118 · Upgrade framework minor version",
-            "repos": [
-              "payments-api",
-              "web-app",
-              "billing-service",
-              "internal-tools"
-            ]
+          "proof": {
+            "type": "customer-result",
+            "statement": "\"1,800 — repositories managed with automated Devin playbooks via custom Replit apps\" (reported scope). The story describes an automation system FE fundinfo built with Replit that finds repositories needing updates, triggers Devin sessions, tracks progress and handles errors, auto-merging low-risk changes.",
+            "source_file": "inputs/customer-stories-2026-09.md",
+            "source_url": "https://devin.ai/customers/fefundinfo",
+            "attribution": "FE fundinfo, as published on its devin.ai customer story page. Scope is FE fundinfo's own estate — 200+ engineers, approximately 1,800 active code repositories. FE fundinfo has not endorsed this independent project."
           },
+          "claims_avoided": [
+            "1,800 is the repository count under management, not completed migrations",
+            "no 10% capacity figure and no 2–4x projection in this execution",
+            "not presented as a typical or guaranteed outcome, and not as out-of-the-box automation",
+            "no customer logo and no implied endorsement"
+          ],
           "formats": {
             "4:5": {
-              "src": "/ads/v2/enterprise-playbook-b-1080x1350.png",
-              "file": "public/ads/v2/enterprise-playbook-b-1080x1350.png",
+              "src": "/ads/live/B2-1080x1350.png",
+              "file": "public/ads/live/B2-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "4cafe9d576bb9380"
+              "sha256_16": "88d8254e856f1464"
             },
             "1:1": {
-              "src": "/ads/v2/enterprise-playbook-b-1080x1080.png",
-              "file": "public/ads/v2/enterprise-playbook-b-1080x1080.png",
+              "src": "/ads/live/B2-1080x1080.png",
+              "file": "public/ads/live/B2-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "784ee4b323afb684"
+              "sha256_16": "e8ec76b29946d5f2"
             }
           },
           "provenance": {
-            "copy_model": "claude-opus-5",
+            "strategy_model": "claude-opus-5",
             "direction_model": "gpt-6-astra",
             "composited_in_code": [
               "headline",
-              "support",
-              "official Cognition lockup",
-              "product name Devin",
-              "CTA button"
+              "supporting line",
+              "supplied Devin logo",
+              "CTA button",
+              "attribution and qualifier"
             ],
-            "model_generated": [
-              "illustration panel (text-free)"
-            ],
-            "panel": {
-              "image_model": "gpt-image-2.5-sunburst",
-              "size": "1088x816",
-              "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards and repository-folder shapes, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small hollow indicator on the final review gate. Organize four stage columns centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First column: one bounded task card containing a single blank inset rectangle. Second column: one functional connector from that task branching into four evenly separated paths; this is routing geometry, not a chart. Third column: four identical repository-folder cards stacked vertically, each receiving one path and each containing the same small two-pane blank change document. All four repository cards must be equal in size and treatment. Fourth column: carry four separate thin connectors into one tall outlined review tray holding four separate blank document slots, preserving one proposed change per repository rather than collapsing them into a single merged document. Attach one small blue hollow indicator to the review tray's upper-right corner. End the workflow there, with no approval tick or completed state. Preserve ample uniform background above and below the geometry. The repeated task, four repository artifacts and retained review boundary must remain legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
-              "sha256_16": "d2b7b2ffa69fda72"
-            },
-            "brand_lock": {
-              "pass": true,
-              "verdict": "Both formats pass the visually verifiable execution checks. Exact wording parity with enterprise-playbook-a remains unverified because that reference was not supplied.",
-              "forbidden_elements": [],
-              "checks": [
-                {
-                  "item": "1. Headline, support and CTA exactly match enterprise-playbook-a",
-                  "pass": true,
-                  "note": "Copy is identical across both supplied sizes; comparison against enterprise-playbook-a is unavailable."
-                },
-                {
-                  "item": "2. Uniform #F7F6F5 ground; #317CFF only on final open review indicator",
-                  "pass": true,
-                  "note": "Ground appears uniform, with blue confined to the final open review ring. Exact hex values are not verifiable by eye."
-                },
-                {
-                  "item": "3. One official black lockup, undistorted, with at least 48px clearspace",
-                  "pass": true,
-                  "note": "Each static has one recognizable black Cognition lockup, visibly undistorted and comfortably isolated."
-                },
-                {
-                  "item": "4. Exactly one panel with one task branching to four equal repository artifacts and a separate review boundary",
-                  "pass": true,
-                  "note": "Each illustration shows one source branching to four equal repository artifacts, followed by a distinct review enclosure."
-                },
-                {
-                  "item": "5. Image contains no text, code, logos, screenshot chrome, gradients, shadows or texture",
-                  "pass": true,
-                  "note": "The illustration itself contains only flat outlined shapes and connectors; copy and branding remain outside it."
-                },
-                {
-                  "item": "6. Four stage labels and exact illustration disclaimer are legible and outside the image",
-                  "pass": true,
-                  "note": "Both show legible external labels: Playbook, Fan out, Diff per repo, Your review. Disclaimer reads: Illustration. Not a screenshot and not execution evidence."
-                },
-                {
-                  "item": "7. Exactly one black Book a demo CTA; critical content clears outer 80px",
-                  "pass": true,
-                  "note": "One black Book a demo button appears per static. Content appears within the intended safe inset; no clear margin violation is visually established."
-                },
-                {
-                  "item": "8. Four proposed changes remain separate; no approval, merger, measured outcome or seat-pricing claim",
-                  "pass": true,
-                  "note": "Four separate change documents remain visible inside the review boundary; no prohibited claims or completion signals appear."
-                }
-              ],
-              "accepted_exception": null
-            }
+            "model_generated": []
           }
         }
       ]
