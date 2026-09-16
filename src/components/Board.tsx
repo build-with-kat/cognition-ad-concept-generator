@@ -117,9 +117,9 @@ export default function Board({ batch }: { batch: Batch }) {
         <Research findings={batch.research} />
 
         {batch.angles.map((angle) => (
-          <section key={angle.id} className="pt-6">
+          <section key={angle.id} className="pt-10">
             <AngleIntro angle={angle} />
-            <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
               {angle.executions.map((execution) => (
                 <CreativeCard
                   key={execution.id}
@@ -182,7 +182,6 @@ function Research({ findings }: { findings: Finding[] }) {
 }
 
 function AngleIntro({ angle }: { angle: Angle }) {
-  const [open, setOpen] = useState(false);
   return (
     <div>
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -193,42 +192,33 @@ function AngleIntro({ angle }: { angle: Angle }) {
       </div>
       <p className="mt-1 max-w-3xl text-[13px] text-muted">ICP: {angle.audience}</p>
       <p className="mt-1 max-w-3xl text-[14px]">{angle.insight}</p>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="mt-1 inline-flex min-h-11 items-center text-[13px] font-medium text-accent underline underline-offset-4"
-      >
-        Why this angle?
-      </button>
-      {open && (
-        <div className="mt-3 grid gap-4 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed sm:grid-cols-2">
-          <Field label="Buyer insight">{angle.insight}</Field>
-          <Field label="Test hypothesis">{angle.hypothesis}</Field>
-          <Field label={`Evidence — ${angle.evidence.section}`}>
-            <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
-            <p className="mt-2 text-muted">
-              Source: {angle.evidence.source_file.replace("inputs/", "")}
-              {angle.evidence.source_url ? (
-                <>
-                  {" · "}
-                  <a className="text-accent underline underline-offset-2" href={angle.evidence.source_url} target="_blank" rel="noreferrer">
-                    original
-                  </a>
-                </>
-              ) : (
-                " · no original URL supplied in the input file"
-              )}
-            </p>
-          </Field>
-          <Field label="Reading (synthesis, not verified product fact)">
-            {angle.evidence.reading}
-            <p className="mt-2 text-muted">
-              Proposed metric: {angle.measurement.metric}. {angle.measurement.definition_note}
-            </p>
-          </Field>
-        </div>
-      )}
+      <h3 className="mt-4 text-[13px] font-medium text-ink">Why this angle?</h3>
+      <div className="mt-2 grid gap-5 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed md:grid-cols-2">
+        <Field label="Buyer insight">{angle.insight}</Field>
+        <Field label="Test hypothesis">{angle.hypothesis}</Field>
+        <Field label={`Evidence — ${angle.evidence.section}`}>
+          <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
+          <p className="mt-2 text-muted">
+            Source: {angle.evidence.source_file.replace("inputs/", "")}
+            {angle.evidence.source_url ? (
+              <>
+                {" · "}
+                <a className="text-accent underline underline-offset-2" href={angle.evidence.source_url} target="_blank" rel="noreferrer">
+                  original
+                </a>
+              </>
+            ) : (
+              " · no original URL supplied in the input file"
+            )}
+          </p>
+        </Field>
+        <Field label="Reading (synthesis, not verified product fact)">
+          {angle.evidence.reading}
+          <p className="mt-2 text-muted">
+            Proposed metric: {angle.measurement.metric}. {angle.measurement.definition_note}
+          </p>
+        </Field>
+      </div>
     </div>
   );
 }
@@ -552,28 +542,71 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
   );
 }
 
+const RESEARCH_FOLDER = "https://drive.google.com/drive/folders/1LSSCDx2hzmXfxMiRJCXm4HbBqXVgIh62?usp=sharing";
+
 function HowItWasBuilt({ batch }: { batch: Batch }) {
   return (
-    <footer className="mt-16 border-t border-line pt-5 text-[12px] text-muted">
-      <details>
-        <summary className="cursor-pointer font-medium text-ink">How it was built</summary>
-        <div className="mt-3 max-w-3xl space-y-3">
-          <p>
-            Strategy — the two angles, the four concepts and the claims to avoid — came from {batch.pipeline[0].model}, reading the research
-            files in this repository. Art direction and a second critique pass came from {batch.pipeline[1].model}. One image-generation
-            experiment ran on {batch.pipeline[3].model} as a candidate for the enterprise pain concept; it was reviewed, rejected and is not
-            part of any finished ad. The four ads you see are composed entirely in code with {batch.pipeline[4].engine} in{" "}
-            {batch.pipeline[4].typeface}, over the supplied Devin logo file — no generated pixels, and no model renders text or the logo.
-            Prompts, model outputs and review results are recorded in data/stages.
+    <footer className="mt-16 border-t border-line pt-8">
+      <h2 className="text-[11px] uppercase tracking-[0.14em] text-muted">How it was built</h2>
+      <ol className="mt-4 grid gap-4 text-[13px] leading-relaxed md:grid-cols-2">
+        <li className="rounded-xl border border-line bg-card p-5">
+          <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 1</div>
+          <p className="mt-1.5 font-medium">Research with Grok Bot</p>
+          <p className="mt-2 text-muted">
+            Used Grok Bot to research buyer language, competitor campaigns, and Devin’s positioning, then organize the findings into
+            Markdown inputs.
           </p>
-          <ul className="list-disc space-y-1 pl-5">
-            {batch.limitations.map((l) => (
-              <li key={l}>{l}</li>
-            ))}
-          </ul>
-          <p>Generated {new Date(batch.generated_at).toISOString().slice(0, 10)}. Independent project, not affiliated with Cognition.</p>
-        </div>
-      </details>
+          <a
+            className="mt-2 inline-block text-accent underline underline-offset-2"
+            href={RESEARCH_FOLDER}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View research files
+          </a>
+        </li>
+        <li className="rounded-xl border border-line bg-card p-5">
+          <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 2</div>
+          <p className="mt-1.5 font-medium">Brief development with ChatGPT</p>
+          <p className="mt-2 text-muted">
+            Used ChatGPT to turn the research and review feedback into scoped instructions for Devin, with the goal of conserving Devin
+            usage.
+          </p>
+        </li>
+        <li className="rounded-xl border border-line bg-card p-5">
+          <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 3</div>
+          <p className="mt-1.5 font-medium">Creative production orchestrated by Devin</p>
+          <p className="mt-2 text-muted">
+            Devin passed the research to Claude to develop messaging for self-serve developers and enterprise engineering buyers. Astra
+            directed and critiqued the concepts, including an experiment with ChatGPT Images 2.5. The final selected statics were composed
+            in code with the supplied Devin logo for precise typography and layout.
+          </p>
+        </li>
+        <li className="rounded-xl border border-line bg-card p-5">
+          <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 4</div>
+          <p className="mt-1.5 font-medium">Deployment through GitHub and Vercel</p>
+          <p className="mt-2 text-muted">Committed the app to GitHub and deployed it to Vercel.</p>
+        </li>
+      </ol>
+      <p className="mt-4 text-[12px] text-muted">
+        Build setup: Devin Standard on the Pro plan, with $25 in additional overage credit purchased.
+      </p>
+      <div className="mt-6 border-t border-line pt-4 text-[12px] text-muted">
+        <p>
+          Execution records: strategy {batch.pipeline[0].model}, direction and critique {batch.pipeline[1].model}, one rejected
+          image-generation experiment on {batch.pipeline[3].model}, final composition with {batch.pipeline[4].engine} in{" "}
+          {batch.pipeline[4].typeface} over the supplied Devin logo file — no generated pixels in the finished ads. Prompts and model
+          outputs are recorded in data/stages.
+        </p>
+        <ul className="mt-3 list-disc space-y-1 pl-5">
+          {batch.limitations.map((l) => (
+            <li key={l}>{l}</li>
+          ))}
+        </ul>
+        <p className="mt-3">
+          Generated {new Date(batch.generated_at).toISOString().slice(0, 10)}. Independent project, not affiliated with Cognition.
+        </p>
+      </div>
     </footer>
   );
 }
