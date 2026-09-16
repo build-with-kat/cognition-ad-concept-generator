@@ -19,8 +19,10 @@ if (fs.existsSync(path.join(ROOT, "public/ads/v2"))) {
   fs.cpSync(path.join(ROOT, "public/ads/v2"), path.join(archiveDir, "v2"), { recursive: true });
   fs.rmSync(path.join(ROOT, "public/ads/v2"), { recursive: true, force: true });
 }
-if (fs.existsSync(path.join(ROOT, "data/batch.json"))) {
-  fs.copyFileSync(path.join(ROOT, "data/batch.json"), path.join(ROOT, "data/archive/batch-v2.json"));
+const prevBatch = path.join(ROOT, "data/batch.json");
+const archivedBatch = path.join(ROOT, "data/archive/batch-v2.json");
+if (fs.existsSync(prevBatch) && !fs.existsSync(archivedBatch)) {
+  fs.copyFileSync(prevBatch, archivedBatch);
 }
 
 const fmtOf = (id, key) => {
@@ -118,7 +120,7 @@ const angles = [
         concept_line: "One named chore is the focal point; the accent colour carries the task itself.",
         ad: {
           headline: "Hand off the dependency update.\nYou review the PR.",
-          support: "Devin handles the task in your repo and opens a pull request for you to review.",
+          support: "Devin makes the changes in your repo and opens a pull request.",
           cta: "Get started",
           destination: dest("https://devin.ai/", "Devin product site."),
         },
@@ -152,7 +154,7 @@ const angles = [
         concept_line: "Call and response across a rule: Devin's action on the left, the developer's decision answering it on the right.",
         ad: {
           headline: "Devin opens the PR.\nYou decide if it merges.",
-          support: "Review the changes before you merge.",
+          support: "Delegate the task. Review the diff.",
           cta: "Get started",
           destination: dest("https://devin.ai/", "Devin product site."),
         },
@@ -246,14 +248,14 @@ const angles = [
         concept_line: "The reported number is the artwork, with the customer's name attached directly above it.",
         ad: {
           headline: "FE fundinfo\n1,800 repositories.",
-          support: "Managed with automated Devin playbooks through a custom-built orchestration system.",
-          qualifier: "Reported by FE fundinfo. Custom implementation, not a typical result.",
+          support: "Managed with automated Devin playbooks through custom-built tooling.",
+          qualifier: "Custom implementation, not a typical result. Source: Devin\u2019s FE fundinfo customer story.",
           cta: "See how they did it",
           destination: dest("https://devin.ai/customers/fefundinfo", "The FE fundinfo customer story this ad cites."),
         },
         meta: {
           primary:
-            "FE fundinfo reports running automated Devin playbooks across all 1,800 of its active code repositories.\nThe orchestration around it — finding repositories that need work, triggering sessions, tracking progress — is a system FE fundinfo built itself using custom Replit apps.\nTheir engineers stay in review on anything beyond low-risk changes.",
+            "FE fundinfo reports running automated Devin playbooks across all 1,800 of its active code repositories.\nThe orchestration around it — finding repositories that need work, triggering sessions, tracking progress — is tooling FE fundinfo built itself.\nTheir engineers stay in review on anything beyond low-risk changes.",
           headline: "Devin playbooks. 1,800 repos.",
           description: "FE fundinfo's reported implementation.",
         },

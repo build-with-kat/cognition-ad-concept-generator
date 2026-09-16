@@ -191,7 +191,8 @@ function AngleIntro({ angle }: { angle: Angle }) {
         </span>
         <h2 className="text-[22px] font-semibold tracking-[-0.02em]">{angle.title}</h2>
       </div>
-      <p className="mt-1 max-w-3xl text-[14px] text-muted">{angle.insight}</p>
+      <p className="mt-1 max-w-3xl text-[13px] text-muted">ICP: {angle.audience}</p>
+      <p className="mt-1 max-w-3xl text-[14px]">{angle.insight}</p>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -465,6 +466,12 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
           </div>
 
           <div className="mt-5 grid gap-4">
+            <Field label="On-image copy">
+              <p className="whitespace-pre-line font-medium">{execution.ad.headline}</p>
+              <p className="mt-1">{execution.ad.support}</p>
+              {execution.ad.qualifier && <p className="mt-1 text-muted">{execution.ad.qualifier}</p>}
+              <p className="mt-1 text-muted">CTA: {execution.ad.cta}</p>
+            </Field>
             <Field label="Meta primary text">
               <p className="whitespace-pre-line">{execution.meta.primary}</p>
             </Field>

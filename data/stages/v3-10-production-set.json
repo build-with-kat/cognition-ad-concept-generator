@@ -1,6 +1,6 @@
 {
   "stage": "production-candidates",
-  "ran_at": "2026-09-16T20:36:05.177Z",
+  "ran_at": "2026-09-16T20:40:08.340Z",
   "composition": "deterministic only — @resvg/resvg-js + sharp, Inter (assets/fonts), supplied brand-refs/brand-logo-devin.png",
   "image_model_calls": 0,
   "strategy_provenance": [
@@ -20,13 +20,13 @@
           "format": "1080x1350",
           "ratio": "4:5",
           "src": "/ads/candidates/A1-1080x1350.png",
-          "sha256_16": "0bfc4cb006ef6917"
+          "sha256_16": "959f7eff2a3091a7"
         },
         {
           "format": "1080x1080",
           "ratio": "1:1",
           "src": "/ads/candidates/A1-1080x1080.png",
-          "sha256_16": "e59487d3547f2a28"
+          "sha256_16": "04c04d3202f5074d"
         }
       ]
     },
@@ -41,13 +41,13 @@
           "format": "1080x1350",
           "ratio": "4:5",
           "src": "/ads/candidates/A2-1080x1350.png",
-          "sha256_16": "0386ac8c6bdcf883"
+          "sha256_16": "a42c01d01443c980"
         },
         {
           "format": "1080x1080",
           "ratio": "1:1",
           "src": "/ads/candidates/A2-1080x1080.png",
-          "sha256_16": "d3cf276a212d9a41"
+          "sha256_16": "4dbc2ee12857aefb"
         }
       ]
     },
@@ -83,13 +83,13 @@
           "format": "1080x1350",
           "ratio": "4:5",
           "src": "/ads/candidates/B2-1080x1350.png",
-          "sha256_16": "88d8254e856f1464"
+          "sha256_16": "11a7c1a923175d84"
         },
         {
           "format": "1080x1080",
           "ratio": "1:1",
           "src": "/ads/candidates/B2-1080x1080.png",
-          "sha256_16": "e8ec76b29946d5f2"
+          "sha256_16": "79f59780c8993bad"
         }
       ]
     }

@@ -1,6 +1,6 @@
 {
   "schema": "devin-creative-lab/3",
-  "generated_at": "2026-09-16T20:36:34.145Z",
+  "generated_at": "2026-09-16T20:40:37.838Z",
   "product": {
     "title": "Devin Creative Lab",
     "subtitle": "Independent project · Built with Devin"
@@ -130,7 +130,7 @@
           "concept_line": "One named chore is the focal point; the accent colour carries the task itself.",
           "ad": {
             "headline": "Hand off the dependency update.\nYou review the PR.",
-            "support": "Devin handles the task in your repo and opens a pull request for you to review.",
+            "support": "Devin makes the changes in your repo and opens a pull request.",
             "cta": "Get started",
             "destination": {
               "url": "https://devin.ai/",
@@ -162,14 +162,14 @@
               "file": "public/ads/live/A1-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "0bfc4cb006ef6917"
+              "sha256_16": "959f7eff2a3091a7"
             },
             "1:1": {
               "src": "/ads/live/A1-1080x1080.png",
               "file": "public/ads/live/A1-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "e59487d3547f2a28"
+              "sha256_16": "04c04d3202f5074d"
             }
           },
           "provenance": {
@@ -193,7 +193,7 @@
           "concept_line": "Call and response across a rule: Devin's action on the left, the developer's decision answering it on the right.",
           "ad": {
             "headline": "Devin opens the PR.\nYou decide if it merges.",
-            "support": "Review the changes before you merge.",
+            "support": "Delegate the task. Review the diff.",
             "cta": "Get started",
             "destination": {
               "url": "https://devin.ai/",
@@ -225,14 +225,14 @@
               "file": "public/ads/live/A2-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "0386ac8c6bdcf883"
+              "sha256_16": "a42c01d01443c980"
             },
             "1:1": {
               "src": "/ads/live/A2-1080x1080.png",
               "file": "public/ads/live/A2-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "d3cf276a212d9a41"
+              "sha256_16": "4dbc2ee12857aefb"
             }
           },
           "provenance": {
@@ -341,8 +341,8 @@
           "concept_line": "The reported number is the artwork, with the customer's name attached directly above it.",
           "ad": {
             "headline": "FE fundinfo\n1,800 repositories.",
-            "support": "Managed with automated Devin playbooks through a custom-built orchestration system.",
-            "qualifier": "Reported by FE fundinfo. Custom implementation, not a typical result.",
+            "support": "Managed with automated Devin playbooks through custom-built tooling.",
+            "qualifier": "Custom implementation, not a typical result. Source: Devin’s FE fundinfo customer story.",
             "cta": "See how they did it",
             "destination": {
               "url": "https://devin.ai/customers/fefundinfo",
@@ -352,7 +352,7 @@
             }
           },
           "meta": {
-            "primary": "FE fundinfo reports running automated Devin playbooks across all 1,800 of its active code repositories.\nThe orchestration around it — finding repositories that need work, triggering sessions, tracking progress — is a system FE fundinfo built itself using custom Replit apps.\nTheir engineers stay in review on anything beyond low-risk changes.",
+            "primary": "FE fundinfo reports running automated Devin playbooks across all 1,800 of its active code repositories.\nThe orchestration around it — finding repositories that need work, triggering sessions, tracking progress — is tooling FE fundinfo built itself.\nTheir engineers stay in review on anything beyond low-risk changes.",
             "headline": "Devin playbooks. 1,800 repos.",
             "description": "FE fundinfo's reported implementation."
           },
@@ -375,14 +375,14 @@
               "file": "public/ads/live/B2-1080x1350.png",
               "width": 1080,
               "height": 1350,
-              "sha256_16": "88d8254e856f1464"
+              "sha256_16": "11a7c1a923175d84"
             },
             "1:1": {
               "src": "/ads/live/B2-1080x1080.png",
               "file": "public/ads/live/B2-1080x1080.png",
               "width": 1080,
               "height": 1080,
-              "sha256_16": "e8ec76b29946d5f2"
+              "sha256_16": "79f59780c8993bad"
             }
           },
           "provenance": {
