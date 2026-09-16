@@ -24,6 +24,7 @@ export type Execution = {
   id: string;
   angle_id: string;
   label: string;
+  short_label: string;
   approach: string;
   concept_line: string;
   ad: { headline: string; support: string; qualifier?: string; cta: string; destination: Destination };
@@ -49,6 +50,7 @@ export type Finding = {
   source_url: string | null;
   implication: string;
   label: string;
+  citation: { label: string; url: string | null; note: string | null };
 };
 
 export type Angle = {
@@ -57,6 +59,7 @@ export type Angle = {
   title: string;
   audience: string;
   insight: string;
+  rationale: string;
   hypothesis: string;
   evidence: {
     source_file: string;
@@ -65,6 +68,7 @@ export type Angle = {
     label: string;
     reading: string;
     source_url: string | null;
+    citation: { label: string; url: string | null };
   };
   measurement: { metric: string; definition_note: string };
   executions: Execution[];

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Devin Creative Lab",
+  title: "Cognition Creative Lab",
   description: "Two paid-social messaging hypotheses for Devin, two executions each, awaiting human approval. Independent project · Built with Devin.",
 };
 

@@ -164,16 +164,21 @@ function Research({ findings }: { findings: Finding[] }) {
             <p className="mt-1.5 font-medium">{f.finding}</p>
             <p className="mt-2 text-muted">Implication: {f.implication}</p>
             <p className="mt-2 text-[12px] text-muted">
-              Source: {f.source_file.replace("inputs/", "")} · {f.section}
-              {f.source_url && (
-                <>
-                  {" · "}
-                  <a className="text-accent underline underline-offset-2" href={f.source_url} target="_blank" rel="noreferrer">
-                    original
-                  </a>
-                </>
+              Source:{" "}
+              {f.citation.url ? (
+                <a
+                  className="text-accent underline underline-offset-2"
+                  href={f.citation.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {f.citation.label}
+                </a>
+              ) : (
+                f.citation.label
               )}
             </p>
+            {f.citation.note && <p className="mt-1 text-[12px] text-muted">{f.citation.note}</p>}
           </div>
         ))}
       </div>
@@ -191,32 +196,32 @@ function AngleIntro({ angle }: { angle: Angle }) {
         <h2 className="text-[22px] font-semibold tracking-[-0.02em]">{angle.title}</h2>
       </div>
       <p className="mt-1 max-w-3xl text-[13px] text-muted">ICP: {angle.audience}</p>
-      <p className="mt-1 max-w-3xl text-[14px]">{angle.insight}</p>
       <h3 className="mt-4 text-[13px] font-medium text-ink">Why this angle?</h3>
-      <div className="mt-2 grid gap-5 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed md:grid-cols-2">
-        <Field label="Buyer insight">{angle.insight}</Field>
+      <p className="mt-1.5 max-w-3xl text-[14px] leading-relaxed">{angle.rationale}</p>
+      <div className="mt-3 grid gap-5 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed md:grid-cols-2">
         <Field label="Test hypothesis">{angle.hypothesis}</Field>
-        <Field label={`Evidence — ${angle.evidence.section}`}>
+        <Field label="Evidence">
           <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
           <p className="mt-2 text-muted">
-            Source: {angle.evidence.source_file.replace("inputs/", "")}
-            {angle.evidence.source_url ? (
-              <>
-                {" · "}
-                <a className="text-accent underline underline-offset-2" href={angle.evidence.source_url} target="_blank" rel="noreferrer">
-                  original
-                </a>
-              </>
+            Source:{" "}
+            {angle.evidence.citation.url ? (
+              <a
+                className="text-accent underline underline-offset-2"
+                href={angle.evidence.citation.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {angle.evidence.citation.label}
+              </a>
             ) : (
-              " · no original URL supplied in the input file"
+              angle.evidence.citation.label
             )}
           </p>
         </Field>
-        <Field label="Reading (synthesis, not verified product fact)">
-          {angle.evidence.reading}
-          <p className="mt-2 text-muted">
-            Proposed metric: {angle.measurement.metric}. {angle.measurement.definition_note}
-          </p>
+        <Field label="Reading (synthesis, not verified product fact)">{angle.evidence.reading}</Field>
+        <Field label="Proposed success metric">
+          {angle.measurement.metric}
+          <p className="mt-1 text-muted">{angle.measurement.definition_note}</p>
         </Field>
       </div>
     </div>
@@ -257,7 +262,7 @@ function CreativeCard({
   return (
     <article className="overflow-hidden rounded-2xl border border-line bg-card">
       <div className="flex items-center justify-between gap-3 px-4 pt-3">
-        <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{execution.label}</span>
+        <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{execution.short_label}</span>
         <div className="flex items-center gap-1 rounded-full border border-line p-0.5">
           {(["4:5", "1:1"] as FormatKey[]).map((f) => (
             <button
@@ -283,7 +288,7 @@ function CreativeCard({
       >
         <Image
           src={render.src}
-          alt={`${execution.label} — ${execution.ad.headline.replace(/\n/g, " ")}`}
+          alt={`${execution.short_label} — ${execution.ad.headline.replace(/\n/g, " ")}`}
           width={render.width}
           height={render.height}
           priority
@@ -447,7 +452,7 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
         <div className="text-[13px] leading-relaxed">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.12em] text-muted">{execution.label}</div>
+              <div className="text-[11px] uppercase tracking-[0.12em] text-muted">{execution.short_label}</div>
               <h3 className="mt-1 text-[20px] font-semibold tracking-[-0.02em]">{angle.title}</h3>
             </div>
             <button type="button" onClick={onClose} aria-label="Close" className="h-9 rounded-lg border border-line px-3 text-[13px]">
@@ -497,15 +502,15 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
             <Field label="Why this angle">
               <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
               <p className="mt-1 text-muted">
-                {angle.evidence.source_file.replace("inputs/", "")} · {angle.evidence.section}
-                {angle.evidence.source_url ? ` · ${angle.evidence.source_url}` : " · no original URL supplied"}
+                Source: {angle.evidence.citation.label}
+                {angle.evidence.citation.url ? ` · ${angle.evidence.citation.url}` : ""}
               </p>
               <p className="mt-2">{angle.hypothesis}</p>
               <p className="mt-2 text-muted">
                 Reading (synthesis, not independently verified): {angle.evidence.reading}
               </p>
               <p className="mt-2 text-muted">
-                Proposed metric: {angle.measurement.metric}. {angle.measurement.definition_note}
+                Proposed success metric: {angle.measurement.metric}. {angle.measurement.definition_note}
               </p>
             </Field>
             <details className="rounded-lg border border-line bg-ground p-3">
@@ -588,9 +593,6 @@ function HowItWasBuilt({ batch }: { batch: Batch }) {
           <p className="mt-2 text-muted">Committed the app to GitHub and deployed it to Vercel.</p>
         </li>
       </ol>
-      <p className="mt-4 text-[12px] text-muted">
-        Build setup: Devin Standard on the Pro plan, with $25 in additional overage credit purchased.
-      </p>
       <div className="mt-6 border-t border-line pt-4 text-[12px] text-muted">
         <p>
           Execution records: strategy {batch.pipeline[0].model}, direction and critique {batch.pipeline[1].model}, one rejected

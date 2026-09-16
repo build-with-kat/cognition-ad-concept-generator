@@ -63,6 +63,11 @@ const research = [
     source_url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
     implication: "Both self-serve statics keep the merge decision with the developer instead of promising autonomy.",
     label: "OBS",
+    citation: {
+      label: "Simon Willison — Code proven to work",
+      url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
+      note: null,
+    },
   },
   {
     id: "format",
@@ -74,6 +79,11 @@ const research = [
     source_url: null,
     implication: "All four concepts are statics with a direct site CTA rather than a comment bridge.",
     label: "OBS",
+    citation: {
+      label: "Ad-library review \u00b7 September 2026",
+      url: null,
+      note: "Own sample: ~110 active Cognition cards and ~650 competitor cards reviewed in one pass. A sample of live inventory, not performance data.",
+    },
   },
   {
     id: "proof",
@@ -85,6 +95,11 @@ const research = [
     source_url: "https://devin.ai/customers/fefundinfo",
     implication: "The enterprise angle gets one named implementation at estate scale (B2) alongside the pain-led execution (B1).",
     label: "REPORTED",
+    citation: {
+      label: "FE fundinfo \u2014 Devin customer story",
+      url: "https://devin.ai/customers/fefundinfo",
+      note: null,
+    },
   },
 ];
 
@@ -95,6 +110,8 @@ const angles = [
     title: "Hand off the ticket. Review the PR.",
     audience: "Developers weighing whether to delegate defined engineering tasks inside existing repositories.",
     insight: "Developers will delegate defined chores only if the finished work comes back inspectable and they keep the merge.",
+    rationale:
+      "Developers want to hand off defined tasks while retaining control over the resulting changes. These ads test a concrete task against a review-focused message.",
     hypothesis:
       "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
     evidence: {
@@ -105,6 +122,7 @@ const angles = [
       reading:
         "It evidences a practitioner norm that the human stays accountable for proving code works, which is why 'you keep the merge' should resonate; it says nothing about whether Devin's output is correct.",
       source_url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
+      citation: { label: "Simon Willison \u2014 Code proven to work", url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/" },
     },
     measurement: {
       metric: "Cost per activated signup",
@@ -116,6 +134,7 @@ const angles = [
         id: "A1",
         angle_id: "self-serve-handoff",
         label: "A1 · The dependency update",
+        short_label: "Dependency update",
         approach: "task-led",
         concept_line: "One named chore is the focal point; the accent colour carries the task itself.",
         ad: {
@@ -150,6 +169,7 @@ const angles = [
         id: "A2",
         angle_id: "self-serve-handoff",
         label: "A2 · Show me the diff",
+        short_label: "Review and control",
         approach: "review/control-led",
         concept_line: "Call and response across a rule: Devin's action on the left, the developer's decision answering it on the right.",
         ad: {
@@ -188,6 +208,8 @@ const angles = [
     title: "One playbook. Many repos.",
     audience: "Engineering and platform leaders accountable for maintenance spread across a large repository estate.",
     insight: "Maintenance work survives every sprint; leaders need it run across many repos without adding coordination overhead.",
+    rationale:
+      "Recurring maintenance competes with feature development across repositories. These ads pair that problem with FE fundinfo\u2019s documented implementation.",
     hypothesis:
       "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
     evidence: {
@@ -199,6 +221,7 @@ const angles = [
       reading:
         "One named company describing maintenance crowding out feature work supports the pain framing; it is not evidence that this is universal or that Devin clears such backlogs.",
       source_url: "https://devin.ai/customers/fefundinfo",
+      citation: { label: "FE fundinfo \u2014 Devin customer story", url: "https://devin.ai/customers/fefundinfo" },
     },
     measurement: {
       metric: "Cost per qualified meeting",
@@ -210,6 +233,7 @@ const angles = [
         id: "B1",
         angle_id: "enterprise-playbook",
         label: "B1 · The cleanup that stayed",
+        short_label: "The cleanup that stayed",
         approach: "pain-led",
         concept_line: "Typographic contrast: the shipped line sits light on the ground, the unfinished work outweighs it inside an ink band.",
         ad: {
@@ -244,6 +268,7 @@ const angles = [
         id: "B2",
         angle_id: "enterprise-playbook",
         label: "B2 · FE fundinfo playbooks",
+        short_label: "FE fundinfo playbooks",
         approach: "customer-proof-led",
         concept_line: "The reported number is the artwork, with the customer's name attached directly above it.",
         ad: {
@@ -284,7 +309,7 @@ const angles = [
 const batch = {
   schema: "devin-creative-lab/3",
   generated_at: new Date().toISOString(),
-  product: { title: "Devin Creative Lab", subtitle: "Independent project · Built with Devin" },
+  product: { title: "Cognition Creative Lab", subtitle: "Independent project · Built with Devin" },
   scope: {
     angles: 2,
     executions: 4,
