@@ -1,0 +1,341 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "api": "responses",
+  "generated_at": "2026-09-16T17:54:45.997Z",
+  "image_inputs": [
+    {
+      "file": "brand-refs/Cognition_PrimaryLockup_Black.png",
+      "role": "official Cognition lockup"
+    },
+    {
+      "file": "brand-refs/Cognition_PrimaryLockup_White.png",
+      "role": "official Cognition lockup"
+    }
+  ],
+  "usage": {
+    "input_tokens": 5037,
+    "input_tokens_details": {
+      "cache_write_tokens": 5034,
+      "cached_tokens": 0
+    },
+    "output_tokens": 7288,
+    "output_tokens_details": {
+      "reasoning_tokens": 667
+    },
+    "total_tokens": 12325
+  },
+  "batch_direction": "The five statics share warm off-white surfaces, restrained grotesque typography, generous margins, a plain DEVIN wordmark, and one small blue mono tag. The heroes introduce a single abstract line motif each; the volume concepts differentiate through right alignment, an offset black enterprise composition, and a stepped headline. Use the permitted DEVIN wordmark throughout rather than reconstructing a symbol that conflicts with the supplied official lockups.",
+  "specs": [
+    {
+      "id": "assign-walk-away-review",
+      "tier": "hero",
+      "concept_line": "A left-aligned two-line headline sits above a single stepped progression line, with self-serve pricing quietly anchored below.",
+      "layout": {
+        "grid": "1080x1080 canvas; origin at top left. Use 108px horizontal margins and a 12-column grid of 50px columns with 24px gutters, spanning x=108–972. All coordinates describe top-left positions unless stated otherwise.",
+        "headline": {
+          "text": "Assign the ticket. Review the PR.",
+          "position": "x=108, y=296, width=864, height=188; left aligned. Break after 'ticket.'; line height 94px.",
+          "size_px": 80,
+          "weight": "medium",
+          "tracking": "tight",
+          "max_lines": 2
+        },
+        "subline": {
+          "text": "Free → Pro $20/mo",
+          "position": "x=108, y=728, width=650, height=40; left aligned.",
+          "size_px": 28
+        },
+        "tag": {
+          "text": "FREE",
+          "color": "#317CFF",
+          "position": "x=108, y=212; 18px mono, 24px line height, no container."
+        },
+        "mark": {
+          "asset": "DEVIN wordmark",
+          "position": "x=108, y=140; plain uppercase text in black, 34px visible cap height.",
+          "height_px": 34,
+          "clearspace_px": 34
+        },
+        "motif": "One continuous abstract progression line in #191919, 2px stroke, square caps: vertices (108,610), (414,610), (414,654), (720,654). No arrowheads, dots, icons, labels, cards, shadows, or implied product interface."
+      },
+      "palette": {
+        "ground": "#F7F6F5",
+        "ink": "#191919",
+        "accent": "#317CFF",
+        "accent_usage": "Only the FREE tag; wordmark is #000000."
+      },
+      "type_system": {
+        "display": "clean grotesque sans, Inter-like",
+        "mono": "Geist Mono / IBM Plex Mono",
+        "notes": "Use Inter Medium for the headline with -2% tracking, Inter Regular for the subline, and Geist Mono Regular for the tag. DEVIN is plain Inter Medium uppercase, not a newly drawn logo. No serif styling."
+      },
+      "safe_zones": "1080x1080: no critical type in y=0–107 or y=972–1079. 1080x1350: no critical type in y=0–134 or y=1215–1349. All wordmarks and tags count as critical type.",
+      "ratio_adaptation": {
+        "1080x1080": "Preserve the specified positions, 108px side margins, left alignment, and fixed two-line headline.",
+        "1080x1350": "Translate every element, including the complete motif, downward by exactly 135px. Keep all widths, sizes, and internal spacing unchanged; the additional height becomes 135px of extra empty space above and below the composition."
+      },
+      "negative_space_pct": 65,
+      "brand_lock_checklist": [
+        "Background is uniformly #F7F6F5.",
+        "Headline reads exactly 'Assign the ticket. Review the PR.' and occupies two left-aligned lines.",
+        "Subline reads exactly 'Free → Pro $20/mo'.",
+        "FREE is the only blue element.",
+        "DEVIN appears once as a black plain-text wordmark with at least 34px clearspace.",
+        "Exactly one thin stepped line appears; it has no arrowheads, icons, or labels.",
+        "No critical type enters the specified top or bottom exclusion bands.",
+        "No additional copy, CTA, logo, screenshot, photograph, or watermark appears.",
+        "Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears."
+      ],
+      "render_prompt": "Create an editorial typographic poster, restrained and product-led rather than magazine-styled, on a 1080x1080 canvas. Use a completely flat #F7F6F5 background. Coordinates are measured from the top left. The only visible text is \"DEVIN\", \"FREE\", \"Assign the ticket. Review the PR.\", and \"Free → Pro $20/mo\"; no other text may appear. Set DEVIN as plain Inter Medium uppercase in #000000 at x108 y140 with a visible cap height of 34px and at least 34px clearspace. Do not draw any symbol or reconstruct the supplied Cognition lockup. Set FREE at x108 y212 in 18px Geist Mono Regular, 24px line height, #317CFF, without a box. Set the headline at x108 y296, width 864px, in 80px Inter Medium, #191919, -2% tracking, 94px line height; use exactly two lines, breaking after \"Assign the ticket.\". Set the subline at x108 y728 in 28px Inter Regular, #191919. Draw one continuous 2px #191919 line through (108,610), (414,610), (414,654), and (720,654), using square caps; no other non-type motif. Keep the composition sparse. No critical type may enter y0–107 or y972–1079. For a 1080x1350 output, shift every element down exactly 135px without scaling; no critical type may enter y0–134 or y1215–1349. Do not add a CTA or proof claim. Forbid neon robots, mascots, humanoid figures, purple or magenta gradients, cyberpunk glow, fake IDE windows, lorem code, stock office photography, extra logos, watermarks, and misspellings. If any brand-lock check fails, reject and regenerate once; if the regenerated image still fails, fail the concept."
+    },
+    {
+      "id": "inspect-the-receipt",
+      "tier": "hero",
+      "concept_line": "A centered headline is held within a single open inspection bracket, with a centered pricing line and a low-positioned DEVIN wordmark.",
+      "layout": {
+        "grid": "1080x1080 canvas; 108px outer horizontal margins. Use a central axis at x=540 and a centered 720px text measure from x=180 to x=900. Motif may extend to x=144; all typography remains within the text measure.",
+        "headline": {
+          "text": "Diff, CI, recording. Then you merge.",
+          "position": "x=180, y=354, width=720, height=172; centered. Break after 'recording.'; line height 86px.",
+          "size_px": 70,
+          "weight": "regular",
+          "tracking": "tight",
+          "max_lines": 2
+        },
+        "subline": {
+          "text": "Pro $20/mo",
+          "position": "x=180, y=618, width=720, height=40; centered.",
+          "size_px": 28
+        },
+        "tag": {
+          "text": "PRO",
+          "color": "#317CFF",
+          "position": "Centered on x=540, y=218; 18px mono, 24px line height, no container."
+        },
+        "mark": {
+          "asset": "DEVIN wordmark",
+          "position": "Horizontally centered on x=540, y=860; plain uppercase text in black, 32px visible cap height.",
+          "height_px": 32,
+          "clearspace_px": 32
+        },
+        "motif": "One open left inspection bracket in #191919, 2px stroke, square caps: continuous path (204,318), (144,318), (144,558), (204,558). This is an abstract typographic framing device, not a receipt, screenshot, product control, or evidence artifact."
+      },
+      "palette": {
+        "ground": "#F7F6F5",
+        "ink": "#191919",
+        "accent": "#317CFF",
+        "accent_usage": "Only the PRO tag; wordmark is #000000."
+      },
+      "type_system": {
+        "display": "clean grotesque sans, Inter-like",
+        "mono": "Geist Mono / IBM Plex Mono",
+        "notes": "Inter Regular headline with -2% tracking; Inter Regular subline; Geist Mono Regular tag. Set DEVIN in plain Inter Medium uppercase. The bracket must not imply a fabricated Desktop interface."
+      },
+      "safe_zones": "1080x1080: no critical type in y=0–107 or y=972–1079. 1080x1350: no critical type in y=0–134 or y=1215–1349. All wordmarks and tags count as critical type.",
+      "ratio_adaptation": {
+        "1080x1080": "Maintain the centered text stack, asymmetric bracket, and isolated bottom-center wordmark.",
+        "1080x1350": "Translate all elements downward by 135px without scaling. The additional 270px is divided equally into empty space above and below; preserve the bracket geometry and the wordmark's separation from the text stack."
+      },
+      "negative_space_pct": 68,
+      "brand_lock_checklist": [
+        "Background is uniformly #F7F6F5.",
+        "Headline reads exactly 'Diff, CI, recording. Then you merge.' with the specified centered two-line break.",
+        "Subline reads exactly 'Pro $20/mo'.",
+        "PRO is the only blue element.",
+        "DEVIN is centered below the main composition and has at least 32px clearspace.",
+        "Exactly one open left bracket appears; no screenshot or fabricated evidence artifact appears.",
+        "No critical type enters the specified top or bottom exclusion bands.",
+        "No additional copy, CTA, logo, photograph, or watermark appears.",
+        "Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears."
+      ],
+      "render_prompt": "Create a quiet editorial typographic poster on a 1080x1080 canvas, using clean product typography rather than ornate editorial styling. The background is uniformly #F7F6F5. The only visible text is \"PRO\", \"Diff, CI, recording. Then you merge.\", \"Pro $20/mo\", and \"DEVIN\"; no other text may appear. Center PRO on x540 at y218 in 18px Geist Mono Regular, 24px line height, #317CFF, without a container. Center the headline inside x180 y354 width720 height172, in 70px Inter Regular, #191919, -2% tracking, 86px line height. Use exactly two lines, breaking after \"Diff, CI, recording.\". Center the subline in x180 y618 width720 using 28px Inter Regular in #191919. Center DEVIN on x540 at y860 as plain Inter Medium uppercase in #000000, with 32px visible cap height and at least 32px clearspace. Do not draw a logo symbol. Draw exactly one open left bracket as a continuous 2px #191919 path through (204,318), (144,318), (144,558), and (204,558), with square caps. It is only an abstract framing device; do not render a receipt, code, CI badge, player control, or interface. No critical type may enter y0–107 or y972–1079. For 1080x1350, translate all elements down by exactly 135px without scaling; keep critical type out of y0–134 and y1215–1349. No CTA or additional proof language. Forbid neon robots, mascots, humanoid figures, purple or magenta gradients, cyberpunk glow, fake IDE windows, lorem code, stock office photography, extra logos, watermarks, and misspellings. If any brand-lock check fails, reject and regenerate once; if the regenerated image still fails, fail the concept."
+    },
+    {
+      "id": "stop-rationing-quota",
+      "tier": "volume",
+      "concept_line": "An oversized right-aligned pricing headline dominates the square while a small upper-left wordmark creates a diagonal counterweight.",
+      "layout": {
+        "grid": "1080x1080 canvas; 108px left and right margins. Use x=972 as the primary right-alignment axis and x=108 as the isolated wordmark axis. Main headline measure spans x=108–972.",
+        "headline": {
+          "text": "Pro $20. Max $200. No rationing.",
+          "position": "x=108, y=322, width=864, height=342; right aligned. Lines are 'Pro $20.', 'Max $200.', and 'No rationing.'; line height 114px.",
+          "size_px": 100,
+          "weight": "medium",
+          "tracking": "tight",
+          "max_lines": 3
+        },
+        "subline": {
+          "text": "Included quota, then usage",
+          "position": "x=108, y=728, width=864, height=40; right aligned to x=972.",
+          "size_px": 28
+        },
+        "tag": {
+          "text": "MAX",
+          "color": "#317CFF",
+          "position": "Right aligned to x=972, y=224; 18px mono, 24px line height, no container."
+        },
+        "mark": {
+          "asset": "DEVIN wordmark",
+          "position": "x=108, y=148; plain uppercase text in black, 38px visible cap height.",
+          "height_px": 38,
+          "clearspace_px": 38
+        },
+        "motif": "none"
+      },
+      "palette": {
+        "ground": "#F7F6F5",
+        "ink": "#191919",
+        "accent": "#317CFF",
+        "accent_usage": "Only the MAX tag; wordmark is #000000."
+      },
+      "type_system": {
+        "display": "clean grotesque sans, Inter-like",
+        "mono": "Geist Mono / IBM Plex Mono",
+        "notes": "Use Inter Medium throughout the headline, including prices, with -2% tracking. Do not isolate numbers in badges or add monthly suffixes to the locked headline. Subline is Inter Regular; tag is Geist Mono Regular; DEVIN is plain Inter Medium uppercase."
+      },
+      "safe_zones": "1080x1080: no critical type in y=0–107 or y=972–1079. 1080x1350: no critical type in y=0–134 or y=1215–1349. All wordmarks and tags count as critical type.",
+      "ratio_adaptation": {
+        "1080x1080": "Keep the three-line headline and subline flush right; preserve the detached upper-left wordmark.",
+        "1080x1350": "Move all elements downward by exactly 135px. Keep the headline at 100px and the right-alignment axis at x=972; the extra height is empty space distributed equally above and below."
+      },
+      "negative_space_pct": 60,
+      "brand_lock_checklist": [
+        "Background is uniformly #F7F6F5.",
+        "Headline reads exactly 'Pro $20. Max $200. No rationing.' on three right-aligned lines.",
+        "All three headline lines use the same font size and weight.",
+        "Subline reads exactly 'Included quota, then usage' and is flush right.",
+        "MAX is the only blue element.",
+        "DEVIN appears in the upper left with at least 38px clearspace.",
+        "No non-type motif, pricing card, divider, badge, or icon appears.",
+        "No critical type enters the specified top or bottom exclusion bands.",
+        "No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears."
+      ],
+      "render_prompt": "Create a pure-type editorial typographic poster on a 1080x1080 canvas. Use a flat #F7F6F5 background, #191919 headline and subline, #000000 DEVIN wordmark, and #317CFF only for the small MAX tag. The only visible text is \"DEVIN\", \"MAX\", \"Pro $20. Max $200. No rationing.\", and \"Included quota, then usage\"; no other text may appear. Place DEVIN at x108 y148 as plain Inter Medium uppercase, 38px visible cap height, with at least 38px clearspace; do not draw a symbol. Place MAX right aligned to x972 at y224 in 18px Geist Mono Regular with 24px line height and no container. Set the headline within x108 y322 width864 height342, right aligned to x972, in 100px Inter Medium with -2% tracking and 114px line height. Use exactly three lines: \"Pro $20.\", \"Max $200.\", \"No rationing.\". Keep every headline line the same size and weight. Set the subline at y728 inside x108–972, right aligned, in 28px Inter Regular. Do not add monthly suffixes, an unlimited badge, or any pricing information beyond the allowed text. No motifs, rules, cards, icons, or buttons. No critical type may enter y0–107 or y972–1079. For 1080x1350, move everything down exactly 135px without scaling; keep critical type out of y0–134 and y1215–1349. Forbid neon robots, mascots, humanoid figures, purple or magenta gradients, cyberpunk glow, fake IDE windows, lorem code, stock office photography, extra logos, watermarks, and misspellings. If any brand-lock check fails, reject and regenerate once; if the regenerated image still fails, fail the concept."
+    },
+    {
+      "id": "bounded-autonomy-gate",
+      "tier": "volume",
+      "concept_line": "A black enterprise contrast frame separates a quiet left branding rail from a compact, right-offset three-line headline.",
+      "layout": {
+        "grid": "1080x1080 canvas; 108px outer horizontal margins. Left branding rail spans x=108–286. Leave x=286–359 empty as a 74px gutter. Main text column spans x=360–972, width 612px. Do not draw the grid or a rail divider.",
+        "headline": {
+          "text": "Permissions, sandbox, audit trail.",
+          "position": "x=360, y=336, width=612, height=252; left aligned. Lines are 'Permissions,', 'sandbox,', and 'audit trail.'; line height 84px.",
+          "size_px": 68,
+          "weight": "regular",
+          "tracking": "tight",
+          "max_lines": 3
+        },
+        "subline": {
+          "text": "Governed agent fleets",
+          "position": "x=360, y=656, width=612, height=40; left aligned.",
+          "size_px": 28
+        },
+        "tag": {
+          "text": "ENTERPRISE",
+          "color": "#317CFF",
+          "position": "x=108, y=148; 18px mono, 24px line height, no container."
+        },
+        "mark": {
+          "asset": "DEVIN wordmark",
+          "position": "x=108, y=854; plain uppercase text in white, 30px visible cap height.",
+          "height_px": 30,
+          "clearspace_px": 30
+        },
+        "motif": "none"
+      },
+      "palette": {
+        "ground": "#000000",
+        "ink": "#FFFFFF",
+        "accent": "#317CFF",
+        "accent_usage": "Only the ENTERPRISE tag; all other visible type is #FFFFFF."
+      },
+      "type_system": {
+        "display": "clean grotesque sans, Inter-like",
+        "mono": "Geist Mono / IBM Plex Mono",
+        "notes": "Inter Regular headline with -2% tracking and Inter Regular subline. Geist Mono Regular tag. DEVIN is plain Inter Medium uppercase reversed in white; do not redraw or recolor an official symbol."
+      },
+      "safe_zones": "1080x1080: no critical type in y=0–107 or y=972–1079. 1080x1350: no critical type in y=0–134 or y=1215–1349. All wordmarks and tags count as critical type.",
+      "ratio_adaptation": {
+        "1080x1080": "Preserve the empty left rail between the upper tag and lower wordmark; headline remains offset to x=360.",
+        "1080x1350": "Translate every element down exactly 135px. Keep both column widths and all font sizes fixed; add the extra height as 135px of empty black above and below."
+      },
+      "negative_space_pct": 69,
+      "brand_lock_checklist": [
+        "Background is uniformly #000000, without charcoal panels or gradients.",
+        "Headline reads exactly 'Permissions, sandbox, audit trail.' on the specified three left-aligned lines.",
+        "Headline begins at x=360 rather than the left outer margin.",
+        "Subline reads exactly 'Governed agent fleets'.",
+        "ENTERPRISE is the only blue element; all remaining text is white.",
+        "DEVIN appears in the lower-left rail with at least 30px clearspace.",
+        "No motif, shield, lock icon, interface, divider, or certification badge appears.",
+        "No critical type enters the specified top or bottom exclusion bands.",
+        "No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears."
+      ],
+      "render_prompt": "Create an intentionally black enterprise editorial typographic poster on a 1080x1080 canvas. This is a restrained contrast frame, not AI dark-mode styling. Use a uniform #000000 background and #FFFFFF for the headline, subline, and DEVIN wordmark. Use #317CFF only for ENTERPRISE. The only visible text is \"ENTERPRISE\", \"Permissions, sandbox, audit trail.\", \"Governed agent fleets\", and \"DEVIN\"; no other text may appear. Place ENTERPRISE at x108 y148 in 18px Geist Mono Regular, 24px line height, no container. Leave the left rail largely empty. Set the headline at x360 y336, width612 height252, left aligned, in 68px Inter Regular with -2% tracking and 84px line height. Use exactly three lines: \"Permissions,\", \"sandbox,\", \"audit trail.\". Set the subline at x360 y656 in 28px Inter Regular. Place DEVIN at x108 y854 as plain white Inter Medium uppercase with 30px visible cap height and at least 30px clearspace. Do not draw a symbol, vertical divider, security icon, certification badge, interface, motif, or CTA. No critical type may enter y0–107 or y972–1079. For 1080x1350, translate everything down exactly 135px without scaling; keep critical type out of y0–134 and y1215–1349. Forbid neon robots, mascots, humanoid figures, purple or magenta gradients, cyberpunk glow, fake IDE windows, lorem code, stock office photography, extra logos, watermarks, and misspellings. If any brand-lock check fails, reject and regenerate once; if the regenerated image still fails, fail the concept."
+    },
+    {
+      "id": "one-playbook-many-repos",
+      "tier": "volume",
+      "concept_line": "Three headline lines step progressively to the right across an off-white field, balanced by an upper-right DEVIN wordmark and a workload-pricing subline.",
+      "layout": {
+        "grid": "1080x1080 canvas; 108px horizontal margins. Use three headline start axes at x=108, x=204, and x=300. The shared right boundary is x=972. Upper-left tag and upper-right wordmark form a horizontal header; no grid lines are visible.",
+        "headline": {
+          "text": "One playbook. Many repos. One fleet.",
+          "position": "One headline block with three explicit line origins: 'One playbook.' at x=108, y=340, width=864; 'Many repos.' at x=204, y=448, width=768; 'One fleet.' at x=300, y=556, width=672. Each line is left aligned at its own origin with a 94px line box.",
+          "size_px": 78,
+          "weight": "medium",
+          "tracking": "tight",
+          "max_lines": 3
+        },
+        "subline": {
+          "text": "Workload, not seats",
+          "position": "x=300, y=746, width=672, height=40; left aligned with the third headline line.",
+          "size_px": 28
+        },
+        "tag": {
+          "text": "ENTERPRISE",
+          "color": "#317CFF",
+          "position": "x=108, y=160; 18px mono, 24px line height, no container."
+        },
+        "mark": {
+          "asset": "DEVIN wordmark",
+          "position": "Right edge at x=972, top y=148; plain uppercase text in black, 36px visible cap height.",
+          "height_px": 36,
+          "clearspace_px": 36
+        },
+        "motif": "none"
+      },
+      "palette": {
+        "ground": "#F7F6F5",
+        "ink": "#191919",
+        "accent": "#317CFF",
+        "accent_usage": "Only the ENTERPRISE tag; wordmark is #000000."
+      },
+      "type_system": {
+        "display": "clean grotesque sans, Inter-like",
+        "mono": "Geist Mono / IBM Plex Mono",
+        "notes": "All headline lines use Inter Medium at the same size with -2% tracking. The stepped arrangement is typography, not a diagram: no connector lines, repo icons, nodes, or boxes. Use Inter Regular for the subline, Geist Mono Regular for the tag, and plain Inter Medium uppercase for DEVIN."
+      },
+      "safe_zones": "1080x1080: no critical type in y=0–107 or y=972–1079. 1080x1350: no critical type in y=0–134 or y=1215–1349. All wordmarks and tags count as critical type.",
+      "ratio_adaptation": {
+        "1080x1080": "Preserve the 96px horizontal step between successive headline lines, top-right wordmark, and third-line-aligned subline.",
+        "1080x1350": "Translate all elements down exactly 135px; headline line origins become y=475, 583, and 691. Keep the horizontal steps, font sizes, and internal spacing unchanged; extra height becomes equal empty space above and below."
+      },
+      "negative_space_pct": 63,
+      "brand_lock_checklist": [
+        "Background is uniformly #F7F6F5.",
+        "Headline reads exactly 'One playbook. Many repos. One fleet.' on three lines.",
+        "Successive headline lines start at x=108, x=204, and x=300.",
+        "All headline lines use the same size and weight.",
+        "Subline reads exactly 'Workload, not seats' and aligns with the third headline line.",
+        "ENTERPRISE is the only blue element; DEVIN is black at the upper right with at least 36px clearspace.",
+        "No motif, repo icon, connector, node, divider, box, or customer logo appears.",
+        "No critical type enters the specified top or bottom exclusion bands.",
+        "No extra text, CTA, watermark, serif, imagery, gradient, or glow appears."
+      ],
+      "render_prompt": "Create a sparse editorial typographic poster on a 1080x1080 canvas, using clean engineering-product typography. Use a uniform #F7F6F5 background. Use #191919 for the headline and subline, #000000 for DEVIN, and #317CFF only for ENTERPRISE. The only visible text is \"ENTERPRISE\", \"DEVIN\", \"One playbook. Many repos. One fleet.\", and \"Workload, not seats\"; no other text may appear. Place ENTERPRISE at x108 y160 in 18px Geist Mono Regular, 24px line height, without a container. Set DEVIN as plain Inter Medium uppercase with its right edge at x972 and top at y148, 36px visible cap height, and at least 36px clearspace; no symbol. Construct one three-line headline in 78px Inter Medium with -2% tracking and identical size and weight on all lines. Place \"One playbook.\" at x108 y340, \"Many repos.\" at x204 y448, and \"One fleet.\" at x300 y556. Each line has a 94px line box and is left aligned at its specified origin. The headline steps horizontally by exactly 96px per line. Set \"Workload, not seats\" at x300 y746 in 28px Inter Regular. Do not convert the typography into a diagram; add no lines, connectors, repo icons, nodes, cards, motifs, or CTA. No critical type may enter y0–107 or y972–1079. For 1080x1350, translate every element down exactly 135px without scaling; headline y positions become 475, 583, and 691, and critical type must remain outside y0–134 and y1215–1349. Forbid neon robots, mascots, humanoid figures, purple or magenta gradients, cyberpunk glow, fake IDE windows, lorem code, stock office photography, extra logos, watermarks, and misspellings. If any brand-lock check fails, reject and regenerate once; if the regenerated image still fails, fail the concept."
+    }
+  ]
+}

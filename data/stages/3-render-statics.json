@@ -1,0 +1,839 @@
+{
+  "hero_model": "gpt-image-2.5-sunburst",
+  "volume_model": "gpt-image-2.5-flare",
+  "judge_model": "gpt-6-astra",
+  "provider": "openai",
+  "generated_at": "2026-09-16T18:05:07.160Z",
+  "ratios": [
+    {
+      "output": "1080x1080",
+      "rendered_at": "1088x1088"
+    },
+    {
+      "output": "1080x1350",
+      "rendered_at": "1088x1360"
+    }
+  ],
+  "usage": [
+    {
+      "stage": "image",
+      "id": "assign-walk-away-review",
+      "ratio": "1080x1080",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "input_tokens": 1014,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1014
+      },
+      "output_tokens": 1834,
+      "output_tokens_details": {
+        "image_tokens": 1834,
+        "text_tokens": 0
+      },
+      "total_tokens": 2848
+    },
+    {
+      "stage": "image",
+      "id": "assign-walk-away-review",
+      "ratio": "1080x1350",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "input_tokens": 1038,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1038
+      },
+      "output_tokens": 1587,
+      "output_tokens_details": {
+        "image_tokens": 1587,
+        "text_tokens": 0
+      },
+      "total_tokens": 2625
+    },
+    {
+      "stage": "image",
+      "id": "inspect-the-receipt",
+      "ratio": "1080x1080",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "input_tokens": 1023,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1023
+      },
+      "output_tokens": 1834,
+      "output_tokens_details": {
+        "image_tokens": 1834,
+        "text_tokens": 0
+      },
+      "total_tokens": 2857
+    },
+    {
+      "stage": "image",
+      "id": "inspect-the-receipt",
+      "ratio": "1080x1350",
+      "attempt": 1,
+      "model": "gpt-image-2.5-sunburst",
+      "input_tokens": 1048,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1048
+      },
+      "output_tokens": 1587,
+      "output_tokens_details": {
+        "image_tokens": 1587,
+        "text_tokens": 0
+      },
+      "total_tokens": 2635
+    },
+    {
+      "stage": "image",
+      "id": "stop-rationing-quota",
+      "ratio": "1080x1080",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 974,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 974
+      },
+      "output_tokens": 816,
+      "output_tokens_details": {
+        "image_tokens": 816,
+        "text_tokens": 0
+      },
+      "total_tokens": 1790
+    },
+    {
+      "stage": "image",
+      "id": "stop-rationing-quota",
+      "ratio": "1080x1350",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 995,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 995
+      },
+      "output_tokens": 1587,
+      "output_tokens_details": {
+        "image_tokens": 1587,
+        "text_tokens": 0
+      },
+      "total_tokens": 2582
+    },
+    {
+      "stage": "image",
+      "id": "bounded-autonomy-gate",
+      "ratio": "1080x1080",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 930,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 930
+      },
+      "output_tokens": 816,
+      "output_tokens_details": {
+        "image_tokens": 816,
+        "text_tokens": 0
+      },
+      "total_tokens": 1746
+    },
+    {
+      "stage": "image",
+      "id": "bounded-autonomy-gate",
+      "ratio": "1080x1350",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 942,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 942
+      },
+      "output_tokens": 1587,
+      "output_tokens_details": {
+        "image_tokens": 1587,
+        "text_tokens": 0
+      },
+      "total_tokens": 2529
+    },
+    {
+      "stage": "image",
+      "id": "one-playbook-many-repos",
+      "ratio": "1080x1080",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 1075,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1075
+      },
+      "output_tokens": 816,
+      "output_tokens_details": {
+        "image_tokens": 816,
+        "text_tokens": 0
+      },
+      "total_tokens": 1891
+    },
+    {
+      "stage": "image",
+      "id": "one-playbook-many-repos",
+      "ratio": "1080x1080",
+      "attempt": 2,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 1075,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1075
+      },
+      "output_tokens": 816,
+      "output_tokens_details": {
+        "image_tokens": 816,
+        "text_tokens": 0
+      },
+      "total_tokens": 1891
+    },
+    {
+      "stage": "image",
+      "id": "one-playbook-many-repos",
+      "ratio": "1080x1350",
+      "attempt": 1,
+      "model": "gpt-image-2.5-flare",
+      "input_tokens": 1097,
+      "input_tokens_details": {
+        "image_tokens": 0,
+        "text_tokens": 1097
+      },
+      "output_tokens": 1587,
+      "output_tokens_details": {
+        "image_tokens": 1587,
+        "text_tokens": 0
+      },
+      "total_tokens": 2684
+    }
+  ],
+  "results": [
+    {
+      "id": "assign-walk-away-review",
+      "tier": "hero",
+      "image_model": "gpt-image-2.5-sunburst",
+      "status": "passed",
+      "renders": [
+        {
+          "ratio": "1080x1080",
+          "file": "/ads/assign-walk-away-review-1080x1080.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "Visually consistent with a uniform warm off-white; exact hex is not visually verifiable."
+              },
+              {
+                "item": "2. Headline reads exactly 'Assign the ticket. Review the PR.' and occupies two left-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation appear on two left-aligned lines."
+              },
+              {
+                "item": "3. Subline reads exactly 'Free → Pro $20/mo'.",
+                "pass": true,
+                "note": "Subline matches exactly."
+              },
+              {
+                "item": "4. FREE is the only blue element.",
+                "pass": true,
+                "note": "Only FREE appears in blue."
+              },
+              {
+                "item": "5. DEVIN appears once as a black plain-text wordmark with at least 34px clearspace.",
+                "pass": true,
+                "note": "One black plain-text DEVIN wordmark has ample visible clearspace; exact pixels are not visually verifiable."
+              },
+              {
+                "item": "6. Exactly one thin stepped line appears; it has no arrowheads, icons, or labels.",
+                "pass": true,
+                "note": "One thin stepped line appears without adornments."
+              },
+              {
+                "item": "7. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "8. No additional copy, CTA, logo, screenshot, photograph, or watermark appears.",
+                "pass": true,
+                "note": "Only the required copy and DEVIN wordmark appear."
+              },
+              {
+                "item": "9. Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears.",
+                "pass": true,
+                "note": "Typography is clean and visually consistent with the intent; no prohibited styling or imagery appears."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks with correct text and no forbidden elements."
+          }
+        },
+        {
+          "ratio": "1080x1350",
+          "file": "/ads/assign-walk-away-review-1080x1350.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'Assign the ticket. Review the PR.' and occupies two left-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation appear on two left-aligned lines."
+              },
+              {
+                "item": "3. Subline reads exactly 'Free → Pro $20/mo'.",
+                "pass": true,
+                "note": "Subline matches exactly."
+              },
+              {
+                "item": "4. FREE is the only blue element.",
+                "pass": true,
+                "note": "Only FREE appears in blue."
+              },
+              {
+                "item": "5. DEVIN appears once as a black plain-text wordmark with at least 34px clearspace.",
+                "pass": true,
+                "note": "One black plain-text DEVIN wordmark has visibly ample clearspace."
+              },
+              {
+                "item": "6. Exactly one thin stepped line appears; it has no arrowheads, icons, or labels.",
+                "pass": true,
+                "note": "One thin stepped line appears without attached arrowheads, icons, or labels."
+              },
+              {
+                "item": "7. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "8. No additional copy, CTA, logo, screenshot, photograph, or watermark appears.",
+                "pass": true,
+                "note": "Only the required text and stepped line appear."
+              },
+              {
+                "item": "9. Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears.",
+                "pass": true,
+                "note": "Clean typography with no visible prohibited styling or imagery."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "inspect-the-receipt",
+      "tier": "hero",
+      "image_model": "gpt-image-2.5-sunburst",
+      "status": "passed",
+      "renders": [
+        {
+          "ratio": "1080x1080",
+          "file": "/ads/inspect-the-receipt-1080x1080.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'Diff, CI, recording. Then you merge.' with the specified centered two-line break.",
+                "pass": true,
+                "note": "Exact headline, centered on two lines with the break after 'recording.'"
+              },
+              {
+                "item": "3. Subline reads exactly 'Pro $20/mo'.",
+                "pass": true,
+                "note": "Subline matches exactly."
+              },
+              {
+                "item": "4. PRO is the only blue element.",
+                "pass": true,
+                "note": "Only the PRO tag is blue."
+              },
+              {
+                "item": "5. DEVIN is centered below the main composition and has at least 32px clearspace.",
+                "pass": true,
+                "note": "DEVIN is centered below the composition with ample visible clearspace."
+              },
+              {
+                "item": "6. Exactly one open left bracket appears; no screenshot or fabricated evidence artifact appears.",
+                "pass": true,
+                "note": "One open left bracket; no screenshot or evidence artifact."
+              },
+              {
+                "item": "7. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "8. No additional copy, CTA, logo, photograph, or watermark appears.",
+                "pass": true,
+                "note": "Only the required copy and DEVIN wordmark appear."
+              },
+              {
+                "item": "9. Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears.",
+                "pass": true,
+                "note": "Clean typography with no visibly prohibited styling or imagery."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        },
+        {
+          "ratio": "1080x1350",
+          "file": "/ads/inspect-the-receipt-1080x1350.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'Diff, CI, recording. Then you merge.' with the specified centered two-line break.",
+                "pass": true,
+                "note": "Exact wording and punctuation; centered break after 'recording.'"
+              },
+              {
+                "item": "3. Subline reads exactly 'Pro $20/mo'.",
+                "pass": true,
+                "note": "Subline matches exactly."
+              },
+              {
+                "item": "4. PRO is the only blue element.",
+                "pass": true,
+                "note": "Only PRO is blue."
+              },
+              {
+                "item": "5. DEVIN is centered below the main composition and has at least 32px clearspace.",
+                "pass": true,
+                "note": "DEVIN is visibly centered below with ample clearspace."
+              },
+              {
+                "item": "6. Exactly one open left bracket appears; no screenshot or fabricated evidence artifact appears.",
+                "pass": true,
+                "note": "One left bracket; no screenshot or evidence artifact."
+              },
+              {
+                "item": "7. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "8. No additional copy, CTA, logo, photograph, or watermark appears.",
+                "pass": true,
+                "note": "Only the required copy and DEVIN wordmark appear."
+              },
+              {
+                "item": "9. Typography is clean sans and mono; no serif, gradient, glow, mascot, or humanoid appears.",
+                "pass": true,
+                "note": "Clean typography with none of the prohibited styling or imagery."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "stop-rationing-quota",
+      "tier": "volume",
+      "image_model": "gpt-image-2.5-flare",
+      "status": "passed",
+      "renders": [
+        {
+          "ratio": "1080x1080",
+          "file": "/ads/stop-rationing-quota-1080x1080.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'Pro $20. Max $200. No rationing.' on three right-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation appear on three right-aligned lines."
+              },
+              {
+                "item": "3. All three headline lines use the same font size and weight.",
+                "pass": true,
+                "note": "Size and weight appear consistent across all three lines."
+              },
+              {
+                "item": "4. Subline reads exactly 'Included quota, then usage' and is flush right.",
+                "pass": true,
+                "note": "Exact subline appears flush right."
+              },
+              {
+                "item": "5. MAX is the only blue element.",
+                "pass": true,
+                "note": "Only MAX is blue."
+              },
+              {
+                "item": "6. DEVIN appears in the upper left with at least 38px clearspace.",
+                "pass": true,
+                "note": "DEVIN appears in the upper left with ample clearspace."
+              },
+              {
+                "item": "7. No non-type motif, pricing card, divider, badge, or icon appears.",
+                "pass": true,
+                "note": "Only typography appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "No extra text or prohibited visual elements appear."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks with correct text and no forbidden elements."
+          }
+        },
+        {
+          "ratio": "1080x1350",
+          "file": "/ads/stop-rationing-quota-1080x1350.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'Pro $20. Max $200. No rationing.' on three right-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation on three right-aligned lines."
+              },
+              {
+                "item": "3. All three headline lines use the same font size and weight.",
+                "pass": true,
+                "note": "Size and weight appear consistent across all three lines."
+              },
+              {
+                "item": "4. Subline reads exactly 'Included quota, then usage' and is flush right.",
+                "pass": true,
+                "note": "Exact subline, aligned with the headline's right edge."
+              },
+              {
+                "item": "5. MAX is the only blue element.",
+                "pass": true,
+                "note": "Only MAX appears in blue."
+              },
+              {
+                "item": "6. DEVIN appears in the upper left with at least 38px clearspace.",
+                "pass": true,
+                "note": "DEVIN is upper left with visibly ample clearspace."
+              },
+              {
+                "item": "7. No non-type motif, pricing card, divider, badge, or icon appears.",
+                "pass": true,
+                "note": "Only typography appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "No extra text or prohibited visual elements are visible."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bounded-autonomy-gate",
+      "tier": "volume",
+      "image_model": "gpt-image-2.5-flare",
+      "status": "passed",
+      "renders": [
+        {
+          "ratio": "1080x1080",
+          "file": "/ads/bounded-autonomy-gate-1080x1080.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #000000, without charcoal panels or gradients.",
+                "pass": true,
+                "note": "Visually uniform black; no panels or gradients."
+              },
+              {
+                "item": "2. Headline reads exactly 'Permissions, sandbox, audit trail.' on the specified three left-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation on three left-aligned lines."
+              },
+              {
+                "item": "3. Headline begins at x=360 rather than the left outer margin.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "4. Subline reads exactly 'Governed agent fleets'.",
+                "pass": true,
+                "note": "Subline matches exactly."
+              },
+              {
+                "item": "5. ENTERPRISE is the only blue element; all remaining text is white.",
+                "pass": true,
+                "note": "ENTERPRISE is blue; headline, subline, and DEVIN are white."
+              },
+              {
+                "item": "6. DEVIN appears in the lower-left rail with at least 30px clearspace.",
+                "pass": true,
+                "note": "DEVIN sits in the lower-left rail with ample visible clearspace."
+              },
+              {
+                "item": "7. No motif, shield, lock icon, interface, divider, or certification badge appears.",
+                "pass": true,
+                "note": "None appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "Only the required text and DEVIN wordmark appear."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The image passes all visually verifiable checks with correct text and no forbidden elements."
+          }
+        },
+        {
+          "ratio": "1080x1350",
+          "file": "/ads/bounded-autonomy-gate-1080x1350.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #000000, without charcoal panels or gradients.",
+                "pass": true,
+                "note": "Visually uniform black; no panels or gradients."
+              },
+              {
+                "item": "2. Headline reads exactly 'Permissions, sandbox, audit trail.' on the specified three left-aligned lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation on three left-aligned lines."
+              },
+              {
+                "item": "3. Headline begins at x=360 rather than the left outer margin.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "4. Subline reads exactly 'Governed agent fleets'.",
+                "pass": true,
+                "note": "Exact subline appears."
+              },
+              {
+                "item": "5. ENTERPRISE is the only blue element; all remaining text is white.",
+                "pass": true,
+                "note": "ENTERPRISE is blue; headline, subline, and DEVIN are white."
+              },
+              {
+                "item": "6. DEVIN appears in the lower-left rail with at least 30px clearspace.",
+                "pass": true,
+                "note": "DEVIN sits in the lower-left rail with ample visible clearspace."
+              },
+              {
+                "item": "7. No motif, shield, lock icon, interface, divider, or certification badge appears.",
+                "pass": true,
+                "note": "None appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, logo, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "Only required text and the DEVIN wordmark appear."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable Brand-Lock requirements."
+          }
+        }
+      ]
+    },
+    {
+      "id": "one-playbook-many-repos",
+      "tier": "volume",
+      "image_model": "gpt-image-2.5-flare",
+      "status": "passed",
+      "renders": [
+        {
+          "ratio": "1080x1080",
+          "file": "/ads/one-playbook-many-repos-1080x1080.png",
+          "attempts": 2,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "Uniform warm off-white is visually consistent; exact hex is not visually verifiable."
+              },
+              {
+                "item": "2. Headline reads exactly 'One playbook. Many repos. One fleet.' on three lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation appear on three lines."
+              },
+              {
+                "item": "3. Successive headline lines start at x=108, x=204, and x=300.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "4. All headline lines use the same size and weight.",
+                "pass": true,
+                "note": "All three lines visually match in size and weight."
+              },
+              {
+                "item": "5. Subline reads exactly 'Workload, not seats' and aligns with the third headline line.",
+                "pass": true,
+                "note": "Exact subline text is aligned with the third headline line."
+              },
+              {
+                "item": "6. ENTERPRISE is the only blue element; DEVIN is black at the upper right with at least 36px clearspace.",
+                "pass": true,
+                "note": "ENTERPRISE alone is blue; black DEVIN sits upper right with ample clearspace."
+              },
+              {
+                "item": "7. No motif, repo icon, connector, node, divider, box, or customer logo appears.",
+                "pass": true,
+                "note": "None appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "Only the required text and DEVIN wordmark appear."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The static passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        },
+        {
+          "ratio": "1080x1350",
+          "file": "/ads/one-playbook-many-repos-1080x1350.png",
+          "attempts": 1,
+          "brand_lock": {
+            "checks": [
+              {
+                "item": "1. Background is uniformly #F7F6F5.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "2. Headline reads exactly 'One playbook. Many repos. One fleet.' on three lines.",
+                "pass": true,
+                "note": "Exact wording and punctuation appear on three lines."
+              },
+              {
+                "item": "3. Successive headline lines start at x=108, x=204, and x=300.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "4. All headline lines use the same size and weight.",
+                "pass": true,
+                "note": "Headline size and weight appear consistent."
+              },
+              {
+                "item": "5. Subline reads exactly 'Workload, not seats' and aligns with the third headline line.",
+                "pass": true,
+                "note": "Exact subline text is visibly aligned with the third headline line."
+              },
+              {
+                "item": "6. ENTERPRISE is the only blue element; DEVIN is black at the upper right with at least 36px clearspace.",
+                "pass": true,
+                "note": "Only ENTERPRISE is blue; DEVIN is black at upper right with ample clearspace."
+              },
+              {
+                "item": "7. No motif, repo icon, connector, node, divider, box, or customer logo appears.",
+                "pass": true,
+                "note": "None appears."
+              },
+              {
+                "item": "8. No critical type enters the specified top or bottom exclusion bands.",
+                "pass": true,
+                "note": "not visually verifiable"
+              },
+              {
+                "item": "9. No extra text, CTA, watermark, serif, imagery, gradient, or glow appears.",
+                "pass": true,
+                "note": "No extra text or prohibited visual elements appear."
+              }
+            ],
+            "text_rendered_correctly": true,
+            "forbidden_elements": [],
+            "pass": true,
+            "verdict": "The render passes all visually verifiable checks, with correct text and no forbidden elements."
+          }
+        }
+      ]
+    }
+  ]
+}

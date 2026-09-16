@@ -1,0 +1,189 @@
+{
+  "model": "claude-opus-5",
+  "provider": "anthropic",
+  "generated_at": "2026-09-16T17:52:04.803Z",
+  "usage": {
+    "input_tokens": 11742,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 10002,
+    "output_tokens_details": {
+      "thinking_tokens": 6380
+    },
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "research": [
+    {
+      "bullet": "Buyers describe cloud agents as dispatch, not autocomplete: the deliverable is a branch and a PR, so statics should show the artifact, not the editor.",
+      "citation": "a branch and a PR, not a suggestion in your editor.",
+      "section": "§2 Buyers & workflows — A. Self-serve / power developers"
+    },
+    {
+      "bullet": "Engineering leads gate trust on review capacity, not generation volume. Copy should promise something reviewable, never more output.",
+      "citation": "Trust = **review capacity**, not generation volume",
+      "section": "§2 Buyers & workflows — B. Engineering / platform leads"
+    },
+    {
+      "bullet": "The live buyer fork is verifiability: a finished diff to check versus watch-and-interrupt. Task shape, not model quality, picks the tool.",
+      "citation": "Devin hands you a finished diff to check, Claude Code lets you watch and interrupt… I pick by how verifiable the task is.",
+      "section": "§2 Buyers & workflows — B. Engineering / platform leads"
+    },
+    {
+      "bullet": "Enterprise language is governance-shaped: fleets under permissions, sandboxing, audit trail, bounded autonomy. Modernization claims stay qualitative without public proof.",
+      "citation": "governed fleets; permission controls / isolated sandbox / audit trail / bounded autonomy",
+      "section": "§2 Buyers & workflows — C. Enterprise"
+    },
+    {
+      "bullet": "The nearest developer-static format peer runs copy-led, one-job workflow cards. Mirror that density and CTA clarity, not their product nouns.",
+      "citation": "Static/copy-led workflow (Shift+Tab, /delegate, /fleet); Learn More",
+      "section": "§4 Competitor creative patterns"
+    }
+  ],
+  "angles": [
+    {
+      "id": "assign-walk-away-review",
+      "name": "Assign, walk away, review",
+      "track": "self-serve",
+      "icp": "Free → Pro $20 IC developer who owns a ticket queue",
+      "jtbd": "I want to hand off a well-scoped ticket and come back to a finished pull request instead of babysitting an editor.",
+      "insight": "The async dispatcher frame is already how developers describe cloud agents, so the ad reads as category language rather than a vendor promise.",
+      "proof": "The shipped PR: branch, diff, and CI status on a well-scoped ticket, reviewed the next morning",
+      "cta": "Start free",
+      "copy": {
+        "primary": "Assign the ticket. Walk away. Review the PR.\nDevin plans, runs the work, and comes back with a branch and a pull request.\nYou still own the merge.",
+        "headline": "Assign the ticket. Review the PR.",
+        "description": "Ticket to tested PR"
+      },
+      "kill_metric": {
+        "metric": "Outbound CTR on the static",
+        "threshold": "CTR < 0.9% after 12,000 impressions (7 days)",
+        "rationale": "This angle is pure hook clarity, so weak click-through means the dispatcher frame is not landing cold."
+      },
+      "citation": "Assign the ticket. Walk away. Review the PR.",
+      "citation_section": "§5 Rank 1",
+      "avoid": [
+        "fully autonomous senior engineer",
+        "replaces engineers",
+        "invented merge rates or ticket-throughput numbers",
+        "no-coding / idea-to-app framing"
+      ]
+    },
+    {
+      "id": "inspect-the-receipt",
+      "name": "Inspect the receipt",
+      "track": "self-serve",
+      "icp": "Pro $20 IC developer, agent-skeptical, reviews everything before merge",
+      "jtbd": "Before I merge anything an agent wrote, I need to see the diff, the CI run, and what it actually did.",
+      "insight": "Skeptics convert on inspectability, not capability claims, and Desktop is the surface where the session artifacts live.",
+      "proof": "Session artifacts: the diff, CI result, and session recording inside Devin Desktop",
+      "cta": "Download Desktop",
+      "copy": {
+        "primary": "Do not trust the demo. Inspect the proof.\nEvery session leaves a diff, a CI run, and a recording.\nReview it like a sharp intern, then merge.",
+        "headline": "Diff, CI, recording. Then you merge.",
+        "description": "Every session leaves proof"
+      },
+      "kill_metric": {
+        "metric": "Desktop download starts per 100 landing-page sessions",
+        "threshold": "< 8 download starts per 100 LP sessions after 500 LP sessions (7 days)",
+        "rationale": "The promise is inspectable sessions, so if people read it and will not open the surface that shows them, the proof frame failed."
+      },
+      "citation": "Diff + CI + recording — then you merge.",
+      "citation_section": "§5 Rank 2",
+      "avoid": [
+        "win-rate or bug-catch percentages",
+        "Answer.AI as a current benchmark",
+        "cursor killer",
+        "green CI implies correct intent"
+      ]
+    },
+    {
+      "id": "stop-rationing-quota",
+      "name": "Stop rationing the agent",
+      "track": "self-serve",
+      "icp": "Max $200 IC developer running long multi-repo work past Pro quota",
+      "jtbd": "I keep rationing runs so I do not burn quota mid-migration, and I want a plan that matches how much work I actually delegate.",
+      "insight": "Quota burn and opaque metering are the live cost objections for heavy self-serve users, so naming the ladder plainly removes the fear that stalls upgrades.",
+      "proof": "The published ladder: Free, Pro $20/mo, Max $200/mo — included quota, then dollars for extra work",
+      "cta": "Sign up",
+      "copy": {
+        "primary": "Free to start. Pro $20/mo. Max $200/mo.\nIncluded quota, then dollars for the extra work.\nStop rationing runs halfway through a migration.",
+        "headline": "Pro $20. Max $200. No rationing.",
+        "description": "Included quota, then usage"
+      },
+      "kill_metric": {
+        "metric": "Signup to paid plan (Pro or Max) conversion",
+        "threshold": "< 4% of signups upgrade within 14 days, after 300 signups",
+        "rationale": "A price-led static that cannot move signups onto a paid tier is buying curiosity, not intent."
+      },
+      "citation": "*quota burn*, *opaque metering*, *invisible async spend*",
+      "citation_section": "§3 Recurring problems / objections / phrases",
+      "avoid": [
+        "invented ACU rates or cost-per-PR figures",
+        "competitor price comparisons as fact",
+        "unlimited usage",
+        "pay for work not seats on a self-serve card"
+      ]
+    },
+    {
+      "id": "bounded-autonomy-gate",
+      "name": "Bounded autonomy",
+      "track": "enterprise",
+      "icp": "VP Eng owning platform and security-adjacent approval for agent rollout",
+      "jtbd": "I cannot let an agent touch production repos until permissions, sandboxing, and an audit trail are in place.",
+      "insight": "Enterprise agent buyers read control language before capability language, and bounded autonomy is the only enterprise claim we can make without public outcome proof.",
+      "proof": "Control surface: permission gates, isolated sandbox, audit trail, session replay — the agent halts rather than guesses",
+      "cta": "Book demo",
+      "copy": {
+        "primary": "Permissions, sandbox, audit trail — then the agent works.\nDangerous commands wait for approval. A missing secret halts the run.\nEvery session replays.",
+        "headline": "Permissions, sandbox, audit trail.",
+        "description": "Governed agent fleets"
+      },
+      "kill_metric": {
+        "metric": "Landing-page session to demo-form submit rate",
+        "threshold": "< 1.0% demo submits after 1,500 LP sessions (14 days)",
+        "rationale": "Governance copy exists to trigger a sales conversation, so a dead form is the honest signal that the control frame is not a buying trigger here."
+      },
+      "citation": "Permissions, sandbox, audit trail — then the agent works.",
+      "citation_section": "§5 Rank 8",
+      "avoid": [
+        "invented security certifications or compliance badges",
+        "unverified enterprise logos",
+        "seat-count pricing",
+        "invented ROI or savings figures"
+      ]
+    },
+    {
+      "id": "one-playbook-many-repos",
+      "name": "One playbook, many repos",
+      "track": "enterprise",
+      "icp": "CTO funding multi-repo modernization on workload-priced agents",
+      "jtbd": "I need the same migration playbook executed across every repo without buying a seat for each engineer who might run it.",
+      "insight": "Leaders treat the backlog as a parallelism problem, so fleet execution priced on workload rather than seats matches how they actually budget the work.",
+      "proof": "Fleet backlog execution across repos, priced on workload and ACUs rather than seats",
+      "cta": "Get started",
+      "copy": {
+        "primary": "One playbook. Many repos.\nMigrations, flaky tests, dependency bumps, coverage gaps — run as a fleet of agents, not a queue of tickets.\nPriced on workload, not seats.",
+        "headline": "One playbook. Many repos. One fleet.",
+        "description": "Workload, not seats"
+      },
+      "kill_metric": {
+        "metric": "Sales-accepted rate of demos sourced from this angle",
+        "threshold": "< 30% of demo submits accepted after 25 submits (21 days)",
+        "rationale": "Fleet and workload language attracts curiosity from every tier, so acceptance rate is the only honest test that it reaches real enterprise budget owners."
+      },
+      "citation": "(migrations, flaky tests, dependency bumps, coverage gaps) — one playbook / many repos",
+      "citation_section": "§2 Buyers & workflows — B. Engineering / platform leads",
+      "avoid": [
+        "named customer outcomes without public proof",
+        "invented cost-per-ticket or modernization ROI",
+        "seats or headcount framing",
+        "competitor claims such as team counts or funding figures as Cognition facts"
+      ]
+    }
+  ]
+}
