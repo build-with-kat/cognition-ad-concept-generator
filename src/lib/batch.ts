@@ -50,7 +50,12 @@ export type Finding = {
   source_url: string | null;
   implication: string;
   label: string;
-  citation: { label: string; url: string | null; note: string | null };
+  citation: {
+    label: string;
+    url: string | null;
+    note: string | null;
+    segments?: { text: string; url: string | null }[];
+  };
 };
 
 export type Angle = {
@@ -59,7 +64,6 @@ export type Angle = {
   title: string;
   audience: string;
   insight: string;
-  rationale: string;
   hypothesis: string;
   evidence: {
     source_file: string;

@@ -72,17 +72,30 @@ const research = [
   {
     id: "format",
     kind: "Competitive format observation",
-    finding: "Cognition's sampled Meta inventory is video/creator with comment-to-DM; the static, copy-led slot that competitors dominate is open.",
+    finding: "In the reviewed Meta sample, Cognition leaned on creator videos and comment-to-DM CTAs; Viktor used copy-led statics with direct signup CTAs.",
     quote: "Cognition ~110 active; sampled cards overwhelmingly video with comment-to-DM. Viktor ~650 active; static/templated claim cards dominate.",
     source_file: "inputs/competitive-campaign-signals-2026-09-15.md",
     section: "Finding 1 — static DR is the gap",
     source_url: null,
-    implication: "All four concepts are statics with a direct site CTA rather than a comment bridge.",
+    implication: "Test workflow-specific statics with a direct next step.",
     label: "OBS",
     citation: {
-      label: "Ad-library review \u00b7 September 2026",
+      label: "Meta Ads Library \u00b7 Cognition and Viktor \u00b7 September 2026",
       url: null,
-      note: "Own sample: ~110 active Cognition cards and ~650 competitor cards reviewed in one pass. A sample of live inventory, not performance data.",
+      note: null,
+      segments: [
+        { text: "Meta Ads Library \u00b7 ", url: null },
+        {
+          text: "Cognition",
+          url: "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&view_all_page_id=627575257116750",
+        },
+        { text: " and ", url: null },
+        {
+          text: "Viktor",
+          url: "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&view_all_page_id=973849642483367",
+        },
+        { text: " \u00b7 September 2026", url: null },
+      ],
     },
   },
   {
@@ -108,10 +121,9 @@ const angles = [
     id: "self-serve-handoff",
     track: "self-serve",
     title: "Hand off the ticket. Review the PR.",
-    audience: "Developers weighing whether to delegate defined engineering tasks inside existing repositories.",
-    insight: "Developers will delegate defined chores only if the finished work comes back inspectable and they keep the merge.",
-    rationale:
-      "Developers want to hand off defined tasks while retaining control over the resulting changes. These ads test a concrete task against a review-focused message.",
+    audience: "Individual developers working in existing codebases.",
+    insight:
+      "Delegation is more compelling when the task is clear and the developer can review the changes before merging.",
     hypothesis:
       "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
     evidence: {
@@ -206,10 +218,9 @@ const angles = [
     id: "enterprise-playbook",
     track: "enterprise",
     title: "One playbook. Many repos.",
-    audience: "Engineering and platform leaders accountable for maintenance spread across a large repository estate.",
-    insight: "Maintenance work survives every sprint; leaders need it run across many repos without adding coordination overhead.",
-    rationale:
-      "Recurring maintenance competes with feature development across repositories. These ads pair that problem with FE fundinfo\u2019s documented implementation.",
+    audience: "Engineering and platform leaders managing multiple repositories.",
+    insight:
+      "Recurring maintenance competes with feature delivery. Repeatable workflows offer a way to address it across repositories.",
     hypothesis:
       "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
     evidence: {

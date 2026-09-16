@@ -165,7 +165,23 @@ function Research({ findings }: { findings: Finding[] }) {
             <p className="mt-2 text-muted">Implication: {f.implication}</p>
             <p className="mt-2 text-[12px] text-muted">
               Source:{" "}
-              {f.citation.url ? (
+              {f.citation.segments ? (
+                f.citation.segments.map((s, i) =>
+                  s.url ? (
+                    <a
+                      key={i}
+                      className="text-accent underline underline-offset-2"
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {s.text}
+                    </a>
+                  ) : (
+                    <span key={i}>{s.text}</span>
+                  ),
+                )
+              ) : f.citation.url ? (
                 <a
                   className="text-accent underline underline-offset-2"
                   href={f.citation.url}
@@ -196,34 +212,7 @@ function AngleIntro({ angle }: { angle: Angle }) {
         <h2 className="text-[22px] font-semibold tracking-[-0.02em]">{angle.title}</h2>
       </div>
       <p className="mt-1 max-w-3xl text-[13px] text-muted">ICP: {angle.audience}</p>
-      <h3 className="mt-4 text-[13px] font-medium text-ink">Why this angle?</h3>
-      <p className="mt-1.5 max-w-3xl text-[14px] leading-relaxed">{angle.rationale}</p>
-      <div className="mt-3 grid gap-5 rounded-xl border border-line bg-card p-5 text-[13px] leading-relaxed md:grid-cols-2">
-        <Field label="Test hypothesis">{angle.hypothesis}</Field>
-        <Field label="Evidence">
-          <blockquote className="border-l-2 border-line pl-3 italic">“{angle.evidence.quote}”</blockquote>
-          <p className="mt-2 text-muted">
-            Source:{" "}
-            {angle.evidence.citation.url ? (
-              <a
-                className="text-accent underline underline-offset-2"
-                href={angle.evidence.citation.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {angle.evidence.citation.label}
-              </a>
-            ) : (
-              angle.evidence.citation.label
-            )}
-          </p>
-        </Field>
-        <Field label="Reading (synthesis, not verified product fact)">{angle.evidence.reading}</Field>
-        <Field label="Proposed success metric">
-          {angle.measurement.metric}
-          <p className="mt-1 text-muted">{angle.measurement.definition_note}</p>
-        </Field>
-      </div>
+      <p className="mt-2 max-w-3xl text-[14px] leading-relaxed">Insight: {angle.insight}</p>
     </div>
   );
 }
