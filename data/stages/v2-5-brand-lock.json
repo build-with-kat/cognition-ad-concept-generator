@@ -1,0 +1,208 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "api": "responses",
+  "generated_at": "2026-09-16T18:40:18.283Z",
+  "reviews": [
+    {
+      "execution_id": "self-serve-handoff-a",
+      "model": "gpt-6-astra",
+      "pass": false,
+      "verdict": "Both statics fail because the standalone “Devin” label adds copy prohibited by the checklist. Otherwise, the visible execution is consistent with the requirements, including retained typography in the square version.",
+      "checks": [
+        {
+          "item": "1. Uniform #F7F6F5 ground and #191919 headline ink",
+          "pass": true,
+          "note": "Both backgrounds are uniform and visually consistent with the specified ground and headline colors."
+        },
+        {
+          "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
+          "pass": true,
+          "note": "Each static shows one black lockup, without visible distortion and with ample clearspace."
+        },
+        {
+          "item": "3. Two-line headline and support appearing once",
+          "pass": true,
+          "note": "Both retain the same two headline lines and show the support once."
+        },
+        {
+          "item": "4. All typeset text uses Inter; no eyebrow or additional copy",
+          "pass": false,
+          "note": "Typography appears consistent with Inter, but “Devin” is additional copy in both statics."
+        },
+        {
+          "item": "5. One black CTA reading Get started in white",
+          "pass": true,
+          "note": "Each static has exactly one black CTA with the required white text."
+        },
+        {
+          "item": "6. No panel, motif, accent mark, border or decorative line",
+          "pass": true,
+          "note": "No prohibited decorative elements are visible."
+        },
+        {
+          "item": "7. All critical content at least 80px from every canvas edge",
+          "pass": true,
+          "note": "Edge clearances appear consistent with the requirement; no visually clear infringement."
+        },
+        {
+          "item": "8. Square retains portrait typography and compresses only spacing",
+          "pass": true,
+          "note": "Type sizes, weights and line breaks appear unchanged; spacing is compressed."
+        }
+      ],
+      "forbidden_elements": [
+        "Additional standalone “Devin” copy in both statics"
+      ]
+    },
+    {
+      "execution_id": "self-serve-handoff-b",
+      "model": "gpt-6-astra",
+      "pass": true,
+      "verdict": "Both formats pass on visible execution, with no visible forbidden elements. Exact copy matching to self-serve-handoff-a remains unverified because that reference was not attached.",
+      "checks": [
+        {
+          "item": "1. Headline, support and CTA exactly match self-serve-handoff-a.",
+          "pass": true,
+          "note": "Wording is identical across both supplied formats; no visible discrepancy, but the self-serve-handoff-a comparison is unavailable."
+        },
+        {
+          "item": "2. Uniform #F7F6F5 ground; sole blue accent is the open review indicator.",
+          "pass": true,
+          "note": "Both grounds appear uniformly warm off-white. Only the open review ring is blue."
+        },
+        {
+          "item": "3. One official black lockup, undistorted, with at least 48px clearspace.",
+          "pass": true,
+          "note": "Each static has one black Cognition lockup, visibly undistorted and generously separated from surrounding content."
+        },
+        {
+          "item": "4. Exactly one flat panel showing a bounded ticket progressing to separate pending review.",
+          "pass": true,
+          "note": "Each static contains one flat workflow illustration, with a bounded ticket and a distinct final review stage."
+        },
+        {
+          "item": "5. No text, code, logo, screenshot chrome, texture, shadow or gradient in the illustration.",
+          "pass": true,
+          "note": "Both illustrations use only flat outlined shapes, connectors and the open blue ring."
+        },
+        {
+          "item": "6. Four stage labels and exact disclaimer legible outside the image.",
+          "pass": true,
+          "note": "Ticket, Devin runs, Diff + tests, and You review are legible below the illustration. Both display: “Illustration. Not a screenshot and not execution evidence.” Original supplied text references are unavailable for independent comparison."
+        },
+        {
+          "item": "7. Exactly one black Get started CTA; critical content clears the outer 80px.",
+          "pass": true,
+          "note": "Each has one black Get started button. Critical content appears within the intended safe area; no clear visual margin violation."
+        },
+        {
+          "item": "8. Review remains open, without merged, approved or completed status.",
+          "pass": true,
+          "note": "The hollow blue indicator and awaiting-review headline preserve an explicitly pending handoff; no completion markers appear."
+        }
+      ],
+      "forbidden_elements": []
+    },
+    {
+      "execution_id": "enterprise-playbook-a",
+      "model": "gpt-6-astra",
+      "pass": false,
+      "verdict": "Both formats include an extra “Devin” label above the headline, violating the no-eyebrow requirement. The remaining checks pass on visible evidence, without asserting exact color, font or pixel measurements.",
+      "checks": [
+        {
+          "item": "1. Uniform #F7F6F5 ground with no dark section or blue accent",
+          "pass": true,
+          "note": "Both backgrounds appear uniformly warm off-white, with no dark section or blue accent."
+        },
+        {
+          "item": "2. One undistorted black Cognition lockup with at least 48px clearspace",
+          "pass": true,
+          "note": "Each format shows one black Cognition lockup, visibly undistorted and generously separated from other content."
+        },
+        {
+          "item": "3. Supplied headline on two lines and support sentence once",
+          "pass": true,
+          "note": "Both show “One playbook.” / “Many repos.” on two lines and the support sentence once."
+        },
+        {
+          "item": "4. All typeset text uses Inter; no eyebrow or extra claim",
+          "pass": false,
+          "note": "Both include an extra “Devin” label above the headline, functioning as an eyebrow; no visible font mismatch is apparent."
+        },
+        {
+          "item": "5. Exactly one black CTA reading Book a demo in white",
+          "pass": true,
+          "note": "Each format has exactly one black CTA with the correct white text."
+        },
+        {
+          "item": "6. No panel, repository motif, decorative line, customer logo or chart",
+          "pass": true,
+          "note": "None of these elements is visible in either format."
+        },
+        {
+          "item": "7. All critical content clears the outer 80px on every side",
+          "pass": true,
+          "note": "Both appear adequately inset; no clear margin violation is visually established without precise measurement."
+        },
+        {
+          "item": "8. No added seat-pricing, quantified outcome or execution-evidence claim",
+          "pass": true,
+          "note": "No such claims appear in either format."
+        }
+      ],
+      "forbidden_elements": [
+        "Extra “Devin” eyebrow label in both formats"
+      ]
+    },
+    {
+      "execution_id": "enterprise-playbook-b",
+      "model": "gpt-6-astra",
+      "pass": true,
+      "verdict": "Both formats pass the visually verifiable execution checks. Exact wording parity with enterprise-playbook-a remains unverified because that reference was not supplied.",
+      "checks": [
+        {
+          "item": "1. Headline, support and CTA exactly match enterprise-playbook-a",
+          "pass": true,
+          "note": "Copy is identical across both supplied sizes; comparison against enterprise-playbook-a is unavailable."
+        },
+        {
+          "item": "2. Uniform #F7F6F5 ground; #317CFF only on final open review indicator",
+          "pass": true,
+          "note": "Ground appears uniform, with blue confined to the final open review ring. Exact hex values are not verifiable by eye."
+        },
+        {
+          "item": "3. One official black lockup, undistorted, with at least 48px clearspace",
+          "pass": true,
+          "note": "Each static has one recognizable black Cognition lockup, visibly undistorted and comfortably isolated."
+        },
+        {
+          "item": "4. Exactly one panel with one task branching to four equal repository artifacts and a separate review boundary",
+          "pass": true,
+          "note": "Each illustration shows one source branching to four equal repository artifacts, followed by a distinct review enclosure."
+        },
+        {
+          "item": "5. Image contains no text, code, logos, screenshot chrome, gradients, shadows or texture",
+          "pass": true,
+          "note": "The illustration itself contains only flat outlined shapes and connectors; copy and branding remain outside it."
+        },
+        {
+          "item": "6. Four stage labels and exact illustration disclaimer are legible and outside the image",
+          "pass": true,
+          "note": "Both show legible external labels: Playbook, Fan out, Diff per repo, Your review. Disclaimer reads: Illustration. Not a screenshot and not execution evidence."
+        },
+        {
+          "item": "7. Exactly one black Book a demo CTA; critical content clears outer 80px",
+          "pass": true,
+          "note": "One black Book a demo button appears per static. Content appears within the intended safe inset; no clear margin violation is visually established."
+        },
+        {
+          "item": "8. Four proposed changes remain separate; no approval, merger, measured outcome or seat-pricing claim",
+          "pass": true,
+          "note": "Four separate change documents remain visible inside the review boundary; no prohibited claims or completion signals appear."
+        }
+      ],
+      "forbidden_elements": []
+    }
+  ]
+}

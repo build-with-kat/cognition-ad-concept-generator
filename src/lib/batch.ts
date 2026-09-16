@@ -1,65 +1,66 @@
 import batch from "../../data/batch.json";
 
-export type BrandLockCheck = { item: string; pass: boolean; note?: string };
+export type Destination = { url: string; checked_at: string; http_status: number; page_title?: string; note: string };
 
-export type Render = {
-  ratio: string;
-  src: string | null;
-  sha256_16: string | null;
-  image_model: string;
-  attempts: number;
-  brand_lock: { pass: boolean; verdict: string; forbidden_elements: string[]; checks: BrandLockCheck[] };
+export type FormatKey = "4:5" | "1:1";
+
+export type FormatRender = {
+  src: string;
+  file: string;
+  width: number;
+  height: number;
+  sha256_16: string;
 };
 
-export type Concept = {
+export type Execution = {
   id: string;
-  name: string;
-  track: "self-serve" | "enterprise" | string;
-  tier: string;
-  icp: string;
-  jtbd: string;
-  insight: string;
-  proof: string;
-  cta: string;
-  copy: { primary: string; headline: string; description: string };
-  kill_metric: { metric: string; threshold: string; rationale: string };
-  citation: { quote: string; source: string; section: string };
-  avoid: string[];
-  visual: {
-    director_model: string;
-    concept_line: string;
-    ground: string;
-    accent: string;
-    negative_space_pct: number;
-    motif: string;
-    safe_zones: string;
-    brand_lock_checklist: string[];
+  angle_id: string;
+  label: string;
+  treatment: "typography-led" | "workflow-led";
+  concept_line: string;
+  ad: { headline: string; support: string; cta: string; destination: Destination };
+  meta: { primary: string; headline: string; description: string };
+  artifact: { kind: "none" } | { kind: "illustration"; note: string; steps: string[]; ticket: string | null; repos: string[] };
+  formats: Record<FormatKey, FormatRender>;
+  provenance: {
+    copy_model: string;
+    direction_model: string;
+    composited_in_code: string[];
+    model_generated: string[];
+    panel: { image_model: string; size: string; prompt: string; sha256_16: string } | null;
   };
-  status: string;
-  renders: Render[];
+};
+
+export type Angle = {
+  id: string;
+  track: "self-serve" | "enterprise";
+  title: string;
+  audience: string;
+  insight: string;
+  hypothesis: string;
+  evidence: {
+    source_file: string;
+    section: string;
+    quote: string;
+    label: string;
+    reading: string;
+    source_url: string | null;
+  };
+  measurement: { metric: string; definition_note: string };
+  executions: Execution[];
 };
 
 export type Batch = {
-  batch_id: string;
+  schema: string;
   generated_at: string;
-  orchestrated_by: string;
-  inputs: { file: string; role?: string; sha256_16: string }[];
-  pipeline: {
-    stage: number;
-    name: string;
-    provider: string;
-    model?: string;
-    models?: Record<string, string>;
-    api?: string;
-    ran_at: string;
-    output: string;
-    policy?: string;
-    trace: string;
-  }[];
-  research: { bullet: string; citation: string; section: string; source: string }[];
-  batch_direction: string;
-  concepts: Concept[];
-  push: { simulated: boolean; note: string };
+  product: { title: string; subtitle: string };
+  scope: { angles: number; executions: number; formats_per_execution: FormatKey[]; note: string };
+  inputs: string[];
+  pipeline: { stage: string; provider: string; model?: string | null; api?: string; engine?: string; typeface?: string; trace: string }[];
+  limitations: string[];
+  angles: Angle[];
 };
 
 export const getBatch = (): Batch => batch as unknown as Batch;
+
+export const allExecutions = (b: Batch): Execution[] => b.angles.flatMap((a) => a.executions);

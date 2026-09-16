@@ -1,0 +1,51 @@
+{
+  "provider": "openai",
+  "api": "images.generations",
+  "generated_at": "2026-09-16T18:33:46.029Z",
+  "panels": [
+    {
+      "execution_id": "self-serve-handoff-b",
+      "image_model": "gpt-image-2.5-sunburst",
+      "size": "1088x816",
+      "file": "data/panels/self-serve-handoff-b.png",
+      "sha256_16": "e988afa6d2d70a69",
+      "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small open review indicator in the final stage. Arrange four stages left to right, centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First stage: one bounded ticket-shaped card with a small edge notch, no internal writing. Second stage: two slightly offset rectangular work sheets receiving the ticket through a connector. Third stage: one review document containing two clearly separated blank rectangular panes, representing a proposed change ready for inspection, with no code or pseudo-text. Fourth stage: a separate outlined review tray containing that proposed-change document, with one small blue hollow circular indicator attached to its upper-right corner. Connect the stages with thin black directional connectors; terminate the workflow at the open review tray, without an approval tick, merged state or completion badge. Preserve generous blank space above and below the diagram. Make the ticket-to-proposed-change-to-pending-review sequence legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
+      "usage": {
+        "input_tokens": 360,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 360
+        },
+        "output_tokens": 555,
+        "output_tokens_details": {
+          "image_tokens": 555,
+          "text_tokens": 0
+        },
+        "total_tokens": 915
+      },
+      "role": "illustration panel only — text, lockup and CTA are composited deterministically in stage 4"
+    },
+    {
+      "execution_id": "enterprise-playbook-b",
+      "image_model": "gpt-image-2.5-sunburst",
+      "size": "1088x816",
+      "file": "data/panels/enterprise-playbook-b.png",
+      "sha256_16": "d2b7b2ffa69fda72",
+      "prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards and repository-folder shapes, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small hollow indicator on the final review gate. Organize four stage columns centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First column: one bounded task card containing a single blank inset rectangle. Second column: one functional connector from that task branching into four evenly separated paths; this is routing geometry, not a chart. Third column: four identical repository-folder cards stacked vertically, each receiving one path and each containing the same small two-pane blank change document. All four repository cards must be equal in size and treatment. Fourth column: carry four separate thin connectors into one tall outlined review tray holding four separate blank document slots, preserving one proposed change per repository rather than collapsing them into a single merged document. Attach one small blue hollow indicator to the review tray's upper-right corner. End the workflow there, with no approval tick or completed state. Preserve ample uniform background above and below the geometry. The repeated task, four repository artifacts and retained review boundary must remain legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos.",
+      "usage": {
+        "input_tokens": 386,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 386
+        },
+        "output_tokens": 312,
+        "output_tokens_details": {
+          "image_tokens": 312,
+          "text_tokens": 0
+        },
+        "total_tokens": 698
+      },
+      "role": "illustration panel only — text, lockup and CTA are composited deterministically in stage 4"
+    }
+  ]
+}

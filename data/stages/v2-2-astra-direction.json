@@ -1,0 +1,305 @@
+{
+  "model": "gpt-6-astra",
+  "provider": "openai",
+  "api": "responses",
+  "generated_at": "2026-09-16T18:33:02.419Z",
+  "image_inputs": [
+    {
+      "file": "brand-refs/Cognition_PrimaryLockup_Black.png",
+      "role": "official Cognition lockup"
+    },
+    {
+      "file": "brand-refs/Cognition_PrimaryLockup_White.png",
+      "role": "official Cognition lockup"
+    }
+  ],
+  "usage": {
+    "input_tokens": 5457,
+    "input_tokens_details": {
+      "cache_write_tokens": 5454,
+      "cached_tokens": 0
+    },
+    "output_tokens": 5086,
+    "output_tokens_details": {
+      "reasoning_tokens": 955
+    },
+    "total_tokens": 10543
+  },
+  "instructions": "You are the visual director for a four-execution Devin (Cognition) paid-social set.\nYou do not write copy and you do not render pixels. You emit a layout specification that a deterministic\ncompositor applies literally: all text, the official lockup and the CTA button are typeset in code, so your\njob is composition, scale, rhythm and restraint. The attached images are official Cognition lockups — visual\ntruth, not ads to copy.",
+  "prompt": "<brand-kit>\n# Cognition / Devin — Brand Kit (paid creative)\nVersion: 0.2 · Sources: https://devin.ai/ · https://devin.ai/desktop (scraped 2026-09-16) · Cognition self-serve pricing (Apr 2026)  \nPurpose: Brand Lock for Meta/LinkedIn statics. If a render breaks this kit, **reject and regenerate once**, then fail the concept.\n\n---\n\n## 1. Product truth (say this, not “AI coworker”)\n\n- **Name:** Devin  \n- **Category line:** The AI software engineer  \n- **Parent:** Cognition  \n- **Desktop line:** The home for every agent you run · Manage fleets of local and cloud agents from one surface  \n- **What it is:** An agent that plans and executes real engineering work end-to-end — migrations, refactors, PR review, docs, chores, incident triage — and ships PRs the way the team does.  \n- **What it is not:** Chat autocomplete, pair-programming toy, a seat on the org chart, or a generic “AI teammate.”\n\n**Commercial model (must show up in self-serve copy):**\n- Free → Pro **$20/mo** → Max **$200/mo** → Teams (usage, **$80/mo** min) → Enterprise (custom, **ACUs / workload**)\n- Self-serve: included quota, then dollars for extra work  \n- Enterprise: workload-priced, not seat-priced  \n- Related: Ask Devin, DeepWiki, Devin Review, Devin Desktop, Devin Automations / API\n\n**Proof language that fits:**\n- Named outcomes + time collapse  \n- “It merged.” / PR shipped / CI fixed / ticket closed  \n- Multi-repo, multi-week, fleet of agents · Sessions · Spaces · Board / List  \n- Learns codebase + tribal knowledge  \n\n---\n\n## 2. Voice\n\n| Do | Don’t |\n|---|---|\n| Short, declarative, engineering-literate | Hype, “AGI,” “replace your team” |\n| Concrete work nouns (migration, PR, CI, Linear, Datadog, session) | Vague “productivity 10x” |\n| Confident, quiet, spare | Exclamation points, emoji in ads |\n| Second person to the engineer (“you review”) | “Synergy,” “empower,” “AI coworker” |\n| Workload / quota / finished work | Seats, headcount, “junior engineer” |\n\n**Approved lines (steal / remix):**\n- Devin, the AI software engineer  \n- The home for every agent you run  \n- A team of agents for every engineer  \n- Tab, Tab, Ship  \n- Never miss a detail  \n- Plan, delegate, review, and ship without leaving your editor  \n- Pay for work. Not seats. (enterprise — grounded in ACU/workload pricing)\n\n---\n\n## 3. Visual system (Brand Lock) — from live Desktop/home\n\n**Default surface is LIGHT, not charcoal.** Marketing pages use warm off-white; product UI is light IDE chrome; dark (`#000`) is for contrast sections only.\n\n**Palette (exact)**\n| Token | Hex | Use |\n|---|---|---|\n| Page / ad ground (default) | `#F7F6F5` | Primary static background |\n| Ink | `#191919` | Headlines, body |\n| Pure black | `#000000` | Primary CTAs, dark sections, high-contrast frames |\n| White | `#FFFFFF` | Cards, buttons on dark, product chrome |\n| Accent blue | `#317CFF` | Sparse accent only (tags, links, one underline/dot) — also seen as `#337DF4` |\n| Vivid blue (rare) | `#2200FF` | Avoid in ads unless matching a specific product moment |\n| Muted label | ~`#6B6B6B` | Secondary lines, mono captions |\n\n**Do not** default ads to neon-on-black “AI dark mode.” Dark ads are allowed only as intentional contrast (e.g. one enterprise frame) with white type — not purple gradients.\n\n**Typography**\n- Display / UI: clean grotesque sans (`nbInternationalPro` or nearest: Inter / similar). Regular + medium. Tight tracking on big headlines.  \n- Labels / technical: mono (`Geist Mono` / `IBM Plex Mono`) — small, all-caps section tags like `STATS`  \n- No ornate editorial serifs on v1 statics  \n\n**Logo / mark**\n- Cognition/Devin mark: **three black circles in a tight triangle** (compact geometric). Prefer this mark or the word **Devin** / **DEVIN** — do not invent a new logo.  \n- Clearspace ≥ mark height. Never recolor to neon, never put on busy photo.  \n- Enterprise customer marks on site are grayscale — match that restraint if using logos (only with permission / public proof).  \n\n**Layout for Meta statics (1080×1080 and 1080×1350)**\n- Typographic first: one headline, optional one subline, optional mark or DEVIN wordmark  \n- Safe zones: keep critical type out of top/bottom ~10%  \n- Plenty of `#F7F6F5` empty space  \n- Optional: one small `#317CFF` mono tag (e.g. `PRO` / `ENTERPRISE`)  \n- Product UI crops only if from real Desktop chrome and still Brand-Lock clean — never fake illegible IDE soup as the hero  \n\n---\n\n## 4. Forbidden (automatic Brand-Lock fail)\n\n- Neon robots / humanoid “AI” mascots / cartoon agents  \n- Fake IDE with illegible lorem code as the hero  \n- Purple / magenta “AI startup” gradients · cyberpunk glow  \n- Defaulting every ad to charcoal/black when the site default is `#F7F6F5`  \n- “Replace engineers,” “fire your team,” “AGI coworker”  \n- Seat-count pricing on enterprise ads  \n- Unnamed “Fortune 500 saved millions” without a cited public proof  \n- Busy stock office photography  \n- Ornate editorial / magazine styling that fights the product chrome  \n\n---\n\n## 5. ICP split for creative (3 / 2 default)\n\n**Self-serve (3):** Free / Pro $20 / Max $200 — IC developers  \n- Hooks: backlog ticket merged, migrations/tests/chores, stop rationing quota, Desktop as home for agents  \n- Proof: the PR / closed ticket — not a logo wall  \n\n**Enterprise (2):** VP Eng / CTO  \n- Hooks: named time-collapse proof, workload not seats, fleets / multi-repo  \n- Proof: public case-study class claims only when cited in market-truth  \n\n---\n\n## 6. Channel constraints\n\n- Meta Feed: 1080×1350 primary; also 1080×1080  \n- LinkedIn: same statics; prefer enterprise concepts  \n- Meta primary / headline / description: scannable, no walls of text  \n\n---\n\n## 7. Repo layout beside this file\n\n```\ninputs/\n  cognition-brand-kit.md    ← this file\n  market-truth.md\n  winners/                  ← optional real ads or Desktop UI crops\n```\n\nBrand refs (internal): `brand-refs/` screenshots from Desktop + home — use as visual truth for Astra, not as ad creatives themselves.\n\n</brand-kit>\n\n<executions>\n[\n  {\n    \"id\": \"self-serve-handoff-a\",\n    \"angle\": \"Hand off the ticket. Review the PR.\",\n    \"audience\": \"developers delegating well-scoped engineering tasks\",\n    \"treatment\": \"typography-led\",\n    \"headline\": \"Hand off the ticket.\\nReview the PR.\",\n    \"support\": \"You delegate bounded work. You own the merge.\",\n    \"cta\": \"Get started\",\n    \"artifact\": {\n      \"kind\": \"none\",\n      \"content\": {\n        \"ticket_id\": \"\",\n        \"ticket_title\": \"\",\n        \"steps\": [],\n        \"repos\": [],\n        \"note\": \"Illustration. Not a screenshot and not execution evidence.\"\n      }\n    }\n  },\n  {\n    \"id\": \"self-serve-handoff-b\",\n    \"angle\": \"Hand off the ticket. Review the PR.\",\n    \"audience\": \"developers delegating well-scoped engineering tasks\",\n    \"treatment\": \"workflow-led\",\n    \"headline\": \"From well-scoped ticket\\nto PR awaiting review\",\n    \"support\": \"Devin does the work. You read the diff.\",\n    \"cta\": \"Get started\",\n    \"artifact\": {\n      \"kind\": \"illustration\",\n      \"content\": {\n        \"ticket_id\": \"ENG-2214\",\n        \"ticket_title\": \"Bump lint dependency and fix failures\",\n        \"steps\": [\n          \"Ticket\",\n          \"Devin runs\",\n          \"Diff + tests\",\n          \"You review\"\n        ],\n        \"repos\": [],\n        \"note\": \"Illustration. Not a screenshot and not execution evidence.\"\n      }\n    }\n  },\n  {\n    \"id\": \"enterprise-playbook-a\",\n    \"angle\": \"One playbook. Many repos.\",\n    \"audience\": \"engineering leaders responsible for repeatable maintenance across repositories\",\n    \"treatment\": \"typography-led\",\n    \"headline\": \"One playbook.\\nMany repos.\",\n    \"support\": \"Migrations, dependency updates, flaky tests.\",\n    \"cta\": \"Book a demo\",\n    \"artifact\": {\n      \"kind\": \"none\",\n      \"content\": {\n        \"ticket_id\": \"\",\n        \"ticket_title\": \"\",\n        \"steps\": [],\n        \"repos\": [],\n        \"note\": \"Illustration. Not a screenshot and not execution evidence.\"\n      }\n    }\n  },\n  {\n    \"id\": \"enterprise-playbook-b\",\n    \"angle\": \"One playbook. Many repos.\",\n    \"audience\": \"engineering leaders responsible for repeatable maintenance across repositories\",\n    \"treatment\": \"workflow-led\",\n    \"headline\": \"One task.\\nEvery repo. Your review.\",\n    \"support\": \"Same migration step, one diff per repo.\",\n    \"cta\": \"Book a demo\",\n    \"artifact\": {\n      \"kind\": \"illustration\",\n      \"content\": {\n        \"ticket_id\": \"PLAT-118\",\n        \"ticket_title\": \"Upgrade framework minor version\",\n        \"steps\": [\n          \"Playbook\",\n          \"Fan out\",\n          \"Diff per repo\",\n          \"Your review\"\n        ],\n        \"repos\": [\n          \"payments-api\",\n          \"web-app\",\n          \"billing-service\",\n          \"internal-tools\"\n        ],\n        \"note\": \"Illustration. Not a screenshot and not execution evidence.\"\n      }\n    }\n  }\n]\n</executions>\n\nCanvas: 1080x1350 primary, 1080x1080 adaptation. Same composition, re-flowed.\nTypeface is Inter (Regular / Medium / SemiBold) — assume nothing else is available.\n\nThe two typography-led executions are pure type: headline, optional support line, lockup, CTA button. No motif.\nThe two workflow-led executions carry ONE illustrative panel — a clean, flat, text-free work artifact generated by an\nimage model, which the compositor inserts into a reserved rectangle and labels in code. Suggested territories:\nself-serve = a well-scoped ticket card becoming a pull request awaiting human review; enterprise = one task applied\nacross several repository cards with a review step retained.\n\nReturn ONE JSON object, no prose outside it:\n\n{\n  \"set_direction\": \"2-3 sentences: how the four read as one system and how the pairs differ\",\n  \"specs\": [\n    {\n      \"id\": \"<execution id, all four, same order as given>\",\n      \"concept_line\": \"one sentence describing what the viewer sees\",\n      \"ground\": \"#F7F6F5\" | \"#FFFFFF\" | \"#191919\",\n      \"ink\": \"#191919\" | \"#F7F6F5\",\n      \"accent_usage\": \"one short sentence: the single place #317CFF appears, or 'none'\",\n      \"align\": \"left\" | \"center\",\n      \"margin_px\": <int 72-120, on the 1080 wide canvas>,\n      \"headline\": { \"size_px\": <int 76-132>, \"weight\": \"medium\" | \"semibold\", \"leading\": <number 0.95-1.15>, \"tracking_px\": <number -4 to 0> },\n      \"support\": { \"size_px\": <int 28-40>, \"weight\": \"regular\" | \"medium\", \"color\": \"ink\" | \"muted\" | \"accent\" },\n      \"eyebrow\": { \"text\": \"<2-4 word all-caps label or empty string>\", \"size_px\": <int 18-24>, \"color\": \"accent\" | \"muted\" },\n      \"cta\": { \"style\": \"solid-black\" | \"solid-ink\" , \"height_px\": <int 96-132>, \"width\": \"auto\" | \"full\", \"size_px\": <int 30-40> },\n      \"lockup\": { \"asset\": \"Cognition_PrimaryLockup_Black.png\" | \"Cognition_PrimaryLockup_White.png\", \"position\": \"top-left\" | \"bottom-left\" | \"top-left-with-cta-bottom-right\", \"height_px\": <int 44-72> },\n      \"vertical_order\": [\"ordered list from top: any of 'lockup','eyebrow','headline','support','panel','labels','cta'\"],\n      \"panel\": {\n        \"present\": true | false,\n        \"reserved_box\": { \"x\": <int>, \"y\": <int>, \"w\": <int>, \"h\": <int> },\n        \"label_row\": \"one short sentence on how the compositor should label the panel stages beneath it\",\n        \"render_prompt\": \"<literal prompt for the image model, or empty string when present=false>\"\n      },\n      \"ratio_adaptation\": { \"1080x1350\": \"...\", \"1080x1080\": \"what compresses first\" },\n      \"brand_lock_checklist\": [\"6-8 binary statements a reviewer can verify by looking at the finished render\"]\n    }\n  ]\n}\n\nRules for every \"render_prompt\" (workflow-led only):\n- It renders ONLY the illustrative panel, on a flat uniform background matching the ad ground, at square-ish aspect.\n- Absolutely no text, no letters, no numbers, no logos, no watermarks, no UI chrome screenshots, no code.\n- Flat vector illustration, editorial, minimal: rectangles, rounded cards, connector lines, one accent colour #317CFF used sparingly.\n- Forbid: photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple or magenta,\n  robots, mascots, humanoid figures, fake IDE windows, brand logos.\n- State the exact hexes and that the background must be perfectly uniform.\n- The illustration must be legible as the work artifact even with zero text on it.\n\nComposition rules:\n- Default ground #F7F6F5. At most ONE of the four may use #191919, and only an enterprise execution.\n- One headline, at most one support sentence, one lockup, one CTA button. Nothing else.\n- Each pair must share proposition and CTA and differ in structure, not wording.\n- Generous negative space. Subtle borders only. No pill badges, no charts, no decorative lines as filler.\n- Keep critical type clear of the outer 80px on all sides.",
+  "set_direction": "All four executions use warm off-white, left-aligned Inter, the official black lockup and identical black CTAs; typography-led versions use open space, while workflow-led versions introduce one restrained work-artifact panel. To isolate structure rather than wording, bind both executions in each pair to that pair's supplied typography-led headline, support and CTA, unchanged. Coordinates below describe visible bounds; preserve the supplied lockup artwork and aspect ratio, exclude transparent padding when measuring it, and typeset CTA labels in white Inter Medium with 32px horizontal padding and an 8px corner radius.",
+  "specs": [
+    {
+      "id": "self-serve-handoff-a",
+      "concept_line": "A large two-line handoff statement sits between a small official lockup and a quietly anchored CTA.",
+      "ground": "#F7F6F5",
+      "ink": "#191919",
+      "accent_usage": "none",
+      "align": "left",
+      "margin_px": 96,
+      "headline": {
+        "size_px": 92,
+        "weight": "medium",
+        "leading": 1.02,
+        "tracking_px": -3
+      },
+      "support": {
+        "size_px": 30,
+        "weight": "regular",
+        "color": "muted"
+      },
+      "eyebrow": {
+        "text": "",
+        "size_px": 20,
+        "color": "muted"
+      },
+      "cta": {
+        "style": "solid-black",
+        "height_px": 96,
+        "width": "auto",
+        "size_px": 32
+      },
+      "lockup": {
+        "asset": "Cognition_PrimaryLockup_Black.png",
+        "position": "top-left",
+        "height_px": 48
+      },
+      "vertical_order": [
+        "lockup",
+        "headline",
+        "support",
+        "cta"
+      ],
+      "panel": {
+        "present": false,
+        "reserved_box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "label_row": "",
+        "render_prompt": ""
+      },
+      "ratio_adaptation": {
+        "1080x1350": "Use this execution's supplied headline, support and CTA verbatim, retaining the explicit headline break. Place all elements at x=96 within an 888px content width: lockup y=136; headline y=354 in a 192px-high box; support y=574 in a 38px-high box; CTA y=1118. Support color is #6B6B6B. Keep at least 48px clear around the visible lockup. No additional text, illustration or ornament.",
+        "1080x1080": "Compress empty vertical space first; retain all font sizes, headline breaks, horizontal positions and CTA dimensions. Set lockup y=108, headline y=280, support y=496 and CTA y=888. Do not vertically center the entire stack or fill the open interval above the CTA."
+      },
+      "brand_lock_checklist": [
+        "PASS iff the ground is uniformly #F7F6F5 and headline ink is #191919.",
+        "PASS iff the supplied black Cognition lockup appears once, undistorted, with at least 48px clearspace.",
+        "PASS iff the supplied headline retains its two lines and the support appears once.",
+        "PASS iff all typeset text uses Inter and no eyebrow or additional copy appears.",
+        "PASS iff one black CTA reads Get started in white.",
+        "PASS iff no panel, motif, accent mark, border or decorative line appears.",
+        "PASS iff all critical content remains at least 80px from every canvas edge.",
+        "PASS iff the square version retains the portrait typography and compresses only spacing."
+      ]
+    },
+    {
+      "id": "self-serve-handoff-b",
+      "concept_line": "The same handoff statement leads into a compact ticket-to-review diagram with a visibly open final review gate.",
+      "ground": "#F7F6F5",
+      "ink": "#191919",
+      "accent_usage": "#317CFF appears only on the small open review indicator inside the panel's final stage.",
+      "align": "left",
+      "margin_px": 96,
+      "headline": {
+        "size_px": 76,
+        "weight": "medium",
+        "leading": 1.02,
+        "tracking_px": -2
+      },
+      "support": {
+        "size_px": 30,
+        "weight": "regular",
+        "color": "muted"
+      },
+      "eyebrow": {
+        "text": "",
+        "size_px": 20,
+        "color": "muted"
+      },
+      "cta": {
+        "style": "solid-black",
+        "height_px": 96,
+        "width": "auto",
+        "size_px": 32
+      },
+      "lockup": {
+        "asset": "Cognition_PrimaryLockup_Black.png",
+        "position": "top-left",
+        "height_px": 48
+      },
+      "vertical_order": [
+        "lockup",
+        "headline",
+        "support",
+        "panel",
+        "labels",
+        "cta"
+      ],
+      "panel": {
+        "present": true,
+        "reserved_box": {
+          "x": 96,
+          "y": 486,
+          "w": 600,
+          "h": 450
+        },
+        "label_row": "Typeset the four supplied steps beneath their corresponding columns in Inter Regular 18px #6B6B6B, followed by the supplied illustration note on one separate line in Inter Regular 16px; omit ticket metadata.",
+        "render_prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small open review indicator in the final stage. Arrange four stages left to right, centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First stage: one bounded ticket-shaped card with a small edge notch, no internal writing. Second stage: two slightly offset rectangular work sheets receiving the ticket through a connector. Third stage: one review document containing two clearly separated blank rectangular panes, representing a proposed change ready for inspection, with no code or pseudo-text. Fourth stage: a separate outlined review tray containing that proposed-change document, with one small blue hollow circular indicator attached to its upper-right corner. Connect the stages with thin black directional connectors; terminate the workflow at the open review tray, without an approval tick, merged state or completion badge. Preserve generous blank space above and below the diagram. Make the ticket-to-proposed-change-to-pending-review sequence legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos."
+      },
+      "ratio_adaptation": {
+        "1080x1350": "Bind headline, support and CTA to self-serve-handoff-a, not this execution's alternate wording. All main elements begin at x=96 within an 888px content width. Place lockup y=136; headline y=240 in a 156px-high box, retaining the source break; support y=418 in a 38px-high box, colored #6B6B6B. Insert the panel at its reserved_box without cropping or an outer frame. Place stage labels at y=952 in 24px-high boxes centered at x=171,321,471,621. Place the exact supplied artifact note at x=96,y=984 in an 888px-wide,24px-high box. Place CTA at x=96,y=1118. Keep at least 48px clear around the visible lockup.",
+        "1080x1080": "Compress empty vertical space first, then scale the complete panel uniformly to 480x360 without changing its aspect or clipping its geometry. Retain headline and support sizes. Set lockup x=96,y=108; headline x=96,y=212; support x=96,y=387; panel x=96,y=444. Stage labels begin at y=820, centered at x=156,276,396,516, with unchanged 18px type. Set the note at x=96,y=850 and CTA at x=96,y=888. Labels and note remain code-rendered, not baked into the illustration."
+      },
+      "brand_lock_checklist": [
+        "PASS iff headline, support and CTA wording exactly match self-serve-handoff-a.",
+        "PASS iff the ground is uniformly #F7F6F5 and the sole blue accent is the panel's open review indicator.",
+        "PASS iff one official black lockup appears undistorted with at least 48px clearspace.",
+        "PASS iff exactly one flat panel shows a bounded ticket progressing to a separate pending-review stage.",
+        "PASS iff the illustration contains no text, code, logo, screenshot chrome, texture, shadow or gradient.",
+        "PASS iff the four supplied stage labels and exact illustration disclaimer are legible and typeset outside the image.",
+        "PASS iff exactly one black Get started CTA appears and all critical content clears the outer 80px.",
+        "PASS iff the review stage remains open, with no merged, approved or completed status implied."
+      ]
+    },
+    {
+      "id": "enterprise-playbook-a",
+      "concept_line": "An oversized two-line playbook statement uses empty space, rather than repeated graphics, to imply breadth.",
+      "ground": "#F7F6F5",
+      "ink": "#191919",
+      "accent_usage": "none",
+      "align": "left",
+      "margin_px": 96,
+      "headline": {
+        "size_px": 112,
+        "weight": "medium",
+        "leading": 1.02,
+        "tracking_px": -3
+      },
+      "support": {
+        "size_px": 30,
+        "weight": "regular",
+        "color": "muted"
+      },
+      "eyebrow": {
+        "text": "",
+        "size_px": 20,
+        "color": "muted"
+      },
+      "cta": {
+        "style": "solid-black",
+        "height_px": 96,
+        "width": "auto",
+        "size_px": 32
+      },
+      "lockup": {
+        "asset": "Cognition_PrimaryLockup_Black.png",
+        "position": "top-left",
+        "height_px": 48
+      },
+      "vertical_order": [
+        "lockup",
+        "headline",
+        "support",
+        "cta"
+      ],
+      "panel": {
+        "present": false,
+        "reserved_box": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "label_row": "",
+        "render_prompt": ""
+      },
+      "ratio_adaptation": {
+        "1080x1350": "Use this execution's supplied headline, support and CTA verbatim, retaining the explicit headline break. Place all elements at x=96 within an 888px content width: lockup y=136; headline y=334 in a 232px-high box; support y=598 in a 38px-high box; CTA y=1118. Support color is #6B6B6B. Keep at least 48px clear around the visible lockup. No additional copy, customer marks, panel or ornament.",
+        "1080x1080": "Compress empty vertical space first. Keep font sizes, source headline break, x positions and CTA dimensions unchanged. Set lockup y=108, headline y=256, support y=516 and CTA y=888. Preserve the large uninterrupted interval between support and CTA."
+      },
+      "brand_lock_checklist": [
+        "PASS iff the ground is uniformly #F7F6F5 with no dark section or blue accent.",
+        "PASS iff one supplied black Cognition lockup appears undistorted with at least 48px clearspace.",
+        "PASS iff the supplied headline appears on two lines and its support sentence appears once.",
+        "PASS iff all typeset text uses Inter and no eyebrow or extra claim appears.",
+        "PASS iff exactly one black CTA reads Book a demo in white.",
+        "PASS iff there is no panel, repository motif, decorative line, customer logo or chart.",
+        "PASS iff all critical content clears the outer 80px on every side.",
+        "PASS iff no seat-pricing, quantified outcome or execution-evidence claim has been added."
+      ]
+    },
+    {
+      "id": "enterprise-playbook-b",
+      "concept_line": "The same playbook statement sits above one task branching into four repository changes that remain behind an open review gate.",
+      "ground": "#F7F6F5",
+      "ink": "#191919",
+      "accent_usage": "#317CFF appears only on one open review indicator at the panel's final gate.",
+      "align": "left",
+      "margin_px": 96,
+      "headline": {
+        "size_px": 76,
+        "weight": "medium",
+        "leading": 1.02,
+        "tracking_px": -2
+      },
+      "support": {
+        "size_px": 30,
+        "weight": "regular",
+        "color": "muted"
+      },
+      "eyebrow": {
+        "text": "",
+        "size_px": 20,
+        "color": "muted"
+      },
+      "cta": {
+        "style": "solid-black",
+        "height_px": 96,
+        "width": "auto",
+        "size_px": 32
+      },
+      "lockup": {
+        "asset": "Cognition_PrimaryLockup_Black.png",
+        "position": "top-left",
+        "height_px": 48
+      },
+      "vertical_order": [
+        "lockup",
+        "headline",
+        "support",
+        "panel",
+        "labels",
+        "cta"
+      ],
+      "panel": {
+        "present": true,
+        "reserved_box": {
+          "x": 96,
+          "y": 486,
+          "w": 600,
+          "h": 450
+        },
+        "label_row": "Typeset the four supplied steps beneath their corresponding columns in Inter Regular 18px #6B6B6B, followed by the supplied illustration note on one separate line in Inter Regular 16px; omit ticket and repository names.",
+        "render_prompt": "Render ONLY a text-free illustrative work-artifact panel, not an advertisement, in a compact square-ish 4:3 aspect ratio. The background must be perfectly uniform #F7F6F5 through every edge. Use minimal flat vector editorial geometry: white #FFFFFF rounded cards and repository-folder shapes, subtle thin #191919 outlines and functional connector lines, with #317CFF used exactly once for a small hollow indicator on the final review gate. Organize four stage columns centered at 12.5%, 37.5%, 62.5% and 87.5% of panel width. Keep all artwork inside a 6% inset. First column: one bounded task card containing a single blank inset rectangle. Second column: one functional connector from that task branching into four evenly separated paths; this is routing geometry, not a chart. Third column: four identical repository-folder cards stacked vertically, each receiving one path and each containing the same small two-pane blank change document. All four repository cards must be equal in size and treatment. Fourth column: carry four separate thin connectors into one tall outlined review tray holding four separate blank document slots, preserving one proposed change per repository rather than collapsing them into a single merged document. Attach one small blue hollow indicator to the review tray's upper-right corner. End the workflow there, with no approval tick or completed state. Preserve ample uniform background above and below the geometry. The repeated task, four repository artifacts and retained review boundary must remain legible with zero text. No enclosing application window or outer panel border. Absolutely no text, letters, numbers, logos, watermarks, UI chrome screenshots or code. Forbid photography, 3D renders, gradients, drop shadows, paper texture, grain, noise, vignette, neon, purple, magenta, robots, mascots, humanoid figures, fake IDE windows and brand logos."
+      },
+      "ratio_adaptation": {
+        "1080x1350": "Bind headline, support and CTA to enterprise-playbook-a, not this execution's alternate wording. All main elements begin at x=96 within an 888px content width. Place lockup y=136; headline y=240 in a 156px-high box, retaining the source break; support y=418 in a 38px-high box, colored #6B6B6B. Insert the panel at its reserved_box without cropping or an outer frame. Place stage labels at y=952 in 24px-high boxes centered at x=171,321,471,621. Place the exact supplied artifact note at x=96,y=984 in an 888px-wide,24px-high box. Place CTA at x=96,y=1118. Keep at least 48px clear around the visible lockup.",
+        "1080x1080": "Compress empty vertical space first, then scale the complete panel uniformly to 480x360; retain all four repository cards and the distinct review boundary. Keep headline and support sizes unchanged. Set lockup x=96,y=108; headline x=96,y=212; support x=96,y=387; panel x=96,y=444. Stage labels begin at y=820, centered at x=156,276,396,516, with unchanged 18px type. Set the note at x=96,y=850 and CTA at x=96,y=888. Do not replace the fan-out structure with an additional panel or crop away any branch."
+      },
+      "brand_lock_checklist": [
+        "PASS iff headline, support and CTA wording exactly match enterprise-playbook-a.",
+        "PASS iff the ground is uniformly #F7F6F5 and only the final open review indicator uses #317CFF.",
+        "PASS iff one official black lockup appears undistorted with at least 48px clearspace.",
+        "PASS iff exactly one panel shows one task branching to four equal repository artifacts and a separate review boundary.",
+        "PASS iff the image contains no text, code, logos, screenshot chrome, gradients, shadows or texture.",
+        "PASS iff the four supplied stage labels and exact illustration disclaimer are legible and typeset outside the image.",
+        "PASS iff exactly one black Book a demo CTA appears and all critical content clears the outer 80px.",
+        "PASS iff the four proposed changes remain separate and no approval, merger, measured outcome or seat-pricing claim appears."
+      ]
+    }
+  ]
+}

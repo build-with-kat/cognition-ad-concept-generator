@@ -1,0 +1,144 @@
+{
+  "engine": "satori + @resvg/resvg-js",
+  "typeface": "Inter 4.1 (assets/fonts)",
+  "generated_at": "2026-09-16T18:39:03.625Z",
+  "note": "All text and logo pixels are deterministic; only workflow-led illustration panels come from an image model.",
+  "executions": [
+    {
+      "execution_id": "self-serve-handoff-a",
+      "angle_id": "self-serve-handoff",
+      "treatment": "typography-led",
+      "composited_in_code": [
+        "headline",
+        "support",
+        "official Cognition lockup",
+        "product name Devin",
+        "CTA button"
+      ],
+      "model_generated": [],
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/v2/self-serve-handoff-a-1080x1350.png",
+          "width": 1080,
+          "height": 1350,
+          "sha256_16": "4daaef372c7717d3",
+          "panel_source": null
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/v2/self-serve-handoff-a-1080x1080.png",
+          "width": 1080,
+          "height": 1080,
+          "sha256_16": "34985001747ee8eb",
+          "panel_source": null
+        }
+      ]
+    },
+    {
+      "execution_id": "self-serve-handoff-b",
+      "angle_id": "self-serve-handoff",
+      "treatment": "workflow-led",
+      "composited_in_code": [
+        "headline",
+        "support",
+        "official Cognition lockup",
+        "product name Devin",
+        "CTA button"
+      ],
+      "model_generated": [
+        "illustration panel (text-free)"
+      ],
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/v2/self-serve-handoff-b-1080x1350.png",
+          "width": 1080,
+          "height": 1350,
+          "sha256_16": "506ac82a5b5e56b5",
+          "panel_source": "data/panels/self-serve-handoff-b.png"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/v2/self-serve-handoff-b-1080x1080.png",
+          "width": 1080,
+          "height": 1080,
+          "sha256_16": "ed902bb6f215924e",
+          "panel_source": "data/panels/self-serve-handoff-b.png"
+        }
+      ]
+    },
+    {
+      "execution_id": "enterprise-playbook-a",
+      "angle_id": "enterprise-playbook",
+      "treatment": "typography-led",
+      "composited_in_code": [
+        "headline",
+        "support",
+        "official Cognition lockup",
+        "product name Devin",
+        "CTA button"
+      ],
+      "model_generated": [],
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/v2/enterprise-playbook-a-1080x1350.png",
+          "width": 1080,
+          "height": 1350,
+          "sha256_16": "bc4c54d0ce555e3e",
+          "panel_source": null
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/v2/enterprise-playbook-a-1080x1080.png",
+          "width": 1080,
+          "height": 1080,
+          "sha256_16": "980a5114be65b81f",
+          "panel_source": null
+        }
+      ]
+    },
+    {
+      "execution_id": "enterprise-playbook-b",
+      "angle_id": "enterprise-playbook",
+      "treatment": "workflow-led",
+      "composited_in_code": [
+        "headline",
+        "support",
+        "official Cognition lockup",
+        "product name Devin",
+        "CTA button"
+      ],
+      "model_generated": [
+        "illustration panel (text-free)"
+      ],
+      "renders": [
+        {
+          "format": "1080x1350",
+          "ratio": "4:5",
+          "src": "/ads/v2/enterprise-playbook-b-1080x1350.png",
+          "width": 1080,
+          "height": 1350,
+          "sha256_16": "4cafe9d576bb9380",
+          "panel_source": "data/panels/enterprise-playbook-b.png"
+        },
+        {
+          "format": "1080x1080",
+          "ratio": "1:1",
+          "src": "/ads/v2/enterprise-playbook-b-1080x1080.png",
+          "width": 1080,
+          "height": 1080,
+          "sha256_16": "784ee4b323afb684",
+          "panel_source": "data/panels/enterprise-playbook-b.png"
+        }
+      ]
+    }
+  ]
+}
