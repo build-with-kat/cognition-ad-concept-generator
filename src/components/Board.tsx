@@ -136,7 +136,7 @@ export default function Board({ batch }: { batch: Batch }) {
           </section>
         ))}
 
-        <HowItWasBuilt batch={batch} />
+        <HowItWasBuilt />
       </main>
 
       {toast && (
@@ -162,7 +162,9 @@ function Research({ findings }: { findings: Finding[] }) {
           <div key={f.id} className="rounded-xl border border-line bg-card p-4 text-[13px] leading-relaxed">
             <div className="text-[11px] uppercase tracking-[0.12em] text-muted">{f.kind}</div>
             <p className="mt-1.5 font-medium">{f.finding}</p>
-            <p className="mt-2 text-muted">Implication: {f.implication}</p>
+            <p className="mt-2 text-muted">
+              {f.implication_label ?? "Implication"}: {f.implication}
+            </p>
             <p className="mt-2 text-[12px] text-muted">
               Source:{" "}
               {f.citation.segments ? (
@@ -204,15 +206,17 @@ function Research({ findings }: { findings: Finding[] }) {
 
 function AngleIntro({ angle }: { angle: Angle }) {
   return (
-    <div>
-      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span className="text-[11px] uppercase tracking-[0.14em] text-muted">
-          {angle.track === "self-serve" ? "Self-serve" : "Enterprise"}
-        </span>
-        <h2 className="text-[22px] font-semibold tracking-[-0.02em]">{angle.title}</h2>
+    <div className="grid gap-5 rounded-xl border border-line bg-card p-5 md:grid-cols-2">
+      <div>
+        <h2 className="text-[18px] font-semibold tracking-[-0.02em]">{angle.audience_label}</h2>
+        <p className="mt-1 text-[13px] leading-relaxed text-muted">{angle.audience}</p>
+        <div className="mt-4 text-[11px] uppercase tracking-[0.12em] text-muted">Messaging angle</div>
+        <p className="mt-1.5 text-[20px] font-semibold tracking-[-0.02em]">{angle.title}</p>
       </div>
-      <p className="mt-1 max-w-3xl text-[13px] text-muted">ICP: {angle.audience}</p>
-      <p className="mt-2 max-w-3xl text-[14px] leading-relaxed">Insight: {angle.insight}</p>
+      <div>
+        <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Buyer insight</div>
+        <p className="mt-1.5 text-[14px] leading-relaxed">{angle.insight}</p>
+      </div>
     </div>
   );
 }
@@ -538,7 +542,7 @@ function DetailView({ execution, angle, onClose }: { execution: Execution; angle
 
 const RESEARCH_FOLDER = "https://drive.google.com/drive/folders/1LSSCDx2hzmXfxMiRJCXm4HbBqXVgIh62?usp=sharing";
 
-function HowItWasBuilt({ batch }: { batch: Batch }) {
+function HowItWasBuilt() {
   return (
     <footer className="mt-16 border-t border-line pt-8">
       <h2 className="text-[11px] uppercase tracking-[0.14em] text-muted">How it was built</h2>
@@ -582,20 +586,11 @@ function HowItWasBuilt({ batch }: { batch: Batch }) {
           <p className="mt-2 text-muted">Committed the app to GitHub and deployed it to Vercel.</p>
         </li>
       </ol>
-      <div className="mt-6 border-t border-line pt-4 text-[12px] text-muted">
+      <div className="mt-6 space-y-1 border-t border-line pt-4 text-[12px] text-muted">
+        <p>Demo only: Approvals and feedback are saved in this browser. Nothing is sent to Meta.</p>
         <p>
-          Execution records: strategy {batch.pipeline[0].model}, direction and critique {batch.pipeline[1].model}, one rejected
-          image-generation experiment on {batch.pipeline[3].model}, final composition with {batch.pipeline[4].engine} in{" "}
-          {batch.pipeline[4].typeface} over the supplied Devin logo file — no generated pixels in the finished ads. Prompts and model
-          outputs are recorded in data/stages.
-        </p>
-        <ul className="mt-3 list-disc space-y-1 pl-5">
-          {batch.limitations.map((l) => (
-            <li key={l}>{l}</li>
-          ))}
-        </ul>
-        <p className="mt-3">
-          Generated {new Date(batch.generated_at).toISOString().slice(0, 10)}. Independent project, not affiliated with Cognition.
+          Independent portfolio project: Not affiliated with Cognition. These are proposed creative tests, not measured campaign
+          results.
         </p>
       </div>
     </footer>

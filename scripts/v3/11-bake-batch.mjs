@@ -72,15 +72,16 @@ const research = [
   {
     id: "format",
     kind: "Competitive format observation",
-    finding: "In the reviewed Meta sample, Cognition leaned on creator videos and comment-to-DM CTAs; Viktor used copy-led statics with direct signup CTAs.",
+    finding: "In the reviewed Meta sample, Cognition leaned on creator videos and comment-to-DM CTAs.",
     quote: "Cognition ~110 active; sampled cards overwhelmingly video with comment-to-DM. Viktor ~650 active; static/templated claim cards dominate.",
     source_file: "inputs/competitive-campaign-signals-2026-09-15.md",
     section: "Finding 1 — static DR is the gap",
     source_url: null,
-    implication: "Test workflow-specific statics with a direct next step.",
+    implication: "Workflow-specific statics with a direct next step.",
+    implication_label: "Test opportunity",
     label: "OBS",
     citation: {
-      label: "Meta Ads Library \u00b7 Cognition and Viktor \u00b7 September 2026",
+      label: "Meta Ads Library \u00b7 Cognition \u00b7 September 2026",
       url: null,
       note: null,
       segments: [
@@ -88,11 +89,6 @@ const research = [
         {
           text: "Cognition",
           url: "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&view_all_page_id=627575257116750",
-        },
-        { text: " and ", url: null },
-        {
-          text: "Viktor",
-          url: "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&view_all_page_id=973849642483367",
         },
         { text: " \u00b7 September 2026", url: null },
       ],
@@ -121,9 +117,9 @@ const angles = [
     id: "self-serve-handoff",
     track: "self-serve",
     title: "Hand off the ticket. Review the PR.",
+    audience_label: "Self-serve developers",
     audience: "Individual developers working in existing codebases.",
-    insight:
-      "Delegation is more compelling when the task is clear and the developer can review the changes before merging.",
+    insight: "Developers want to hand off defined tasks while keeping control of the merge.",
     hypothesis:
       "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
     evidence: {
@@ -218,9 +214,10 @@ const angles = [
     id: "enterprise-playbook",
     track: "enterprise",
     title: "One playbook. Many repos.",
-    audience: "Engineering and platform leaders managing multiple repositories.",
+    audience_label: "Enterprise engineering leaders",
+    audience: "Leaders responsible for maintenance across multiple repositories.",
     insight:
-      "Recurring maintenance competes with feature delivery. Repeatable workflows offer a way to address it across repositories.",
+      "Recurring maintenance competes with feature delivery. The opportunity is to delegate repeatable work across repos.",
     hypothesis:
       "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
     evidence: {

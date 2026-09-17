@@ -49,6 +49,7 @@ export type Finding = {
   section: string;
   source_url: string | null;
   implication: string;
+  implication_label?: string;
   label: string;
   citation: {
     label: string;
@@ -62,6 +63,7 @@ export type Angle = {
   id: string;
   track: "self-serve" | "enterprise";
   title: string;
+  audience_label: string;
   audience: string;
   insight: string;
   hypothesis: string;
