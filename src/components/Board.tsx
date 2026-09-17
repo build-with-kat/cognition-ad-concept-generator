@@ -91,16 +91,16 @@ export default function Board({ batch }: { batch: Batch }) {
   return (
     <div className="min-h-screen">
       <header className="sticky top-0 z-30 border-b border-line bg-ground/90 backdrop-blur">
-        <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-6 py-3">
-          <div className="flex min-w-0 items-center gap-3">
+        <div className="mx-auto flex max-w-[1180px] flex-col gap-3 px-6 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+          <div className="flex items-center gap-3">
             <Image src="/brand/devin-logo.png" alt="Devin" width={1988} height={529} priority className="h-5 w-auto shrink-0" />
-            <div className="min-w-0 border-l border-line pl-3">
-              <h1 className="truncate text-[17px] font-semibold tracking-[-0.01em]">{batch.product.title}</h1>
-              <p className="truncate text-[12px] text-muted">{batch.product.subtitle}</p>
+            <div className="border-l border-line pl-3">
+              <h1 className="text-[17px] font-semibold tracking-[-0.01em]">{batch.product.title}</h1>
+              <p className="text-[12px] text-muted">{batch.product.subtitle}</p>
             </div>
           </div>
-          <div className="flex shrink-0 items-center gap-3">
-            <span className="hidden text-[11px] uppercase tracking-[0.14em] text-muted sm:inline">Demo only</span>
+          <div className="flex shrink-0 items-center justify-between gap-3 sm:justify-end">
+            <span className="text-[11px] uppercase tracking-[0.14em] text-muted">Demo only</span>
             <button
               type="button"
               onClick={approveAll}
@@ -206,17 +206,13 @@ function Research({ findings }: { findings: Finding[] }) {
 
 function AngleIntro({ angle }: { angle: Angle }) {
   return (
-    <div className="grid gap-5 rounded-xl border border-line bg-card p-5 md:grid-cols-2">
-      <div>
-        <h2 className="text-[18px] font-semibold tracking-[-0.02em]">{angle.audience_label}</h2>
-        <p className="mt-1 text-[13px] leading-relaxed text-muted">{angle.audience}</p>
-        <div className="mt-4 text-[11px] uppercase tracking-[0.12em] text-muted">Messaging angle</div>
-        <p className="mt-1.5 text-[20px] font-semibold tracking-[-0.02em]">{angle.title}</p>
-      </div>
-      <div>
-        <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Buyer insight</div>
-        <p className="mt-1.5 text-[14px] leading-relaxed">{angle.insight}</p>
-      </div>
+    <div className="rounded-xl border border-line bg-card p-5">
+      <h2 className="text-[18px] font-semibold tracking-[-0.02em]">{angle.audience_label}</h2>
+      <p className="mt-2 max-w-[65ch] text-[13px] leading-relaxed text-muted">{angle.audience}</p>
+      <div className="mt-5 text-[11px] uppercase tracking-[0.12em] text-muted">Buyer insight</div>
+      <p className="mt-2 max-w-[65ch] text-[14px] leading-relaxed">{angle.insight}</p>
+      <div className="mt-5 text-[11px] uppercase tracking-[0.12em] text-muted">Messaging angle</div>
+      <p className="mt-2 text-[20px] font-semibold tracking-[-0.02em]">{angle.title}</p>
     </div>
   );
 }
@@ -551,8 +547,7 @@ function HowItWasBuilt() {
           <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 1</div>
           <p className="mt-1.5 font-medium">Research with Grok Bot</p>
           <p className="mt-2 text-muted">
-            Used Grok Bot to research buyer language, competitor campaigns, and Devin’s positioning, then organize the findings into
-            Markdown inputs.
+            Grok Bot gathered buyer language, competitor campaigns, and company context into Markdown research files.
           </p>
           <a
             className="mt-2 inline-block text-accent underline underline-offset-2"
@@ -567,23 +562,21 @@ function HowItWasBuilt() {
           <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 2</div>
           <p className="mt-1.5 font-medium">Brief development with ChatGPT</p>
           <p className="mt-2 text-muted">
-            Used ChatGPT to turn the research and review feedback into scoped instructions for Devin, with the goal of conserving Devin
-            usage.
+            ChatGPT helped turn the research and review feedback into focused instructions for Devin.
           </p>
         </li>
         <li className="rounded-xl border border-line bg-card p-5">
           <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 3</div>
           <p className="mt-1.5 font-medium">Creative production orchestrated by Devin</p>
           <p className="mt-2 text-muted">
-            Devin passed the research to Claude to develop messaging for self-serve developers and enterprise engineering buyers. Astra
-            directed and critiqued the concepts, including an experiment with ChatGPT Images 2.5. The final selected statics were composed
-            in code with the supplied Devin logo for precise typography and layout.
+            Devin coordinated Claude for messaging and Astra for creative direction and critique. ChatGPT Images 2.5 produced visual
+            experiments. The final ads were composed in code using the supplied Devin logo.
           </p>
         </li>
         <li className="rounded-xl border border-line bg-card p-5">
           <div className="text-[11px] uppercase tracking-[0.12em] text-muted">Step 4</div>
           <p className="mt-1.5 font-medium">Deployment through GitHub and Vercel</p>
-          <p className="mt-2 text-muted">Committed the app to GitHub and deployed it to Vercel.</p>
+          <p className="mt-2 text-muted">The app was committed to GitHub and deployed to Vercel.</p>
         </li>
       </ol>
       <div className="mt-6 space-y-1 border-t border-line pt-4 text-[12px] text-muted">

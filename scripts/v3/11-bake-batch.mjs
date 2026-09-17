@@ -56,15 +56,16 @@ const research = [
   {
     id: "buyer",
     kind: "Buyer observation",
-    finding: "Developers describe delegation in terms of a receipt they can inspect: the human stays accountable for proving the code works.",
+    finding: "Developers remain responsible for checking that code works.",
     quote: "Your job is to deliver code you have proven to work.",
     source_file: "inputs/buyer-creator-signals-2026-09-15.md",
     section: "Finding 2 — Trust language = receipt / proof / junior-shaped review",
     source_url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
-    implication: "Both self-serve statics keep the merge decision with the developer instead of promising autonomy.",
+    implication: "Test messages about defined tasks and reviewable changes.",
+    implication_label: "Creative implication",
     label: "OBS",
     citation: {
-      label: "Simon Willison — Code proven to work",
+      label: "Simon Willison \u00b7 Code proven to work",
       url: "https://simonwillison.net/2025/dec/18/code-proven-to-work/",
       note: null,
     },
@@ -72,12 +73,12 @@ const research = [
   {
     id: "format",
     kind: "Competitive format observation",
-    finding: "In the reviewed Meta sample, Cognition leaned on creator videos and comment-to-DM CTAs.",
+    finding: "The reviewed Cognition Meta ads leaned on creator videos and comment-to-DM calls to action.",
     quote: "Cognition ~110 active; sampled cards overwhelmingly video with comment-to-DM. Viktor ~650 active; static/templated claim cards dominate.",
     source_file: "inputs/competitive-campaign-signals-2026-09-15.md",
     section: "Finding 1 — static DR is the gap",
     source_url: null,
-    implication: "Workflow-specific statics with a direct next step.",
+    implication: "Statics focused on a specific task, with a direct next step.",
     implication_label: "Test opportunity",
     label: "OBS",
     citation: {
@@ -97,15 +98,16 @@ const research = [
   {
     id: "proof",
     kind: "Customer proof",
-    finding: "FE fundinfo reports running automated Devin playbooks across approximately 1,800 active repositories, via automation it built itself.",
+    finding: "FE fundinfo reports using automated Devin playbooks across approximately 1,800 repositories through custom automation.",
     quote: "1,800 — repositories managed with automated Devin playbooks via custom Replit apps",
     source_file: "inputs/customer-stories-2026-09.md",
     section: "FE fundinfo customer story",
     source_url: "https://devin.ai/customers/fefundinfo",
-    implication: "The enterprise angle gets one named implementation at estate scale (B2) alongside the pain-led execution (B1).",
+    implication: "Pair the maintenance problem with a named customer example.",
+    implication_label: "Creative implication",
     label: "REPORTED",
     citation: {
-      label: "FE fundinfo \u2014 Devin customer story",
+      label: "FE fundinfo \u00b7 Devin customer story",
       url: "https://devin.ai/customers/fefundinfo",
       note: null,
     },
@@ -119,7 +121,7 @@ const angles = [
     title: "Hand off the ticket. Review the PR.",
     audience_label: "Self-serve developers",
     audience: "Individual developers working in existing codebases.",
-    insight: "Developers want to hand off defined tasks while keeping control of the merge.",
+    insight: "Developers want to delegate defined tasks while retaining control over the resulting changes.",
     hypothesis:
       "If a static names one recognisable chore and states plainly that the developer still reads the diff and owns the merge, it will convert better than generic 'AI software engineer' framing on cost per activated signup.",
     evidence: {
@@ -216,8 +218,7 @@ const angles = [
     title: "One playbook. Many repos.",
     audience_label: "Enterprise engineering leaders",
     audience: "Leaders responsible for maintenance across multiple repositories.",
-    insight:
-      "Recurring maintenance competes with feature delivery. The opportunity is to delegate repeatable work across repos.",
+    insight: "Recurring maintenance competes with feature delivery across repositories.",
     hypothesis:
       "If the creative names the leftover maintenance work and frames Devin as one repeatable playbook pointed at many repositories, it will produce cheaper qualified meetings than capability or fleet-of-agents messaging.",
     evidence: {
